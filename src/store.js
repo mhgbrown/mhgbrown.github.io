@@ -90,7 +90,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    loadTumblrs (store, { url = 'http://api.tumblr.com/v2/blog/mhgbrown.tumblr.com/likes?api_key=ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv&limit=100' }) {
+    loadTumblrs (store, { url = 'https://api.tumblr.com/v2/blog/mhgbrown.tumblr.com/likes?api_key=ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv&limit=100' }) {
       return axios.get(url)
         .then(response => {
           const tumblrs = response.data.response.liked_posts.reduce((memo, post) => {
