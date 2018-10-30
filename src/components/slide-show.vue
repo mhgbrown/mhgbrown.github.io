@@ -1,6 +1,14 @@
 <template>
   <div class="slide-show">
-    <img v-for="tumblr in randomTumblrs" :src="randomSrc(tumblr)" :key="tumblr.id">
+    <div class="slide-show-inner" ref="inner">
+      <figure
+        v-for="tumblr in tumblrs"
+        :key="tumblr.id"
+        :style="{ width: `${50 * (tumblr.photos[0].alt_sizes[0].width / tumblr.photos[0].alt_sizes[0].height)}vh` }"
+        >
+        <img :src="randomSrc(tumblr)">
+      </figure>
+    </div>
   </div>
 </template>
 
@@ -10,19 +18,63 @@ import shuffle from 'lodash.shuffle'
 
 export default {
   name: 'slide-show',
-  computed: {
-    ...mapState(['tumblrs']),
-    randomTumblrs () {
-      return shuffle(this.tumblrs)
+  data () {
+    return {
+      maxOffset: 1000,
+      offsets: [],
+      timeout: 1000
     }
   },
-  beforeCreate () {
-    this.$store.dispatch('loadTumblrs', {})
+  computed: {
+    ...mapState(['tumblrs'])
+  },
+  async mounted () {
+    await this.doSlideShow()
+    this.doRemove()
   },
   methods: {
     randomSrc (tumblr) {
       var index = Math.floor(Math.random() * tumblr.photos.length)
-      return tumblr.photos[index].original_size.url
+      return tumblr.photos[0].alt_sizes[0].url
+    },
+    generateOffsets () {
+      this.offsets = shuffle(Array.from({ length: this.maxOffset }, (_, index) => index))
+    },
+    async loadTumblr () {
+      try {
+        if (!this.offsets.length) {
+          this.generateOffsets()
+        }
+
+        const offset = this.offsets.shift()
+        await this.$store.dispatch('loadTumblr', { offset })
+      } catch (error) {
+        if (error.message === 'Tumblr post does not include photos') {
+          console.warn(error)
+          this.loadTumblr()
+          return
+        }
+
+        throw error
+      }
+    },
+    async doSlideShow () {
+      const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+      if (this.$refs.inner.clientWidth > windowWidth) {
+        return
+      }
+
+      await this.loadTumblr()
+      this.$nextTick(async () => {
+        await this.doSlideShow()
+      })
+    },
+    doRemove () {
+      setTimeout(async () => {
+        this.$store.commit('REMOVE_TUMBLR')
+        await this.doSlideShow()
+        this.doRemove()
+      }, this.timeout)
     }
   }
 }
@@ -36,18 +88,24 @@ export default {
     transform translate3d(-100%, 0, 0)
 
 .slide-show
-  height 50vh
-  white-space nowrap
   margin 1rem 0
-  // animation-duration 60s
-  // animation-name scroll
-  // animation-iteration-count infinite
-  // animation-timing-function linear
+  min-height 50vh
 
-  img
-    width auto
-    height 100%
-    user-select none
-    vertical-align bottom
+  .slide-show-inner
+    white-space nowrap
+    display inline-block
+
+  figure
+    position relative
+    padding-bottom 50vh
+    display inline-block
+    background-color blue
+
+    img
+      position absolute
+      width 100%
+      top 0
+      left 0
+      height 100%
 
 </style>

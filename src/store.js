@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    tumblrApiKey: 'ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv',
     tumblrs: [],
     projects: [{
       text: 'Camille Aleña',
@@ -87,24 +88,30 @@ export default new Vuex.Store({
   mutations: {
     ADD_TUMBLRS (state, { tumblrs }) {
       Vue.set(state, 'tumblrs', [...state.tumblrs, ...tumblrs])
+    },
+    REMOVE_TUMBLR (state) {
+      state.tumblrs.shift()
     }
   },
   actions: {
-    loadTumblrs (store, { url = 'https://api.tumblr.com/v2/blog/mhgbrown.tumblr.com/likes?api_key=ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv&limit=100' }) {
-      return axios.get(url)
-        .then(response => {
-          const tumblrs = response.data.response.liked_posts.reduce((memo, post) => {
-            if (!post.photos || !post.photos.length) {
-              return memo
-            }
+    async loadTumblr (store, { offset }) {
+      const url = `https://api.tumblr.com/v2/blog/mhgbrown.tumblr.com/likes?api_key=${store.state.tumblrApiKey}&offset=${offset}&limit=1`
+      const response = await axios.get(url)
+      const tumblrs = response.data.response.liked_posts.reduce((memo, post) => {
+        if (!post.photos || !post.photos.length) {
+          return memo
+        }
 
-            memo.push(post)
-            return memo
-          }, [])
+        memo.push(post)
+        return memo
+      }, [])
 
-          store.commit('ADD_TUMBLRS', { tumblrs })
-          return response
-        })
+      if (!tumblrs.length) {
+        throw new Error('Tumblr post does not include photos')
+      }
+
+      store.commit('ADD_TUMBLRS', { tumblrs })
+      return response
     }
   }
 })
