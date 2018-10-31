@@ -6,6 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    app: {
+      tablet: false,
+      phone: false
+    },
     tumblrApiKey: 'ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv',
     tumblrs: [],
     projects: [{
@@ -91,6 +95,9 @@ export default new Vuex.Store({
     },
     REMOVE_TUMBLR (state) {
       state.tumblrs.shift()
+    },
+    UPDATE_APP (state, { field, value }) {
+      Vue.set(state.app, field, value)
     }
   },
   actions: {
