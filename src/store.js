@@ -25,8 +25,11 @@ export default new Vuex.Store({
       text: 'Souvenir',
       href: 'https://www.souvenirofficial.com/'
     }, {
-      text: 'Georg Gatsas',
+      text: 'Kiën',
       href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips'
+    }, {
+      text: 'Georg Gatsas',
+      href: 'http://georggat.cyon.link/'
     }, {
       text: 'Good Spread',
       href: 'https://helpgoodspread.com/'
