@@ -74,7 +74,7 @@ export default new Vuex.Store({
       href: 'https://www.getfirstmate.com/'
     }, {
       text: 'BVG Train Schedule Display',
-      href: 'https://github.com/mhgbrown/why-you-leave-me'
+      href: 'https://www.instagram.com/p/6sGenzL2Gu/'
     }, {
       text: 'Joseph Kadow',
       href: 'http://www.josephkadow.com/'
