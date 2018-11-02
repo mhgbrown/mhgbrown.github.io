@@ -4,9 +4,8 @@
       <figure
         v-for="tumblr in tumblrs"
         :key="tumblr.id"
-        :style="{ width: `${tumblrWidthBase * (tumblr.photos[0].alt_sizes[0].width / tumblr.photos[0].alt_sizes[0].height)}vh` }"
         >
-        <img :src="tumblr.photos[0].alt_sizes[0].url">
+        <img :src="tumblr.photos[Math.floor(Math.random() * tumblr.photos.length)].alt_sizes[0].url">
       </figure>
     </div>
   </div>
@@ -21,7 +20,8 @@ export default {
   data () {
     return {
       maxOffset: 1000,
-      offsets: []
+      offsets: [],
+      maxTumblrs: 5
     }
   },
   computed: {
@@ -63,8 +63,7 @@ export default {
       }
     },
     async doSlideShow () {
-      const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-      if (this.$refs.inner.clientWidth > windowWidth * this.windowThresholdMultiplier) {
+      if (this.tumblrs.length > this.maxTumblrs) {
         return
       }
 
@@ -93,30 +92,28 @@ export default {
 
 .slide-show
   margin 1rem 0
-  min-height 50vh
   font-size 0
-
-  @media (max-width: 480px)
-   min-height 33vh
+  height 0
+  padding-bottom 56.5%
+  position relative
 
   .slide-show-inner
     white-space nowrap
-    display inline-block
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
 
   figure
-    position relative
-    padding-bottom 50vh
-    display inline-block
     background-color blue
-
-    @media (max-width: 480px)
-     padding-bottom 33vh
+    display inline-block
+    vertical-align top
+    width auto !important
+    height 100%
 
     img
-      position absolute
-      width 100%
-      top 0
-      left 0
+      width auto
       height 100%
 
 </style>

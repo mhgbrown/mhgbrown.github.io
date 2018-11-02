@@ -11,8 +11,11 @@
         <li><a target="_blank" href="mailto:inbox@email.mhgbrown.is">Contact</a></li>
       </ul>
     </div>
-    <slide-show></slide-show>
     <div class="content-container">
+      <slide-show></slide-show>
+    </div>
+    <div class="content-container">
+      <p>Some work</p>
       <ul>
         <li v-for="project in projectsShuffled" :key="project.title">
           <a :href="project.href">{{ project.text }}</a>
