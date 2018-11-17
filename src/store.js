@@ -14,82 +14,107 @@ export default new Vuex.Store({
     tumblrs: [],
     projects: [{
       text: 'Camille Aleña',
-      href: 'http://camillealena.com/'
+      href: 'http://camillealena.com/',
+      target: '_blank'
     }, {
       text: 'Dinamo Standards',
-      href: 'http://dinamostandards.com/'
+      href: 'http://dinamostandards.com/',
+      target: '_blank'
     }, {
       text: 'onlinebusiness.lol',
-      href: 'http://onlinebusiness.lol/'
+      href: 'http://onlinebusiness.lol/',
+      target: '_blank'
     }, {
       text: 'Souvenir',
-      href: 'https://www.souvenirofficial.com/'
+      href: 'https://www.souvenirofficial.com/',
+      target: '_blank'
     }, {
       text: 'Kiën',
-      href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips'
+      href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips',
+      target: '_blank'
     }, {
       text: 'Georg Gatsas',
-      href: 'http://georggat.cyon.link/'
+      href: 'http://georggat.cyon.link/',
+      target: '_blank'
     }, {
       text: 'Good Spread',
-      href: 'https://helpgoodspread.com/'
+      href: 'https://helpgoodspread.com/',
+      target: '_blank'
     }, {
       text: 'Talk Talk Talk',
-      href: 'http://talk-talk-talk.ch/'
+      href: 'http://talk-talk-talk.ch/',
+      target: '_blank'
     }, {
       text: 'Lexicon Labs',
-      href: 'http://lexiconlabs.nyc'
+      href: 'http://lexiconlabs.nyc',
+      target: '_blank'
     }, {
       text: 'SumAll',
-      href: 'https://sumall.com'
+      href: 'https://sumall.com',
+      target: '_blank'
     }, {
       text: 'LinkedIn',
-      href: 'https://linkedin.com'
+      href: 'https://linkedin.com',
+      target: '_blank'
     }, {
       text: 'Apple, Inc.',
-      href: 'https://apple.com'
+      href: 'https://apple.com',
+      target: '_blank'
     }, {
       text: 'Tones',
-      href: 'http://tones.mhgbrown.is/'
+      href: 'http://tones.mhgbrown.is/',
+      target: '_blank'
     }, {
       text: 'Witchifier',
-      href: 'http://witchifier.mhgbrown.is'
+      href: 'http://witchifier.mhgbrown.is',
+      target: '_blank'
     }, {
       text: 'Just A Grid',
-      href: 'http://justagrid.mhgbrown.is/'
+      href: 'http://justagrid.mhgbrown.is/',
+      target: '_blank'
     }, {
       text: 'image2html',
-      href: 'http://image2html.mhgbrown.is'
+      href: 'http://image2html.mhgbrown.is',
+      target: '_blank'
     }, {
       text: 'Fuck My Dom',
       href: `javascript:(function fmd(o,t){var c;o.FuckMyDom?FuckMyDom.slowly():(c=t.createElement('script'),c.setAttribute('src','http://mhgbrown.github.io/fuck-my-dom/fuck-my-dom.js'),c.onload=function(){FuckMyDom.slowly()},t.body.appendChild(c))})(window,document);`
     }, {
       text: 'Void',
-      href: 'http://void.mhgbrown.is/'
+      href: 'http://void.mhgbrown.is/',
+      target: '_blank'
     }, {
       text: 'Why You Leave Me?',
-      href: 'https://github.com/mhgbrown/why-you-leave-me'
+      href: 'https://github.com/mhgbrown/why-you-leave-me',
+      target: '_blank'
     }, {
       text: 'Let Me Tweet That For You',
-      href: 'https://twitter.com/lmttfy'
+      href: 'https://twitter.com/lmttfy',
+      target: '_blank'
     }, {
       text: 'Firstmate - Life Coaching',
-      href: 'https://www.getfirstmate.com/'
+      href: 'http://www.staging.getfirstmate.com/',
+      target: '_blank'
     }, {
       text: 'BVG Train Schedule Display',
-      href: 'https://www.instagram.com/p/6sGenzL2Gu/'
+      href: 'https://www.instagram.com/p/6sGenzL2Gu/',
+      target: '_blank'
     }, {
       text: 'Joseph Kadow',
-      href: 'http://www.josephkadow.com/'
+      href: 'http://www.josephkadow.com/',
+      target: '_blank'
     }, {
       text: 'Dan Solbach',
-      href: 'http://dansolbach.ch/'
+      href: 'http://dansolbach.ch/',
+      target: '_blank'
     }, {
       text: 'kpiReady',
-      href: 'https://kpiready.com/'
+      href: 'https://kpiready.com/',
+      target: '_blank'
     }, {
       text: 'Body Of Us',
-      href: 'http://bodyofus.ch/'
+      href: 'http://bodyofus.ch/',
+      target: '_blank'
     }]
   },
   mutations: {

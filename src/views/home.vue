@@ -18,7 +18,7 @@
       <p>Some work</p>
       <ul>
         <li v-for="project in projectsShuffled" :key="project.title">
-          <a :href="project.href">{{ project.text }}</a>
+          <a :target="project.target" :href="project.href">{{ project.text }}</a>
         </li>
       </ul>
     </div>
