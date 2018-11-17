@@ -54,6 +54,7 @@ export default {
         await this.$store.dispatch('loadTumblr', { offset })
       } catch (error) {
         if (error.message === 'Tumblr post does not include photos') {
+          // eslint-disable-next-line no-console
           console.warn(error)
           await this.loadTumblr()
           return
