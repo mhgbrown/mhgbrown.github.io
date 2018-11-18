@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import kebabCase from 'lodash.kebabcase'
 
 Vue.use(Vuex)
 
@@ -115,7 +116,10 @@ export default new Vuex.Store({
       text: 'Body Of Us',
       href: 'http://bodyofus.ch/',
       target: '_blank'
-    }]
+    }].map(project => {
+      project.id = kebabCase(project.text)
+      return project
+    })
   },
   mutations: {
     ADD_TUMBLRS (state, { tumblrs }) {
@@ -126,6 +130,11 @@ export default new Vuex.Store({
     },
     UPDATE_APP (state, { field, value }) {
       Vue.set(state.app, field, value)
+    }
+  },
+  getters: {
+    findProjectById (state) {
+      return id => state.projects.find(project => project.id === id)
     }
   },
   actions: {
