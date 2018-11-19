@@ -40,7 +40,6 @@ export default {
   height 0
   padding-bottom 56.5%
   position relative
-  // background red
 
   .project-inner
     position absolute
@@ -48,5 +47,6 @@ export default {
     left 0
     width 100%
     height 100%
+    font-size 1rem
 
 </style>
