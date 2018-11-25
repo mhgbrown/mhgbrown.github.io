@@ -18,7 +18,8 @@
       <p>Some work</p>
       <ul>
         <li v-for="project in projects" :key="project.title">
-          <a :target="project.target" :href="project.href">{{ project.text }}</a>
+          <router-link v-if="project.href.indexOf('/') === 0" :to="{ name: 'project', params: { id: project.id } }">{{ project.text }}</router-link>
+          <a v-else :target="project.target" :href="project.href">{{ project.text }}</a>
         </li>
       </ul>
     </div>
