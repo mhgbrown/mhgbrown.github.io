@@ -9,7 +9,7 @@
         <div class="project-links">
           <a v-if="project.website" :href="project.website" target="_blank">Visit</a>
           <ul class="inline" v-else>
-            <li v-for="link in project.links">
+            <li v-for="link in project.links" :key="link.href">
               <a :href="link.href" target="_blank">{{ link.text }}</a>
             </li>
           </ul>
