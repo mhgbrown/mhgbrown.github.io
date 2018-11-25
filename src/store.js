@@ -87,7 +87,16 @@ export default new Vuex.Store({
       text: 'Void',
       href: '/projects/void',
       preview: '/images/void.mp4',
-      website: 'http://void.mhgbrown.is/'
+      links: [
+        {
+          text: 'Website',
+          href: 'http://void.mhgbrown.is/'
+        },
+        {
+          text: 'YouTube',
+          href: 'https://www.youtube.com/watch?v=lMuTwL10RSA'
+        }
+      ]
     }, {
       text: 'Why You Leave Me?',
       href: 'https://github.com/mhgbrown/why-you-leave-me',
