@@ -44,8 +44,8 @@ export default new Vuex.Store({
       target: '_blank'
     }, {
       text: 'Talk Talk Talk',
-      href: 'http://talk-talk-talk.ch/',
-      target: '_blank'
+      href: '/projects/talk-talk-talk',
+      preview: '/images/talk-talk-talk.gif'
     }, {
       text: 'Lexicon Labs',
       href: '/projects/lexicon-labs',
