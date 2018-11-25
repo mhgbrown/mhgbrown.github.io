@@ -85,8 +85,9 @@ export default new Vuex.Store({
       href: `javascript:(function fmd(o,t){var c;o.FuckMyDom?FuckMyDom.slowly():(c=t.createElement('script'),c.setAttribute('src','http://mhgbrown.github.io/fuck-my-dom/fuck-my-dom.js'),c.onload=function(){FuckMyDom.slowly()},t.body.appendChild(c))})(window,document);`
     }, {
       text: 'Void',
-      href: 'http://void.mhgbrown.is/',
-      target: '_blank'
+      href: '/projects/void',
+      preview: '/images/void.mp4',
+      website: 'http://void.mhgbrown.is/'
     }, {
       text: 'Why You Leave Me?',
       href: 'https://github.com/mhgbrown/why-you-leave-me',

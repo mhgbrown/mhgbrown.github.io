@@ -2,7 +2,10 @@
   <application-layout class="project-id">
     <div class="project">
       <div class="project-inner">
-        <img :src="project.preview" :alt="project.text">
+        <img v-if="project.preview.indexOf('.gif') >= 0" :src="project.preview" :alt="project.text">
+        <video v-else :src="project.preview" :alt="project.text" autoplay muted preload playsinline webkit-playsinline>
+          <source :src="project.preview" type="video/mp4">
+        </video>
         <div class="project-links">
           <a v-if="project.website" :href="project.website" target="_blank">Visit</a>
         </div>
@@ -52,7 +55,8 @@ export default {
     height 100%
     font-size 1rem
 
-    img
+    img,
+    video
       max-width 100%
       height auto
       max-height 100%
