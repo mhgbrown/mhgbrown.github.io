@@ -3,7 +3,7 @@
     <div class="project">
       <div class="project-inner">
         <img v-if="project.preview.indexOf('.gif') >= 0" :src="project.preview" :alt="project.text">
-        <video v-else :src="project.preview" :alt="project.text" autoplay muted preload playsinline webkit-playsinline>
+        <video v-else :src="project.preview" :alt="project.text" loop autoplay muted preload playsinline webkit-playsinline>
           <source :src="project.preview" type="video/mp4">
         </video>
         <div class="project-links">
