@@ -121,6 +121,8 @@ export default new Vuex.Store({
     }].map(project => {
       project.id = kebabCase(project.text)
       return project
+    }).sort((a, b) => {
+      return a.text.localeCompare(b.text)
     })
   },
   mutations: {

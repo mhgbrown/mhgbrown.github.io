@@ -17,7 +17,7 @@
     <div class="content-container">
       <p>Some work</p>
       <ul>
-        <li v-for="project in projectsShuffled" :key="project.title">
+        <li v-for="project in projects" :key="project.title">
           <a :target="project.target" :href="project.href">{{ project.text }}</a>
         </li>
       </ul>
@@ -27,16 +27,12 @@
 
 <script>
 import { mapState } from 'vuex'
-import shuffle from 'lodash.shuffle'
 import SlideShow from '@/components/slide-show'
 
 export default {
   name: 'home',
   computed: {
-    ...mapState(['projects']),
-    projectsShuffled () {
-      return shuffle(this.projects)
-    }
+    ...mapState(['projects'])
   },
   components: {
     SlideShow
