@@ -69,8 +69,9 @@ export default new Vuex.Store({
       target: '_blank'
     }, {
       text: 'Witchifier',
-      href: 'http://witchifier.mhgbrown.is',
-      target: '_blank'
+      href: '/projects/witchifier',
+      website: 'http://witchifier.mhgbrown.is',
+      preview: '/images/witchifier.gif'
     }, {
       text: 'Just A Grid',
       href: 'http://justagrid.mhgbrown.is/',
