@@ -15,8 +15,9 @@ export default new Vuex.Store({
     tumblrs: [],
     projects: [{
       text: 'Camille Aleña',
-      href: 'http://camillealena.com/',
-      target: '_blank'
+      website: 'http://camillealena.com/',
+      href: '/projects/camille-alena',
+      preview: '/images/camille-alena.gif'
     }, {
       text: 'Dinamo Standards',
       href: 'http://dinamostandards.com/',
@@ -47,8 +48,9 @@ export default new Vuex.Store({
       target: '_blank'
     }, {
       text: 'Lexicon Labs',
-      href: 'http://lexiconlabs.nyc',
-      target: '_blank'
+      href: '/projects/lexicon-labs',
+      website: 'http://lexiconlabs.nyc',
+      preview: '/images/lexicon-labs.gif'
     }, {
       text: 'SumAll',
       href: 'https://sumall.com',

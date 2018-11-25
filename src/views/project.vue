@@ -2,7 +2,10 @@
   <application-layout class="project-id">
     <div class="project">
       <div class="project-inner">
-        {{ project.text }}
+        <img :src="project.preview" :alt="project.text">
+        <div class="project-links">
+          <a v-if="project.website" :href="project.website" target="_blank">Visit</a>
+        </div>
       </div>
     </div>
   </application-layout>
@@ -38,7 +41,7 @@ export default {
   margin 1rem 0
   font-size 0
   height 0
-  padding-bottom 56.5%
+  padding-bottom 56.25%
   position relative
 
   .project-inner
@@ -49,4 +52,26 @@ export default {
     height 100%
     font-size 1rem
 
+    img
+      max-width 100%
+      height auto
+      max-height 100%
+
+    .project-links
+      position absolute
+      left 0
+      bottom 0
+      opacity 0
+      transition opacity 200ms
+      background yellow
+      color red
+
+      a
+        color red
+        border-bottom-color red
+        display inline-block
+
+    &:hover
+      .project-links
+        opacity 1
 </style>
