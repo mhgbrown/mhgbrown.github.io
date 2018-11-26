@@ -28,8 +28,14 @@ export default new Vuex.Store({
       target: '_blank'
     }, {
       text: 'Souvenir',
-      href: 'https://www.souvenirofficial.com/',
-      target: '_blank'
+      href: '/projects/souvenir',
+      preview: '/videos/souvenir.mp4',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://www.souvenirofficial.com/'
+        }
+      ]
     }, {
       text: 'Kiën',
       href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips',
@@ -86,7 +92,7 @@ export default new Vuex.Store({
     }, {
       text: 'Void',
       href: '/projects/void',
-      preview: '/images/void.mp4',
+      preview: '/videos/void.mp4',
       links: [
         {
           text: 'Website',
