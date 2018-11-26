@@ -21,7 +21,8 @@ export default {
     return {
       maxOffset: 1000,
       offsets: [],
-      maxTumblrs: 5
+      maxTumblrs: 5,
+      loadPromise: Promise.resolve()
     }
   },
   computed: {
@@ -73,10 +74,15 @@ export default {
       })
     },
     onLoad () {
-      setTimeout(() => {
-        this.$store.commit('REMOVE_TUMBLR')
-        this.doSlideShow()
-      }, this.timeout)
+      this.loadPromise = this.loadPromise.then(() => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            this.$store.commit('REMOVE_TUMBLR')
+            this.doSlideShow()
+            resolve()
+          }, this.timeout)
+        })
+      })
     }
   }
 }
