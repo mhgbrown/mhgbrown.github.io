@@ -5,7 +5,7 @@
         v-for="tumblr in tumblrs"
         :key="tumblr.id"
         >
-        <img :src="tumblr.photos[Math.floor(Math.random() * tumblr.photos.length)].alt_sizes[0].url">
+        <img :src="tumblr.photos[Math.floor(Math.random() * tumblr.photos.length)].alt_sizes[0].url" @load="onLoad">
       </figure>
     </div>
   </div>
@@ -38,7 +38,6 @@ export default {
   },
   mounted () {
     this.doSlideShow()
-    this.doRemove()
   },
   methods: {
     generateOffsets () {
@@ -73,11 +72,10 @@ export default {
         this.doSlideShow()
       })
     },
-    doRemove () {
+    onLoad () {
       setTimeout(() => {
         this.$store.commit('REMOVE_TUMBLR')
         this.doSlideShow()
-        this.doRemove()
       }, this.timeout)
     }
   }
