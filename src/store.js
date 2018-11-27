@@ -123,8 +123,14 @@ export default new Vuex.Store({
       target: '_blank'
     }, {
       text: 'BVG Train Schedule Display',
-      href: 'https://www.instagram.com/p/6sGenzL2Gu/',
-      target: '_blank'
+      href: '/projects/bvg-train-schedule-display',
+      preview: '/videos/bvg-display.mp4',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://www.instagram.com/p/6sGenzL2Gu/'
+        }
+      ]
     }, {
       text: 'Joseph Kadow',
       href: 'http://www.josephkadow.com/',
