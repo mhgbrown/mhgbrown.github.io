@@ -20,8 +20,14 @@ export default new Vuex.Store({
       preview: '/images/camille-alena.gif'
     }, {
       text: 'Dinamo Standards',
-      href: 'http://dinamostandards.com/',
-      target: '_blank'
+      href: '/projects/dinamo-standards',
+      preview: '/videos/dinamostandards.mp4',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://dinamostandards.com/'
+        }
+      ]
     }, {
       text: 'onlinebusiness.lol',
       href: 'http://onlinebusiness.lol/',
@@ -95,7 +101,7 @@ export default new Vuex.Store({
       preview: '/videos/void.mp4',
       links: [
         {
-          text: 'Website',
+          text: 'Visit',
           href: 'http://void.mhgbrown.is/'
         },
         {

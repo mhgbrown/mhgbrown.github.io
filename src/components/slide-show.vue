@@ -40,11 +40,18 @@ export default {
   mounted () {
     this.doSlideShow()
   },
+  beforeDestroy () {
+    this.loadPromise = null
+  },
   methods: {
     generateOffsets () {
       this.offsets = shuffle(Array.from({ length: this.maxOffset }, (_, index) => index))
     },
     async loadTumblr () {
+      if (!this.loadPromise) {
+        return
+      }
+
       try {
         if (!this.offsets.length) {
           this.generateOffsets()
@@ -64,6 +71,10 @@ export default {
       }
     },
     async doSlideShow () {
+      if (!this.loadPromise) {
+        return
+      }
+
       if (this.tumblrs.length > this.maxTumblrs) {
         return
       }
@@ -74,6 +85,10 @@ export default {
       })
     },
     onLoad () {
+      if (!this.loadPromise) {
+        return
+      }
+
       this.loadPromise = this.loadPromise.then(() => {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
