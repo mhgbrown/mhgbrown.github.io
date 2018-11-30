@@ -44,8 +44,14 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'Kiën',
-      href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips',
-      target: '_blank'
+      href: '/projects/kien',
+      preview: '/videos/kien.mp4',
+      links: [
+        {
+          text: 'Kickstarter',
+          href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips'
+        }
+      ]
     }, {
       text: 'Georg Gatsas',
       href: 'http://georggat.cyon.link/',
