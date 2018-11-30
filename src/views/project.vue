@@ -2,8 +2,8 @@
   <application-layout class="project-id">
     <div class="project">
       <div class="project-inner">
-        <img v-if="project.preview.indexOf('.mp4') < 0" :src="project.preview" :alt="project.text">
-        <video v-else :src="project.preview" :alt="project.text" loop autoplay muted preload playsinline webkit-playsinline>
+        <img ref="media" v-if="project.preview.indexOf('.mp4') < 0" :src="project.preview" :alt="project.text">
+        <video ref="media" v-else :src="project.preview" :alt="project.text" loop autoplay muted preload playsinline webkit-playsinline>
           <source :src="project.preview" type="video/mp4">
         </video>
         <div class="project-links">
@@ -41,6 +41,11 @@ export default {
   },
   components: {
     ApplicationLayout
+  },
+  beforeDestroy () {
+    if (this.$refs.media) {
+      this.$refs.media.remove()
+    }
   }
 }
 </script>
