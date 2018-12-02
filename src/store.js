@@ -175,15 +175,11 @@ export default new Vuex.Store({
     }, {
       text: 'Void',
       href: '/projects/void',
-      preview: '/videos/void.mp4',
+      preview: 'https://www.youtube.com/embed/lMuTwL10RSA?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=lMuTwL10RSA',
       links: [
         {
           text: 'Visit',
           href: 'http://void.mhgbrown.is/'
-        },
-        {
-          text: 'YouTube',
-          href: 'https://www.youtube.com/watch?v=lMuTwL10RSA'
         }
       ]
     }, {
