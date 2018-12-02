@@ -139,8 +139,14 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'Joseph Kadow',
-      href: 'http://www.josephkadow.com/',
-      target: '_blank'
+      href: '/projects/joseph-kadow',
+      preview: 'https://www.youtube.com/embed/HwtptvA5px4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://www.josephkadow.com/'
+        }
+      ]
     }, {
       text: 'Dan Solbach',
       href: 'http://dansolbach.ch/',

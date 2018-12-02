@@ -2,10 +2,11 @@
   <application-layout class="project-id">
     <div class="project">
       <div class="project-inner">
-        <img ref="media" v-if="project.preview.indexOf('.mp4') < 0" :src="project.preview" :alt="project.text">
-        <video ref="media" v-else :src="project.preview" :alt="project.text" loop autoplay muted preload playsinline webkit-playsinline controls>
+        <iframe v-if="project.preview.indexOf('youtube.com') >= 0" width="560" height="315" :src="project.preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video ref="media" v-else-if="project.preview.indexOf('.mp4') >= 0" :src="project.preview" :alt="project.text" loop autoplay muted preload playsinline webkit-playsinline controls>
           <source :src="project.preview" type="video/mp4">
         </video>
+        <img ref="media" v-else :src="project.preview" :alt="project.text">
         <div class="project-links">
           <a v-if="project.website" :href="project.website" target="_blank">Visit</a>
           <ul class="inline" v-else>
@@ -70,6 +71,11 @@ export default {
       max-width 100%
       height auto
       max-height 100%
+
+    iframe
+      position absolute
+      height 100%
+      width 100%
 
     .project-links
       position absolute
