@@ -15,13 +15,18 @@ export default new Vuex.Store({
     tumblrs: [],
     projects: [{
       text: 'Camille Aleña',
-      website: 'http://camillealena.com/',
       href: '/projects/camille-alena',
-      preview: '/images/camille-alena.gif'
+      preview: 'https://www.youtube.com/embed/cDVcOjzam7E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://camillealena.com/'
+        }
+      ]
     }, {
       text: 'Dinamo Standards',
       href: '/projects/dinamo-standards',
-      preview: '/videos/dinamostandards.mp4',
+      preview: 'https://www.youtube.com/embed/V2dQfmUt4s4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
       links: [
         {
           text: 'Visit',
@@ -30,12 +35,18 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'onlinebusiness.lol',
-      href: 'http://onlinebusiness.lol/',
-      target: '_blank'
+      href: '/projects/onlinebusiness-lol',
+      preview: 'https://www.youtube.com/embed/Ct7g-P-pwlQ?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://onlinebusiness.lol/'
+        }
+      ]
     }, {
-      text: 'Souvenir',
+      text: 'SOUVENIR 纪念品 сувенир お土産',
       href: '/projects/souvenir',
-      preview: '/videos/souvenir.mp4',
+      preview: 'https://www.youtube.com/embed/_ymJStaS7Nk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
       links: [
         {
           text: 'Visit',
@@ -45,8 +56,16 @@ export default new Vuex.Store({
     }, {
       text: 'Kiën',
       href: '/projects/kien',
-      preview: '/videos/kien.mp4',
+      preview: 'https://www.youtube.com/embed/xFET7Pj6FQ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
       links: [
+        {
+          text: 'Website',
+          href: 'http://kien.com'
+        },
+        {
+          text: 'Configurator',
+          href: 'http://kien.com/configurator'
+        },
         {
           text: 'Kickstarter',
           href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips'
@@ -140,7 +159,7 @@ export default new Vuex.Store({
     }, {
       text: 'Joseph Kadow',
       href: '/projects/joseph-kadow',
-      preview: 'https://www.youtube.com/embed/HwtptvA5px4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0',
+      preview: 'https://www.youtube.com/embed/HwtptvA5px4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
       links: [
         {
           text: 'Visit',

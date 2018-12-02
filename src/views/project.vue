@@ -80,15 +80,17 @@ export default {
     .project-links
       position absolute
       left 0
-      bottom 0
+      top 0
       opacity 0
       transition opacity 200ms
-      background yellow
-      color red
+      width 100%
+      background blue
+      color white
+      padding-bottom 2px
 
       a
-        color red
-        border-bottom-color red
+        color white
+        border-bottom-color white
         display inline-block
 
     &:hover
