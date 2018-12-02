@@ -83,29 +83,58 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'Good Spread',
-      href: 'https://helpgoodspread.com/',
-      target: '_blank'
+      href: '/projects/good-spread',
+      preview: '/images/good-spread-website.gif',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://helpgoodspread.com/'
+        }
+      ]
     }, {
       text: 'Talk Talk Talk',
       href: '/projects/talk-talk-talk',
-      preview: '/images/talk-talk-talk.gif'
+      preview: 'https://www.youtube.com/embed/F5eCBt_-uhU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=F5eCBt_-uhU'
     }, {
       text: 'Lexicon Labs',
       href: '/projects/lexicon-labs',
-      website: 'http://lexiconlabs.nyc',
-      preview: '/images/lexicon-labs.gif'
+      preview: 'https://www.youtube.com/embed/NKWI-bUtVmc?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=F5eCBt_-uhU',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://lexiconlabs.nyc'
+        }
+      ]
     }, {
       text: 'SumAll',
-      href: 'https://sumall.com',
-      target: '_blank'
+      href: '/projects/sumall',
+      preview: 'https://www.youtube.com/embed/z2JyoYCg5G4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=z2JyoYCg5G4',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://sumall.com'
+        }
+      ]
     }, {
       text: 'LinkedIn',
-      href: 'https://linkedin.com',
-      target: '_blank'
+      href: '/projects/linkedin',
+      preview: '/images/linkedin.jpg',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://linkedin.com'
+        }
+      ]
     }, {
       text: 'Apple, Inc.',
-      href: 'https://apple.com',
-      target: '_blank'
+      href: '/projects/apple',
+      preview: '/images/apple.jpg',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://apple.com'
+        }
+      ]
     }, {
       text: 'Tones',
       href: 'http://tones.mhgbrown.is/',
