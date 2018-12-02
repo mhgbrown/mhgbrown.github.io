@@ -117,7 +117,7 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'LinkedIn',
-      href: '/projects/linkedin',
+      href: '/projects/linked-in',
       preview: '/images/linkedin.jpg',
       links: [
         {
@@ -137,17 +137,34 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'Tones',
-      href: 'http://tones.mhgbrown.is/',
-      target: '_blank'
+      href: '/projects/tones',
+      preview: 'http://tones.mhgbrown.is/?hack=youtube.com',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://tones.mhgbrown.is/'
+        }
+      ]
     }, {
       text: 'Witchifier',
       href: '/projects/witchifier',
-      website: 'http://witchifier.mhgbrown.is',
-      preview: '/images/witchifier.gif'
+      preview: 'http://witchifier.mhgbrown.is/?hack=youtube.com',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://witchifier.mhgbrown.is/'
+        }
+      ]
     }, {
       text: 'Just A Grid',
-      href: 'http://justagrid.mhgbrown.is/',
-      target: '_blank'
+      href: '/projects/just-a-grid',
+      preview: 'http://justagrid.mhgbrown.is/?hack=youtube.com',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://justagrid.mhgbrown.is/'
+        }
+      ]
     }, {
       text: 'image2html',
       href: 'http://image2html.mhgbrown.is',
