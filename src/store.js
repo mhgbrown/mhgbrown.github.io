@@ -138,31 +138,31 @@ export default new Vuex.Store({
     }, {
       text: 'Tones',
       href: '/projects/tones',
-      preview: 'http://tones.mhgbrown.is/?hack=youtube.com',
+      preview: 'https://tones.mhgbrown.is/?hack=youtube.com',
       links: [
         {
           text: 'Visit',
-          href: 'http://tones.mhgbrown.is/'
+          href: 'https://tones.mhgbrown.is/'
         }
       ]
     }, {
       text: 'Witchifier',
       href: '/projects/witchifier',
-      preview: 'http://witchifier.mhgbrown.is/?hack=youtube.com',
+      preview: 'https://witchifier.mhgbrown.is/?hack=youtube.com',
       links: [
         {
           text: 'Visit',
-          href: 'http://witchifier.mhgbrown.is/'
+          href: 'https://witchifier.mhgbrown.is/'
         }
       ]
     }, {
       text: 'Just A Grid',
       href: '/projects/just-a-grid',
-      preview: 'http://justagrid.mhgbrown.is/?hack=youtube.com',
+      preview: 'https://justagrid.mhgbrown.is/?hack=youtube.com',
       links: [
         {
           text: 'Visit',
-          href: 'http://justagrid.mhgbrown.is/'
+          href: 'https://justagrid.mhgbrown.is/'
         }
       ]
     }, {
