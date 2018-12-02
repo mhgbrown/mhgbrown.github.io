@@ -44,7 +44,7 @@ export default new Vuex.Store({
         }
       ]
     }, {
-      text: 'SOUVENIR 纪念品 сувенир お土産',
+      text: 'Souvenir',
       href: '/projects/souvenir',
       preview: 'https://www.youtube.com/embed/_ymJStaS7Nk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=_ymJStaS7Nk',
       links: [
