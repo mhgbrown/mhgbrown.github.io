@@ -16,7 +16,7 @@ export default new Vuex.Store({
     projects: [{
       text: 'Camille Aleña',
       href: '/projects/camille-alena',
-      preview: 'https://www.youtube.com/embed/cDVcOjzam7E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      preview: 'https://www.youtube.com/embed/cDVcOjzam7E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=cDVcOjzam7E',
       links: [
         {
           text: 'Visit',
@@ -26,7 +26,7 @@ export default new Vuex.Store({
     }, {
       text: 'Dinamo Standards',
       href: '/projects/dinamo-standards',
-      preview: 'https://www.youtube.com/embed/V2dQfmUt4s4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      preview: 'https://www.youtube.com/embed/V2dQfmUt4s4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=V2dQfmUt4s4',
       links: [
         {
           text: 'Visit',
@@ -36,7 +36,7 @@ export default new Vuex.Store({
     }, {
       text: 'onlinebusiness.lol',
       href: '/projects/onlinebusiness-lol',
-      preview: 'https://www.youtube.com/embed/Ct7g-P-pwlQ?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      preview: 'https://www.youtube.com/embed/Ct7g-P-pwlQ?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=Ct7g-P-pwlQ',
       links: [
         {
           text: 'Visit',
@@ -46,7 +46,7 @@ export default new Vuex.Store({
     }, {
       text: 'SOUVENIR 纪念品 сувенир お土産',
       href: '/projects/souvenir',
-      preview: 'https://www.youtube.com/embed/_ymJStaS7Nk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      preview: 'https://www.youtube.com/embed/_ymJStaS7Nk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=_ymJStaS7Nk',
       links: [
         {
           text: 'Visit',
@@ -56,7 +56,7 @@ export default new Vuex.Store({
     }, {
       text: 'Kiën',
       href: '/projects/kien',
-      preview: 'https://www.youtube.com/embed/xFET7Pj6FQ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      preview: 'https://www.youtube.com/embed/xFET7Pj6FQ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=xFET7Pj6FQ8',
       links: [
         {
           text: 'Website',
@@ -73,8 +73,14 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'Georg Gatsas',
-      href: 'http://georggat.cyon.link/',
-      target: '_blank'
+      href: '/projects/georg-gatsas',
+      preview: 'https://www.youtube.com/embed/L2dSbRh_eJ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=L2dSbRh_eJ8',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://georggat.cyon.link/'
+        }
+      ]
     }, {
       text: 'Good Spread',
       href: 'https://helpgoodspread.com/',
@@ -159,7 +165,7 @@ export default new Vuex.Store({
     }, {
       text: 'Joseph Kadow',
       href: '/projects/joseph-kadow',
-      preview: 'https://www.youtube.com/embed/HwtptvA5px4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1',
+      preview: 'https://www.youtube.com/embed/HwtptvA5px4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=HwtptvA5px4',
       links: [
         {
           text: 'Visit',
