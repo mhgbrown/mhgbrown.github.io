@@ -226,6 +226,16 @@ export default new Vuex.Store({
       text: 'Body Of Us',
       href: 'http://bodyofus.ch/',
       target: '_blank'
+    }, {
+      text: 'Markus Mai',
+      href: '/projects/markus-mai',
+      preview: 'https://www.youtube.com/embed/wkrm4ITGbto?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=wkrm4ITGbto',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://maimarkus.com/'
+        }
+      ]
     }].map(project => {
       project.id = kebabCase(project.text)
       return project
