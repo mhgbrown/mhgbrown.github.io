@@ -167,8 +167,14 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'image2html',
-      href: 'http://image2html.mhgbrown.is',
-      target: '_blank'
+      href: '/projects/image-2-html',
+      preview: 'https://www.youtube.com/embed/u4ENL5-NQZU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=u4ENL5-NQZU',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://image2html.mhgbrown.is'
+        }
+      ]
     }, {
       text: 'Fuck My Dom',
       href: `javascript:(function fmd(o,t){var c;o.FuckMyDom?FuckMyDom.slowly():(c=t.createElement('script'),c.setAttribute('src','http://mhgbrown.github.io/fuck-my-dom/fuck-my-dom.js'),c.onload=function(){FuckMyDom.slowly()},t.body.appendChild(c))})(window,document);`
