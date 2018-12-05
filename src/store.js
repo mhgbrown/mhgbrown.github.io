@@ -222,8 +222,14 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'Dan Solbach',
-      href: 'http://dansolbach.ch/',
-      target: '_blank'
+      href: '/projects/dan-solbach',
+      preview: 'https://www.youtube.com/embed/hCxKHsfJ69E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=hCxKHsfJ69E',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://dansolbach.ch/'
+        }
+      ]
     }, {
       text: 'kpiReady',
       href: 'https://kpiready.com/',
