@@ -198,8 +198,14 @@ export default new Vuex.Store({
       target: '_blank'
     }, {
       text: 'Firstmate - Life Coaching',
-      href: 'http://www.staging.getfirstmate.com/',
-      target: '_blank'
+      href: '/projects/firstmate-life-coaching',
+      preview: 'https://www.youtube.com/embed/2xurCa3OR5M?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=2xurCa3OR5M',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://www.staging.getfirstmate.com/'
+        }
+      ]
     }, {
       text: 'BVG Train Schedule Display',
       href: '/projects/bvg-train-schedule-display',
