@@ -209,10 +209,10 @@ export default new Vuex.Store({
     }, {
       text: 'BVG Train Schedule Display',
       href: '/projects/bvg-train-schedule-display',
-      preview: '/videos/bvg-display.mp4',
+      preview: 'https://www.youtube.com/embed/IW8mCi2zInM?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=IW8mCi2zInM',
       links: [
         {
-          text: 'Visit',
+          text: 'Instagram',
           href: 'https://www.instagram.com/p/6sGenzL2Gu/'
         }
       ]
