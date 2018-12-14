@@ -8,6 +8,8 @@
         </video>
         <img ref="media" v-else :src="project.preview" :alt="project.text">
         <div class="project-links">
+          <p v-if="project.description">{{ project.description }}</p>
+          <p v-if="project.technology">{{ project.technology }}</p>
           <a v-if="project.website" :href="project.website" target="_blank">Visit</a>
           <ul class="inline" v-else>
             <li v-for="link in project.links" :key="link.href">
@@ -69,8 +71,10 @@ export default {
     img,
     video
       max-width 100%
-      height auto
+      height 100%
       max-height 100%
+      display block
+      margin 0 auto
 
     iframe
       position absolute
@@ -82,11 +86,13 @@ export default {
       left 0
       top 0
       opacity 0
-      transition opacity 200ms
       width 100%
       background blue
       color white
       padding-bottom 2px
+
+      p
+        margin-bottom 0.25rem
 
       a
         color white

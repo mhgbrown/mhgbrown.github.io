@@ -85,6 +85,8 @@ export default new Vuex.Store({
       text: 'Good Spread',
       href: '/projects/good-spread',
       preview: '/images/good-spread-website.gif',
+      description: 'Website for charity-based peanut butter retailer.',
+      technology: 'Shopify, jQuery',
       links: [
         {
           text: 'Visit',
@@ -119,6 +121,8 @@ export default new Vuex.Store({
       text: 'LinkedIn',
       href: '/projects/linked-in',
       preview: '/images/linkedin.jpg',
+      description: 'Implementation of new profile redesign.',
+      technology: 'Java, jQuery, Raphaël',
       links: [
         {
           text: 'Visit',
@@ -129,6 +133,8 @@ export default new Vuex.Store({
       text: 'Apple, Inc.',
       href: '/projects/apple',
       preview: '/images/apple.jpg',
+      description: 'Internal tools to facilitate the operations of Apple\'s marketing communications department. Appearance in 4th Gen iPod Touch marketing images (below).',
+      technology: 'Ruby, Rails, PHP, jQuery',
       links: [
         {
           text: 'Visit',
@@ -242,8 +248,14 @@ export default new Vuex.Store({
       target: '_blank'
     }, {
       text: 'Body Of Us',
-      href: 'http://bodyofus.ch/',
-      target: '_blank'
+      href: '/projects/body-of-us',
+      preview: 'https://www.youtube.com/embed/yqdf1Rhgg3c?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=yqdf1Rhgg3c',
+      links: [
+        {
+          text: 'Visit',
+          href: 'http://bodyofus.ch/'
+        }
+      ]
     }, {
       text: 'Markus Mai',
       href: '/projects/markus-mai',
