@@ -1,22 +1,24 @@
 <template>
   <application-layout class="project-id">
     <div class="project">
-      <div class="project-inner">
-        <iframe v-if="project.preview.indexOf('youtube.com') >= 0" width="560" height="315" :src="project.preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <video ref="media" v-else-if="project.preview.indexOf('.mp4') >= 0" :src="project.preview" :alt="project.text" loop autoplay muted preload playsinline webkit-playsinline controls>
-          <source :src="project.preview" type="video/mp4">
-        </video>
-        <img ref="media" v-else :src="project.preview" :alt="project.text">
-        <div class="project-links">
-          <p v-if="project.description">{{ project.description }}</p>
-          <p v-if="project.technology">{{ project.technology }}</p>
-          <a v-if="project.website" :href="project.website" target="_blank">Visit</a>
-          <ul class="inline" v-else>
-            <li v-for="link in project.links" :key="link.href">
-              <a :href="link.href" target="_blank">{{ link.text }}</a>
-            </li>
-          </ul>
+      <div class="project-media">
+        <div class="project-inner">
+          <iframe v-if="project.preview.indexOf('youtube.com') >= 0" width="560" height="315" :src="project.preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <video ref="media" v-else-if="project.preview.indexOf('.mp4') >= 0" :src="project.preview" :alt="project.text" loop autoplay muted preload playsinline webkit-playsinline controls>
+            <source :src="project.preview" type="video/mp4">
+          </video>
+          <img ref="media" v-else :src="project.preview" :alt="project.text">
         </div>
+      </div>
+      <div class="project-information">
+        <p v-if="project.description">{{ project.description }}</p>
+        <p v-if="project.technology">{{ project.technology }}</p>
+        <a v-if="project.website" :href="project.website" target="_blank">Visit</a>
+        <ul class="inline" v-else>
+          <li v-for="link in project.links" :key="link.href">
+            <a :href="link.href" target="_blank">{{ link.text }}</a>
+          </li>
+        </ul>
       </div>
     </div>
   </application-layout>
@@ -53,7 +55,7 @@ export default {
 }
 </script>
 <style lang="stylus">
-.project
+.project-media
   margin 1rem 0
   font-size 0
   height 0
@@ -81,25 +83,20 @@ export default {
       height 100%
       width 100%
 
-    .project-links
-      position absolute
-      left 0
-      top 0
-      opacity 0
-      width 100%
-      background blue
-      color white
-      padding-bottom 2px
+.project-information
+  left 0
+  top 0
+  width 100%
+  background blue
+  color white
+  padding-bottom 2px
+  margin-bottom 1rem
 
-      p
-        margin-bottom 0.25rem
+  p
+    margin-bottom 0.25rem
 
-      a
-        color white
-        border-bottom-color white
-        display inline-block
-
-    &:hover
-      .project-links
-        opacity 1
+  a
+    color white
+    border-bottom-color white
+    display inline-block
 </style>
