@@ -225,11 +225,15 @@ export default new Vuex.Store({
     }, {
       text: 'Why You Leave Me?',
       href: 'https://github.com/mhgbrown/why-you-leave-me',
-      target: '_blank'
+      target: '_blank',
+      description: 'Twitter bot that asks unfollowers why they unfollowed.',
+      technology: 'Node, Heroku, Twitter'
     }, {
       text: 'Let Me Tweet That For You',
       href: 'https://twitter.com/lmttfy',
-      target: '_blank'
+      target: '_blank',
+      description: 'Twitter bot that tweets what you direct message it.',
+      technology: 'Node, Heroku, Twitter'
     }, {
       text: 'Firstmate - Life Coaching',
       href: '/projects/firstmate-life-coaching',
@@ -281,7 +285,9 @@ export default new Vuex.Store({
     }, {
       text: 'kpiReady',
       href: 'https://kpiready.com/',
-      target: '_blank'
+      target: '_blank',
+      description: 'Web application and backend architecture for company data reporting and analytics platform. Image rendering services for email based around Vue SSR.',
+      technology: 'Node, Vue, AWS'
     }, {
       text: 'Body Of Us',
       href: '/projects/body-of-us',
@@ -306,6 +312,12 @@ export default new Vuex.Store({
           href: 'http://maimarkus.com/'
         }
       ]
+    }, {
+      text: 'Wordtelligence',
+      href: '/projects/wordtelligence',
+      description: 'Backend and Gmail-integrated Chrome extension to help users craft more understandable emails based on the recipients of the message.',
+      technology: 'Django (+ Channels), Websocket, Python, React, Chrome, Heroku',
+      preview: 'https://www.youtube.com/embed/sJsNJKO0kHE?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=sJsNJKO0kHE'
     }].map(project => {
       project.id = kebabCase(project.text)
       return project
