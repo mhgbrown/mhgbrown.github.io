@@ -224,16 +224,36 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'Why You Leave Me?',
-      href: 'https://github.com/mhgbrown/why-you-leave-me',
-      target: '_blank',
-      description: 'Twitter bot that asks unfollowers why they unfollowed.',
-      technology: 'Node, Heroku, Twitter'
+      href: '/projects/why-you-leave-me-',
+      preview: '/images/why-you-leave-me.png',
+      description: 'Twitter bot that asks unfollowers why they unfollowed and collects any responses.',
+      technology: 'Node, Heroku, Twitter, Google Docs',
+      links: [
+        {
+          text: 'Github',
+          href: 'https://github.com/mhgbrown/why-you-leave-me'
+        },
+        {
+          text: 'Responses',
+          href: 'https://docs.google.com/spreadsheets/d/1sa7rdQANt8wzMdLJDFUL9cFLQ9o8ZfJzLQ4Vj53MigU/edit#gid=0'
+        }
+      ]
     }, {
       text: 'Let Me Tweet That For You',
-      href: 'https://twitter.com/lmttfy',
-      target: '_blank',
+      href: '/projects/let-me-tweet-that-for-you',
+      preview: '/images/lmtty.png',
       description: 'Twitter bot that tweets what you direct message it.',
-      technology: 'Node, Heroku, Twitter'
+      technology: 'Node, Heroku, Twitter',
+      links: [
+        {
+          text: 'Twitter',
+          href: 'https://twitter.com/lmttfy'
+        },
+        {
+          text: 'Github',
+          href: 'https://github.com/mhgbrown/letmetweetthatforyou'
+        }
+      ]
     }, {
       text: 'Firstmate - Life Coaching',
       href: '/projects/firstmate-life-coaching',
