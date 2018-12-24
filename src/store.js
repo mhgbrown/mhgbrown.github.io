@@ -304,10 +304,16 @@ export default new Vuex.Store({
       ]
     }, {
       text: 'kpiReady',
-      href: 'https://kpiready.com/',
-      target: '_blank',
+      href: '/projects/kpiready',
+      preview: 'https://www.youtube.com/embed/0NXzsaw8S_c?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=0NXzsaw8S_c',
       description: 'Web application and backend architecture for company data reporting and analytics platform. Image rendering services for email based around Vue SSR.',
-      technology: 'Node, Vue, AWS'
+      technology: 'Node, Vue, Nuxt, AWS, Apexcharts',
+      links: [
+        {
+          text: 'Visit',
+          href: 'https://kpiready.com/'
+        }
+      ]
     }, {
       text: 'Body Of Us',
       href: '/projects/body-of-us',
