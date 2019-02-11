@@ -21,7 +21,7 @@ export default new Vuex.Store({
       technology: 'Kirby CMS, jQuery, Digital Ocean',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://camillealena.com/'
         }
       ]
@@ -33,7 +33,7 @@ export default new Vuex.Store({
       technology: 'React, Contentful, Github, WebVTT',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://dinamostandards.com/'
         }
       ]
@@ -45,7 +45,7 @@ export default new Vuex.Store({
       technology: 'jQuery, Github',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://onlinebusiness.lol/'
         }
       ]
@@ -57,7 +57,7 @@ export default new Vuex.Store({
       technology: 'Shopify (Slate), jQuery',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://www.souvenirofficial.com/'
         }
       ]
@@ -89,7 +89,7 @@ export default new Vuex.Store({
       technology: 'Kirby CMS, Vue',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://georggat.cyon.link/'
         }
       ]
@@ -101,7 +101,7 @@ export default new Vuex.Store({
       technology: 'Shopify, jQuery',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://helpgoodspread.com/'
         }
       ]
@@ -119,7 +119,7 @@ export default new Vuex.Store({
       technology: 'jQuery',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://lexiconlabs.nyc'
         }
       ]
@@ -131,7 +131,7 @@ export default new Vuex.Store({
       technology: 'Java, DropWizard, Vue, Node, D3, Phantom',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://sumall.com'
         }
       ]
@@ -143,7 +143,7 @@ export default new Vuex.Store({
       technology: 'Java, jQuery, Raphaël',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://linkedin.com'
         }
       ]
@@ -151,11 +151,11 @@ export default new Vuex.Store({
       text: 'Apple, Inc.',
       href: '/projects/apple',
       preview: '/images/apple.jpg',
-      description: 'Internal tools to facilitate the operations of Apple\'s marketing communications department. Appearance in 4th Gen iPod Touch marketing images (below).',
+      description: 'Internal tools to facilitate the operations of Apple\'s marketing communications department. Appearance in 4th Gen iPod Touch marketing images (above).',
       technology: 'Ruby, Rails, PHP, jQuery',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://apple.com'
         }
       ]
@@ -167,7 +167,7 @@ export default new Vuex.Store({
       technology: 'jQuery, Github',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://tones.mhgbrown.is/'
         }
       ]
@@ -179,7 +179,7 @@ export default new Vuex.Store({
       technology: 'jQuery, Github',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://witchifier.mhgbrown.is/'
         }
       ]
@@ -191,7 +191,7 @@ export default new Vuex.Store({
       technology: 'jQuery, Github',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://justagrid.mhgbrown.is/'
         }
       ]
@@ -203,7 +203,7 @@ export default new Vuex.Store({
       technology: 'jQuery, Web Workers, Github',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://image2html.mhgbrown.is'
         }
       ]
@@ -218,7 +218,7 @@ export default new Vuex.Store({
       technology: 'Java, Android, AWS, Ruby, Rails',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://void.mhgbrown.is/'
         }
       ]
@@ -262,7 +262,7 @@ export default new Vuex.Store({
       technology: 'Python, Django, iOS, Swift, Vue, Heroku',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://www.staging.getfirstmate.com/'
         }
       ]
@@ -286,7 +286,7 @@ export default new Vuex.Store({
       technology: 'Kirby CMS',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://www.josephkadow.com/'
         }
       ]
@@ -298,7 +298,7 @@ export default new Vuex.Store({
       technology: 'Kirby CMS, Vue',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://dansolbach.ch/'
         }
       ]
@@ -310,7 +310,7 @@ export default new Vuex.Store({
       technology: 'Node, Vue, Nuxt, AWS, Apexcharts',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'https://kpiready.com/'
         }
       ]
@@ -322,7 +322,7 @@ export default new Vuex.Store({
       technology: 'Kirby CMS, Vue',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://bodyofus.ch/'
         }
       ]
@@ -334,7 +334,7 @@ export default new Vuex.Store({
       technology: 'Kirby CMS, Vue',
       links: [
         {
-          text: 'Visit',
+          text: 'Website',
           href: 'http://maimarkus.com/'
         }
       ]
