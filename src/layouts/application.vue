@@ -6,7 +6,7 @@
         <li><a target="_blank" href="http://github.com/mhgbrown">Code</a></li>
         <li><a target="_blank" href="http://instagram.com/mhgbrown">Photos</a></li>
         <li><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">Music</a></li>
-        <li><a target="_blank" href="https://blog.mhgbrown.is">Writing</a></li>
+        <li><a href="https://blog.mhgbrown.is">Writing</a></li>
         <li><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">Resume</a></li>
         <li><a target="_blank" href="mailto:inbox@email.mhgbrown.is">Contact</a></li>
       </ul>
