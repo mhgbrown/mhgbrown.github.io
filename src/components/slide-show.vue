@@ -116,6 +116,8 @@ export default {
   height 0
   padding-bottom 56.5%
   position relative
+  @media only screen and (max-width: 959px)
+    margin 1rem -16px
 
   .slide-show-inner
     white-space nowrap
