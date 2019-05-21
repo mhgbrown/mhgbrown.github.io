@@ -319,7 +319,7 @@ export default new Vuex.Store({
       href: '/projects/body-of-us',
       preview: 'https://www.youtube.com/embed/yqdf1Rhgg3c?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=yqdf1Rhgg3c',
       description: 'Website for the Swiss entry into the 2018 London Design Biennale.',
-      technology: 'Kirby CMS, Vue',
+      technology: 'Kirby CMS, Vue, Vuetify, Digital Ocean',
       links: [
         {
           text: 'Website',
@@ -344,6 +344,18 @@ export default new Vuex.Store({
       description: 'Backend and Gmail-integrated Chrome extension to help users craft more understandable emails based on the recipients of the message.',
       technology: 'Django (+ Channels), Websocket, Python, React, Chrome, Heroku',
       preview: 'https://www.youtube.com/embed/sJsNJKO0kHE?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=sJsNJKO0kHE'
+    }, {
+      text: 'Inside Motion',
+      href: '/projects/inside-motion',
+      description: 'Website for exhibition at the Pharmacy Museum in Basel, Switzerland in collaboration with Swiss design gurus Common Interest',
+      technology: 'Kirby CMS, Vue, Vuetify, Digital Ocean',
+      preview: 'https://www.youtube.com/embed/CgzUgg9nXzU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=CgzUgg9nXzU',
+      links: [
+        {
+          text: 'Website',
+          href: 'https://inside-motion.ch/'
+        }
+      ]
     }].map(project => {
       project.id = kebabCase(project.text)
       return project
