@@ -86,13 +86,7 @@ export default new Vuex.Store({
       href: '/projects/georg-gatsas',
       preview: 'https://www.youtube.com/embed/L2dSbRh_eJ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=L2dSbRh_eJ8',
       description: 'Portfolio website for Swiss photographer.',
-      technology: 'Kirby CMS, Vue',
-      links: [
-        {
-          text: 'Website',
-          href: 'http://georggat.cyon.link/'
-        }
-      ]
+      technology: 'Kirby CMS, Vue'
     }, {
       text: 'Good Spread',
       href: '/projects/good-spread',
