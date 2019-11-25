@@ -350,6 +350,18 @@ export default new Vuex.Store({
           href: 'https://inside-motion.ch/'
         }
       ]
+    }, {
+      text: 'Futuress',
+      href: '/projects/futuress',
+      description: 'Multilingual submission platform for stories of underrepresented viewpoints in the design community. In collaboration with Swiss designers commoninterest.',
+      technology: 'Kirby CMS, Vue, Vuetify, CSS 3D',
+      preview: 'https://www.youtube.com/embed/aag45VG47yU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=aag45VG47yU',
+      links: [
+        {
+          text: 'Website',
+          href: 'https://www.futuress.org/'
+        }
+      ]
     }].map(project => {
       project.id = kebabCase(project.text)
       return project
