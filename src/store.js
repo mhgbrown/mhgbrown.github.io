@@ -355,11 +355,29 @@ export default new Vuex.Store({
       href: '/projects/futuress',
       description: 'Multilingual submission platform for stories of underrepresented viewpoints in the design community. In collaboration with Swiss designers commoninterest.',
       technology: 'Kirby CMS, Vue, Vuetify, CSS 3D',
-      preview: 'https://www.youtube.com/embed/aag45VG47yU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=aag45VG47yU',
+      preview: 'https://www.youtube.com/embed/aag45VG47yU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=aag45VG47yU'
+    }, {
+      text: 'Futuress Magazine',
+      href: '/projects/futuress-magazine',
+      description: '"An online magazine on the politics of design. A community space for transnational solidarity."',
+      technology: 'Ghost CMS, SCSS',
+      preview: 'https://www.youtube.com/embed/b4HNdr8CXXk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=b4HNdr8CXXk',
       links: [
         {
           text: 'Website',
-          href: 'https://www.futuress.org/'
+          href: 'https://futuress.org/'
+        }
+      ]
+    }, {
+      text: 'Capture Translate',
+      href: '/projects/capture-translate',
+      description: 'An exploratory project to determine the feasibility of creating a language learning flashcard app using machine-detected objects as source material.',
+      technology: 'Vue, Google Cloud Functions, Google Translate, TensorFlow JS, Media Devices API, Firebase',
+      preview: 'https://www.youtube.com/embed/O8P3vrdab4E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=O8P3vrdab4E',
+      links: [
+        {
+          text: 'Website',
+          href: 'http://capture-translate.web.app'
         }
       ]
     }].map(project => {
