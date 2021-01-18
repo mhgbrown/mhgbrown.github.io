@@ -407,21 +407,13 @@ export default new Vuex.Store({
     async loadTumblr (store, { offset }) {
       const url = `https://api.tumblr.com/v2/blog/mhgbrown.tumblr.com/likes?api_key=${store.state.tumblrApiKey}&offset=${offset}&limit=1`
       const response = await axios.get(url)
-      const tumblrs = response.data.response.liked_posts.reduce((memo, post) => {
-        if (!post.photos || !post.photos.length) {
-          return memo
-        }
-
-        memo.push(post)
-        return memo
-      }, [])
-
-      if (!tumblrs.length) {
+      const tumblr = response.data.response.liked_posts.find(post => post.photos && post.photos.length)
+      if (!tumblr) {
         throw new Error('Tumblr post does not include photos')
       }
 
-      store.commit('ADD_TUMBLRS', { tumblrs })
-      return response
+      store.commit('ADD_TUMBLRS', { tumblrs: [tumblr] })
+      return tumblr
     }
   }
 })

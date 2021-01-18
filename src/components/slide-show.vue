@@ -2,10 +2,10 @@
   <div class="slide-show">
     <div class="slide-show-inner" ref="inner">
       <figure
-        v-for="tumblr in tumblrs"
+        v-for="(tumblr, index) in tumblrs"
         :key="tumblr.id"
         >
-        <img :src="tumblr.photos[Math.floor(Math.random() * tumblr.photos.length)].alt_sizes[0].url" @load="onLoad">
+        <img v-if="tumblr.photos[randomIndicies[index]]" :src="tumblr.photos[randomIndicies[index]].alt_sizes[0].url" @load="onLoad">
       </figure>
     </div>
   </div>
@@ -22,13 +22,14 @@ export default {
       maxOffset: 1000,
       offsets: [],
       maxTumblrs: 5,
-      loadPromise: Promise.resolve()
+      loadPromise: Promise.resolve(),
+      randomIndicies: []
     }
   },
   computed: {
     ...mapState(['tumblrs']),
     timeout () {
-      return this.$store.state.app.phone ? 5000 : 2000
+      return this.$store.state.app.phone ? 4000 : 2000
     },
     tumblrWidthBase () {
       return this.$store.state.app.phone ? 33 : 50
@@ -58,13 +59,13 @@ export default {
         }
 
         const offset = this.offsets.shift()
-        await this.$store.dispatch('loadTumblr', { offset })
+        const tumblr = await this.$store.dispatch('loadTumblr', { offset })
+        this.randomIndicies.push(Math.floor(Math.random() * tumblr.photos.length))
       } catch (error) {
         if (error.message === 'Tumblr post does not include photos') {
           // eslint-disable-next-line no-console
           console.warn(error)
-          await this.loadTumblr()
-          return
+          return this.loadTumblr()
         }
 
         throw error
@@ -93,6 +94,7 @@ export default {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             this.$store.commit('REMOVE_TUMBLR')
+            this.randomIndicies.shift()
             this.doSlideShow()
             resolve()
           }, this.timeout)
@@ -133,6 +135,8 @@ export default {
     vertical-align top
     width auto !important
     height 100%
+    @media (prefers-color-scheme: dark)
+      background-color yellow
 
     img
       width auto
