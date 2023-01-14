@@ -9,7 +9,7 @@
           <img :src="tumblr.photos[randomIndicies[index]].alt_sizes[0].url" @load="onLoad" @error="onLoad"/>
         </template>
         <template v-else-if="tumblr.video_url">
-          <video :src="tumblr.video_url" muted autoplay loop @load="onLoad" @error="onLoad"/>
+          <video :src="tumblr.video_url" muted autoplay loop playsinline @canplay="onLoad" @error="onLoad"/>
         </template>
       </figure>
     </div>
