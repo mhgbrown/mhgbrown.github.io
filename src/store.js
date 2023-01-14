@@ -391,7 +391,7 @@ export default new Vuex.Store({
     async loadTumblr (store, { offset }) {
       const url = `https://api.tumblr.com/v2/blog/mhgbrown.tumblr.com/likes?api_key=${store.state.tumblrApiKey}&offset=${offset}&limit=1`
       const response = await axios.get(url)
-      const tumblr = response.data.response.liked_posts.find(post => post.photos && post.photos.length)
+      const tumblr = response.data.response.liked_posts.find(post => post.photos && post.photos.length) || response.data.response.liked_posts.find(post => !!post.video_url)
       if (!tumblr) {
         throw new Error('Tumblr post does not include photos')
       }

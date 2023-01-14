@@ -5,7 +5,12 @@
         v-for="(tumblr, index) in tumblrs"
         :key="tumblr.id"
         >
-        <img v-if="tumblr.photos[randomIndicies[index]]" :src="tumblr.photos[randomIndicies[index]].alt_sizes[0].url" @load="onLoad">
+        <template v-if="tumblr.photos && tumblr.photos[randomIndicies[index]]">
+          <img :src="tumblr.photos[randomIndicies[index]].alt_sizes[0].url" @load="onLoad" @error="onLoad"/>
+        </template>
+        <template v-else-if="tumblr.video_url">
+          <video :src="tumblr.video_url" muted autoplay loop @load="onLoad" @error="onLoad"/>
+        </template>
       </figure>
     </div>
   </div>
@@ -29,7 +34,7 @@ export default {
   computed: {
     ...mapState(['tumblrs']),
     timeout () {
-      return 2000
+      return 3000
     },
     windowThresholdMultiplier () {
       return 3.5
@@ -57,11 +62,12 @@ export default {
 
         const offset = this.offsets.shift()
         const tumblr = await this.$store.dispatch('loadTumblr', { offset })
-        this.randomIndicies.push(Math.floor(Math.random() * tumblr.photos.length))
+        const randomFactor = tumblr.photos ? Math.floor(Math.random() * tumblr.photos.length) : 0
+        this.randomIndicies.push(randomFactor)
       } catch (error) {
         if (error.message === 'Tumblr post does not include photos') {
           // eslint-disable-next-line no-console
-          console.warn(error)
+          // console.warn(error)
           return this.loadTumblr()
         }
 
@@ -131,11 +137,12 @@ export default {
     display inline-block
     vertical-align top
     width auto !important
+    color white
     height 100%
     @media (prefers-color-scheme: dark)
       background-color yellow
 
-    img
+    img, video
       width auto
       height 100%
 
