@@ -73,10 +73,6 @@ export default new Vuex.Store({
           href: 'http://kien.com'
         },
         {
-          text: 'Configurator',
-          href: 'http://kien.com/configurator'
-        },
-        {
           text: 'Kickstarter',
           href: 'https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips'
         }
@@ -209,13 +205,7 @@ export default new Vuex.Store({
       href: '/projects/void',
       preview: 'https://www.youtube.com/embed/lMuTwL10RSA?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=lMuTwL10RSA',
       description: 'Android application and backend to share and receive random photos from other users.',
-      technology: 'Java, Android, AWS, Ruby, Rails',
-      links: [
-        {
-          text: 'Website',
-          href: 'https://void.mhgbrown.is/'
-        }
-      ]
+      technology: 'Java, Android, AWS, Ruby, Rails'
     }, {
       text: 'Why You Leave Me?',
       href: '/projects/why-you-leave-me-',
@@ -253,13 +243,7 @@ export default new Vuex.Store({
       href: '/projects/firstmate-life-coaching',
       preview: 'https://www.youtube.com/embed/2xurCa3OR5M?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=2xurCa3OR5M',
       description: 'Web and iOS application to to help users achieve their goals with either a Life Coach or friend.',
-      technology: 'Python, Django, iOS, Swift, Vue, Heroku',
-      links: [
-        {
-          text: 'Website',
-          href: 'http://www.staging.getfirstmate.com/'
-        }
-      ]
+      technology: 'Python, Django, iOS, Swift, Vue, Heroku'
     }, {
       text: 'BVG Train Schedule Display',
       href: '/projects/bvg-train-schedule-display',

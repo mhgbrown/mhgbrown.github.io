@@ -29,13 +29,10 @@ export default {
   computed: {
     ...mapState(['tumblrs']),
     timeout () {
-      return this.$store.state.app.phone ? 4000 : 2000
-    },
-    tumblrWidthBase () {
-      return this.$store.state.app.phone ? 33 : 50
+      return 2000
     },
     windowThresholdMultiplier () {
-      return this.$store.state.app.phone ? 2.5 : 1.5
+      return 3.5
     }
   },
   mounted () {

@@ -61,6 +61,8 @@ export default {
   height 0
   padding-bottom 56.25%
   position relative
+  @media only screen and (max-width: 959px)
+    margin 1rem -16px
 
   .project-inner
     position absolute
