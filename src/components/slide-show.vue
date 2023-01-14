@@ -35,9 +35,6 @@ export default {
     ...mapState(['tumblrs']),
     timeout () {
       return 3000
-    },
-    windowThresholdMultiplier () {
-      return 3.5
     }
   },
   mounted () {
