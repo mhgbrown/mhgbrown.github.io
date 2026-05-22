@@ -3,7 +3,7 @@
     <section v-if="sortedWork.length" id="experience" class="resume-section">
       <h2>Experience</h2>
       <ul class="resume-list">
-        <li v-for="job in sortedWork" :key="job.name + job.position">
+        <li v-for="job in sortedWork" :key="job.name + job.position" :id="'experience-' + slugify(job.name)">
           <div class="resume-item-header">
             <div class="header-main">
               <strong>{{ job.position }}</strong>
@@ -30,7 +30,13 @@
               <strong>{{ project.name }}</strong>
             </div>
             <div v-if="project.associatedWith" class="header-sub">
-              <em>{{ project.associatedWith }}</em>
+              <em v-if="getMatchingJob(project.associatedWith)">
+                <a :href="'#experience-' + slugify(project.associatedWith)" data-scroll-only="true">{{ project.associatedWith }}</a>
+              </em>
+              <em v-else-if="getMatchingEducation(project.associatedWith)">
+                <a :href="'#education-' + slugify(project.associatedWith)" data-scroll-only="true">{{ project.associatedWith }}</a>
+              </em>
+              <em v-else>{{ project.associatedWith }}</em>
             </div>
             <span class="date">{{ project.startDate }} — {{ project.endDate }}</span>
           </div>
@@ -54,7 +60,7 @@
     <section v-if="resume.education" id="education" class="resume-section">
       <h2>Education</h2>
       <ul class="resume-list">
-        <li v-for="edu in resume.education" :key="edu.institution + edu.area">
+        <li v-for="edu in resume.education" :key="edu.institution + edu.area" :id="'education-' + slugify(edu.institution)">
           <div class="resume-item-header">
             <div class="header-main">
               <strong>{{ edu.institution }}</strong>
@@ -87,6 +93,29 @@ const store = useResumeStore()
 const { resume } = storeToRefs(store)
 
 useScrollSpy(['#experience', '#projects', '#skills', '#education', '#about'])
+
+const slugify = (text: string) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '')
+}
+
+const getMatchingJob = (associatedWith: string) => {
+  if (!associatedWith) return null
+  const query = slugify(associatedWith)
+  return resume.value.work?.find(job => slugify(job.name) === query) || null
+}
+
+const getMatchingEducation = (associatedWith: string) => {
+  if (!associatedWith) return null
+  const query = slugify(associatedWith)
+  return resume.value.education?.find(edu => slugify(edu.institution) === query) || null
+}
 
 const sortedWork = computed(() => {
   if (!resume.value.work) return []

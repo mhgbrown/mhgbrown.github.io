@@ -52,7 +52,8 @@ export function useScrollSpy(selectors: string[], threshold = 150) {
     const currentHash = window.location.hash
     if (activeId) {
       const newHash = `#${activeId}`
-      if (currentHash !== newHash) {
+      const isSubSection = currentHash.startsWith(`${newHash}-`)
+      if (currentHash !== newHash && !isSubSection) {
         window.history.replaceState(null, '', newHash)
       }
     } else {
@@ -69,17 +70,22 @@ export function useScrollSpy(selectors: string[], threshold = 150) {
   const scrollToHash = () => {
     const hash = window.location.hash
     if (hash) {
-      const target = document.querySelector(hash) as HTMLElement | null
-      if (target) {
-        isScrollingToHash = true
-        target.scrollIntoView({ behavior: 'smooth' })
+      try {
+        const target = document.querySelector(hash) as HTMLElement | null
+        if (target) {
+          isScrollingToHash = true
+          target.scrollIntoView({ behavior: 'smooth' })
 
-        if (scrollTimeout) {
-          window.clearTimeout(scrollTimeout)
+          if (scrollTimeout) {
+            window.clearTimeout(scrollTimeout)
+          }
+          scrollTimeout = window.setTimeout(() => {
+            isScrollingToHash = false
+          }, 1000)
         }
-        scrollTimeout = window.setTimeout(() => {
-          isScrollingToHash = false
-        }, 1000)
+      } catch (err) {
+        // Handle potential invalid selector errors from malformed hashes
+        console.error(err)
       }
     }
   }
@@ -88,9 +94,46 @@ export function useScrollSpy(selectors: string[], threshold = 150) {
     scrollToHash()
   }
 
+  const handleLinkClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement | null
+    const anchor = target?.closest('a')
+    if (anchor) {
+      const href = anchor.getAttribute('href')
+      if (href && href.startsWith('#')) {
+        try {
+          const targetEl = document.querySelector(href) as HTMLElement | null
+          if (targetEl) {
+            e.preventDefault()
+            isScrollingToHash = true
+
+            const scrollOnly = anchor.getAttribute('data-scroll-only') === 'true'
+
+            if (!scrollOnly) {
+              // Update URL hash with history.pushState so it pushes to browser history
+              window.history.pushState(null, '', href)
+            }
+
+            // Smoothly scroll to target
+            targetEl.scrollIntoView({ behavior: 'smooth' })
+
+            if (scrollTimeout) {
+              window.clearTimeout(scrollTimeout)
+            }
+            scrollTimeout = window.setTimeout(() => {
+              isScrollingToHash = false
+            }, 1000)
+          }
+        } catch (err) {
+          console.error(err)
+        }
+      }
+    }
+  }
+
   onMounted(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('hashchange', onHashChange)
+    window.addEventListener('click', handleLinkClick)
 
     // Scroll to the active hash on initial mount (with a slight delay to ensure rendering is complete)
     setTimeout(scrollToHash, 150)
@@ -99,6 +142,7 @@ export function useScrollSpy(selectors: string[], threshold = 150) {
   onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
     window.removeEventListener('hashchange', onHashChange)
+    window.removeEventListener('click', handleLinkClick)
     if (scrollTimeout) {
       window.clearTimeout(scrollTimeout)
     }
