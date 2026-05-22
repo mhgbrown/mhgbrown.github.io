@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<{
   verticalHeight: '400px'
 })
 
-const tumblrApiKey = 'ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv'
+const tumblrApiKey = import.meta.env.VITE_TUMBLR_API_KEY
 
 const maxOffset = 1000
 const offsets = ref<number[]>([])
