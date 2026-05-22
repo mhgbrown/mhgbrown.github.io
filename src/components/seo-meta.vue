@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useResumeStore } from '@/store'
+import { useResumeStore } from '@/store.ts'
 import { onMounted } from 'vue'
 
 const store = useResumeStore()
@@ -32,4 +32,6 @@ onMounted(() => {
 })
 </script>
 
-
+<template>
+  <div></div>
+</template>
