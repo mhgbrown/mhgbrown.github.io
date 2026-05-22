@@ -1,9 +1,5 @@
 <template>
   <div class="resume-content">
-    <section v-if="resume.basics" class="resume-section bio">
-      <p>{{ resume.basics.summary }}</p>
-    </section>
-
     <section v-if="resume.work" class="resume-section">
       <h2>Experience</h2>
       <ul class="resume-list">
@@ -63,28 +59,11 @@
       </ul>
     </section>
 
-    <section v-if="resume.awards" class="resume-section">
-      <h2>Awards</h2>
-      <ul class="resume-list">
-        <li v-for="award in resume.awards" :key="award.title">
-          <div class="resume-item-header">
-            <strong>{{ award.title }}</strong>
-            <span v-if="award.awarder" class="spacer">|</span>
-            <span v-if="award.awarder">{{ award.awarder }}</span>
-            <span class="date">{{ award.date }}</span>
-          </div>
-          <p v-if="award.summary" class="description">{{ award.summary }}</p>
-        </li>
-      </ul>
-    </section>
-
-    <section v-if="resume.languages" class="resume-section">
-      <h2>Languages</h2>
-      <ul class="resume-list inline-list">
-        <li v-for="lang in resume.languages" :key="lang.language">
-          <strong>{{ lang.language }}:</strong> {{ lang.fluency }}
-        </li>
-      </ul>
+    <section v-if="resume.basics && resume.basics.summary" class="resume-section">
+      <h2>About</h2>
+      <div class="description">
+        <p>{{ resume.basics.summary }}</p>
+      </div>
     </section>
   </div>
 </template>
