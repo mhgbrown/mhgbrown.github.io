@@ -67,8 +67,7 @@
 
     <section v-if="resume.basics && resume.basics.summary" class="resume-section">
       <h2>About</h2>
-      <div class="description">
-        <p>{{ resume.basics.summary }}</p>
+      <div class="description about-text" v-html="resume.basics.summary">
       </div>
     </section>
   </div>
@@ -143,6 +142,10 @@ const sortedProjects = computed(() => {
 .description {
   margin-top: 0.5rem;
   line-height: 1.4;
+}
+
+.about-text {
+  white-space: pre-wrap;
 }
 
 .highlights-list {
