@@ -149,6 +149,9 @@ const loadTumblr = async (): Promise<void> => {
       }
 
       const offset = offsets.value.shift() as number
+      // Filter out overlapping offsets to prevent any duplicate post ranges
+      offsets.value = offsets.value.filter(x => Math.abs(x - offset) >= props.postsPerRequest)
+
       const url = `https://api.tumblr.com/v2/blog/mhgbrown.tumblr.com/likes?api_key=${tumblrApiKey}&offset=${offset}&limit=${props.postsPerRequest}`
 
       const response = await fetch(url)
