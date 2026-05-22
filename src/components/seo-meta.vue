@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useResumeStore } from '@/store.ts'
+import { useResumeStore } from '@/store'
 import { onMounted } from 'vue'
 
 const store = useResumeStore()
@@ -11,7 +11,7 @@ onMounted(() => {
     "name": "Morgan Brown",
     "jobTitle": "Software Engineer",
     "url": "https://mhgbrown.is",
-    "description": store.resume.bio,
+     "description": store.resume.basics.summary,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Berlin",
@@ -32,6 +32,4 @@ onMounted(() => {
 })
 </script>
 
-<template>
-  <!-- This component doesn't render anything -->
-</template>
+

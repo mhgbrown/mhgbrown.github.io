@@ -4,7 +4,7 @@
       <div class="project-media">
         <div class="project-inner">
           <iframe v-if="project.preview && project.preview.indexOf('youtube.com') >= 0" width="560" height="315" :src="project.preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <video ref="media" v-else-if="project.preview && project.preview.indexOf('.mp4') >= 0" :src="project.preview" :alt="project.name" loop autoplay muted preload playsinline webkit-playsinline controls>
+          <video ref="media" v-else-if="project.preview && project.preview.indexOf('.mp4') >= 0" :src="project.preview" :alt="project.name" loop autoplay muted preload="auto" playsinline webkit-playsinline controls>
             <source :src="project.preview" type="video/mp4">
           </video>
           <img ref="media" v-else-if="project.preview" :src="project.preview" :alt="project.name">

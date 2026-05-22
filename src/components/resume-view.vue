@@ -1,6 +1,6 @@
 <template>
   <div class="resume-content">
-    <section v-if="sortedWork.length" class="resume-section">
+    <section v-if="sortedWork.length" id="experience" class="resume-section">
       <h2>Experience</h2>
       <ul class="resume-list">
         <li v-for="job in sortedWork" :key="job.name + job.position">
@@ -21,7 +21,7 @@
       </ul>
     </section>
 
-    <section v-if="sortedProjects.length" class="resume-section">
+    <section v-if="sortedProjects.length" id="projects" class="resume-section">
       <h2>Projects</h2>
       <ul class="resume-list">
         <li v-for="project in sortedProjects" :key="project.name">
@@ -42,7 +42,7 @@
       </ul>
     </section>
 
-    <section v-if="resume.skills" class="resume-section">
+    <section v-if="resume.skills" id="skills" class="resume-section">
       <h2>Skills</h2>
       <ul class="resume-list skills-list">
         <li v-for="skill in resume.skills" :key="skill.name">
@@ -51,7 +51,7 @@
       </ul>
     </section>
 
-    <section v-if="resume.education" class="resume-section">
+    <section v-if="resume.education" id="education" class="resume-section">
       <h2>Education</h2>
       <ul class="resume-list">
         <li v-for="edu in resume.education" :key="edu.institution + edu.area">
@@ -68,7 +68,7 @@
       </ul>
     </section>
 
-    <section v-if="resume.basics && resume.basics.summary" class="resume-section">
+    <section v-if="resume.basics && resume.basics.summary" id="about" class="resume-section">
       <h2>About</h2>
       <div class="description about-text" v-html="resume.basics.summary">
       </div>
