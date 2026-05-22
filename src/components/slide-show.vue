@@ -2,14 +2,16 @@
   <div class="slide-show">
     <div class="slide-show-inner" ref="inner">
       <figure
-        v-for="(tumblr, index) in tumblrs"
+        v-for="tumblr in tumblrs"
         :key="tumblr.id"
         >
-        <template v-if="tumblr.photos && tumblr.photos[randomIndicies[index]]">
-          <img :src="tumblr.photos[randomIndicies[index]].alt_sizes[0].url" @load="onLoad" @error="onLoad"/>
-        </template>
-        <template v-else-if="tumblr.video_url">
-          <video :src="tumblr.video_url" muted autoplay loop playsinline @canplay="onLoad" @error="onLoad"/>
+        <template v-if="tumblr._media">
+          <template v-if="tumblr._media.type === 'image'">
+            <img :src="tumblr._media.url" @load="onLoad" @error="onLoad"/>
+          </template>
+          <template v-else-if="tumblr._media.type === 'video'">
+            <video :src="tumblr._media.url" muted autoplay loop playsinline @canplay="onLoad" @error="onLoad"/>
+          </template>
         </template>
       </figure>
     </div>
@@ -32,7 +34,6 @@ const maxOffset = 1000
 const offsets = ref<number[]>([])
 const maxTumblrs = 5
 let loadPromise: Promise<void> | null = Promise.resolve()
-const randomIndicies = ref<number[]>([])
 const tumblrs = ref<any[]>([])
 const timeout = 3000
 
@@ -40,9 +41,96 @@ const pool = ref<any[]>([])
 const isLoading = ref(false)
 
 const generateOffsets = () => {
-  const step = props.postsPerRequest
-  const count = Math.floor(maxOffset / step)
-  offsets.value = shuffle(Array.from({ length: count }, (_, index) => index * step))
+  offsets.value = shuffle(Array.from({ length: maxOffset }, (_, index) => index))
+}
+
+const extractFromHtml = (html: string): { type: 'image' | 'video', url: string } | null => {
+  const imgRegex = /<img[^>]+src=["']([^"']+)["']/i
+  const imgMatch = html.match(imgRegex)
+  if (imgMatch && imgMatch[1]) {
+    return { type: 'image', url: imgMatch[1] }
+  }
+
+  const videoRegex = /<video[^>]+src=["']([^"']+)["']/i
+  const videoMatch = html.match(videoRegex)
+  if (videoMatch && videoMatch[1]) {
+    return { type: 'video', url: videoMatch[1] }
+  }
+
+  const sourceRegex = /<source[^>]+src=["']([^"']+)["']/i
+  const sourceMatch = html.match(sourceRegex)
+  if (sourceMatch && sourceMatch[1]) {
+    return { type: 'video', url: sourceMatch[1] }
+  }
+
+  return null
+}
+
+const extractMedia = (post: any): { type: 'image' | 'video', url: string } | null => {
+  if (!post) return null
+
+  // 1. Check legacy photos
+  if (post.photos && post.photos.length) {
+    const randomPhoto = post.photos[Math.floor(Math.random() * post.photos.length)]
+    if (randomPhoto && randomPhoto.alt_sizes && randomPhoto.alt_sizes.length) {
+      return { type: 'image', url: randomPhoto.alt_sizes[0].url }
+    }
+  }
+
+  // 2. Check legacy video_url
+  if (post.video_url) {
+    return { type: 'video', url: post.video_url }
+  }
+
+  // 3. Check Neue Post Format (NPF) content blocks
+  if (post.content && Array.isArray(post.content)) {
+    for (const block of post.content) {
+      if (block.type === 'image' && block.media && block.media.length) {
+        return { type: 'image', url: block.media[0].url }
+      }
+      if (block.type === 'video' && block.media) {
+        const mediaUrl = Array.isArray(block.media) ? block.media[0]?.url : block.media.url
+        if (mediaUrl) {
+          return { type: 'video', url: mediaUrl }
+        }
+      }
+    }
+  }
+
+  // 4. Check reblog trail (reblog history)
+  if (post.trail && Array.isArray(post.trail)) {
+    for (const item of post.trail) {
+      if (item.content && Array.isArray(item.content)) {
+        for (const block of item.content) {
+          if (block.type === 'image' && block.media && block.media.length) {
+            return { type: 'image', url: block.media[0].url }
+          }
+          if (block.type === 'video' && block.media) {
+            const mediaUrl = Array.isArray(block.media) ? block.media[0]?.url : block.media.url
+            if (mediaUrl) {
+              return { type: 'video', url: mediaUrl }
+            }
+          }
+        }
+      }
+      if (item.body) {
+        const media = extractFromHtml(item.body)
+        if (media) return media
+      }
+    }
+  }
+
+  // 5. Check inline HTML fields (body, caption)
+  if (post.body) {
+    const media = extractFromHtml(post.body)
+    if (media) return media
+  }
+  if (post.caption) {
+    const media = extractFromHtml(post.caption)
+    if (media) return media
+  }
+
+  return null
 }
 
 const loadTumblr = async (): Promise<void> => {
@@ -70,13 +158,19 @@ const loadTumblr = async (): Promise<void> => {
 
       const data = await response.json()
       const likedPosts = data.response.liked_posts || []
-      const validPosts = likedPosts.filter((post: any) => (post.photos && post.photos.length) || post.video_url)
+      const validPosts = likedPosts
+        .map((post: any) => {
+          const media = extractMedia(post)
+          if (media) {
+            post._media = media
+          }
+          return post
+        })
+        .filter((post: any) => !!post._media)
 
       if (validPosts.length === 0) {
         console.warn('No valid posts found in this batch, trying another batch...')
         isLoading.value = false
-        // Wait 1 second constant backoff before trying the next offset
-        await new Promise(resolve => setTimeout(resolve, 1000))
         return loadTumblr()
       }
 
@@ -87,8 +181,6 @@ const loadTumblr = async (): Promise<void> => {
 
     const tumblr = pool.value.shift()
     if (tumblr) {
-      const randomFactor = tumblr.photos ? Math.floor(Math.random() * tumblr.photos.length) : 0
-      randomIndicies.value.push(randomFactor)
       tumblrs.value.push(tumblr)
     }
   } catch (error: any) {
@@ -122,7 +214,6 @@ const onLoad = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         tumblrs.value.shift()
-        randomIndicies.value.shift()
         doSlideShow()
         resolve()
       }, timeout)
