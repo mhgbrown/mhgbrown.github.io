@@ -1,9 +1,9 @@
 <template>
   <div class="resume-content">
-    <section v-if="resume.work" class="resume-section">
+    <section v-if="sortedWork.length" class="resume-section">
       <h2>Experience</h2>
       <ul class="resume-list">
-        <li v-for="job in resume.work" :key="job.name + job.position">
+        <li v-for="job in sortedWork" :key="job.name + job.position">
           <div class="resume-item-header">
             <div class="header-main">
               <strong>{{ job.name }}</strong>
@@ -20,10 +20,10 @@
       </ul>
     </section>
 
-    <section v-if="resume.projects" class="resume-section">
+    <section v-if="sortedProjects.length" class="resume-section">
       <h2>Projects</h2>
       <ul class="resume-list">
-        <li v-for="project in resume.projects" :key="project.name">
+        <li v-for="project in sortedProjects" :key="project.name">
           <div class="resume-item-header">
             <div class="header-main">
               <strong>{{ project.name }}</strong>
@@ -77,9 +77,21 @@
 <script setup lang="ts">
 import { useResumeStore } from '@/store.ts'
 import { storeToRefs } from 'pinia'
+import { computed } from 'vue'
+import { sortChronologically } from '@/utils/date-sort.ts'
 
 const store = useResumeStore()
 const { resume } = storeToRefs(store)
+
+const sortedWork = computed(() => {
+  if (!resume.value.work) return []
+  return [...resume.value.work].sort(sortChronologically)
+})
+
+const sortedProjects = computed(() => {
+  if (!resume.value.projects) return []
+  return [...resume.value.projects].sort(sortChronologically)
+})
 </script>
 
 <style lang="scss">
