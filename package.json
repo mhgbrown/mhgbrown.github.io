@@ -6,29 +6,23 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "lint": "vue-cli-service lint",
-    "deploy": "npm run build && push-dir --dir=dist --branch=master --cleanup --verbose"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "^0.18.1",
-    "lodash.kebabcase": "^4.1.1",
     "lodash.shuffle": "^4.2.0",
     "pinia": "^3.0.4",
     "reset-css": "^4.0.1",
     "sass": "^1.100.0",
     "vue": "^3.5.34",
-    "vue-router": "^4.6.4",
-    "vuex": "^4.1.0"
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@types/lodash.kebabcase": "^4.1.9",
     "@types/lodash.shuffle": "^4.2.9",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
     "@vue/eslint-config-standard": "^3.0.5",
-    "push-dir": "^0.4.1",
     "typescript": "^6.0.3",
     "vite": "^8.0.14",
     "vue-template-compiler": "^2.5.17",
