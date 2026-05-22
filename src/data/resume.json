@@ -195,26 +195,6 @@
       "courses": []
     }
   ],
-  "awards": [
-    {
-      "title": "Swiss Design Award",
-      "date": "2022",
-      "awarder": "Swiss Federal Office of Culture",
-      "summary": "Won for the core platform design and development of Futuress, a hybrid learning and publishing community focused on design politics."
-    },
-    {
-      "title": "Dean's List",
-      "date": "",
-      "awarder": "",
-      "summary": ""
-    },
-    {
-      "title": "Rock Star",
-      "date": "",
-      "awarder": "",
-      "summary": ""
-    }
-  ],
   "skills": [
     {
       "name": "Frontend Architecture",
@@ -241,28 +221,6 @@
         "Puppeteer",
         "Playwright"
       ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native or Bilingual"
-    },
-    {
-      "language": "German",
-      "fluency": "Professional Working"
-    },
-    {
-      "language": "Spanish",
-      "fluency": "Limited Working"
-    },
-    {
-      "language": "Arabic",
-      "fluency": "Elementary"
-    },
-    {
-      "language": "French",
-      "fluency": "Elementary"
     }
   ],
   "projects": [
