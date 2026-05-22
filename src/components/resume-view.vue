@@ -56,7 +56,8 @@
           <div class="resume-item-header">
             <div class="header-main">
               <strong>{{ edu.institution }}</strong>
-              <span class="spacer">|</span>
+            </div>
+            <div class="header-sub">
               <span>{{ edu.studyType }} {{ edu.area }}</span>
             </div>
             <span class="date">{{ edu.startDate }} — {{ edu.endDate }}</span>
@@ -113,6 +114,8 @@ const sortedProjects = computed(() => {
 
   li {
     margin-bottom: 1.5rem;
+    display: block;
+    width: 100%;
   }
 }
 
@@ -126,6 +129,11 @@ const sortedProjects = computed(() => {
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.5rem;
+  }
+
+  .header-sub {
+    font-style: italic;
+    margin-top: 0.1rem;
   }
 
   .spacer {
