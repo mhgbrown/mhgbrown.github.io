@@ -6,9 +6,10 @@
         <li v-for="job in sortedWork" :key="job.name + job.position">
           <div class="resume-item-header">
             <div class="header-main">
-              <strong>{{ job.name }}</strong>
-              <span class="spacer">|</span>
-              <em>{{ job.position }}</em>
+              <strong>{{ job.position }}</strong>
+            </div>
+            <div class="header-sub">
+              <em>{{ job.name }}</em>
             </div>
             <span class="date">{{ job.startDate }} — {{ job.endDate || 'Present' }}</span>
           </div>
@@ -27,8 +28,9 @@
           <div class="resume-item-header">
             <div class="header-main">
               <strong>{{ project.name }}</strong>
-              <span v-if="project.associatedWith" class="spacer">|</span>
-              <em v-if="project.associatedWith">{{ project.associatedWith }}</em>
+            </div>
+            <div v-if="project.associatedWith" class="header-sub">
+              <em>{{ project.associatedWith }}</em>
             </div>
             <span class="date">{{ project.startDate }} — {{ project.endDate }}</span>
           </div>
