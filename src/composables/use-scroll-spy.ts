@@ -1,4 +1,5 @@
 import { onMounted, onUnmounted } from 'vue'
+import { useResumeStore } from '@/store.ts'
 
 /**
  * Vue 3 Composable to spy on scroll position and update URL fragment (hash) based on the active section.
@@ -8,6 +9,7 @@ import { onMounted, onUnmounted } from 'vue'
  * @param threshold Offset in pixels from top of viewport to determine active section
  */
 export function useScrollSpy(selectors: string[], threshold = 150) {
+  const store = useResumeStore()
   let isScrollingToHash = false
   let scrollTimeout: number | null = null
 
@@ -135,8 +137,20 @@ export function useScrollSpy(selectors: string[], threshold = 150) {
     window.addEventListener('hashchange', onHashChange)
     window.addEventListener('click', handleLinkClick)
 
-    // Scroll to the active hash on initial mount (with a slight delay to ensure rendering is complete)
-    setTimeout(scrollToHash, 150)
+    if (store.scrollPosition > 0) {
+      // Restore the exact pixel scroll position immediately
+      const savedPos = store.scrollPosition
+      store.saveScrollPosition(0)
+      window.scrollTo(0, savedPos)
+
+      // And scroll again after a short delay to account for any layout rendering shifts
+      setTimeout(() => {
+        window.scrollTo(0, savedPos)
+      }, 50)
+    } else {
+      // Scroll to the active hash on initial mount (with a slight delay to ensure rendering is complete)
+      setTimeout(scrollToHash, 150)
+    }
   })
 
   onUnmounted(() => {

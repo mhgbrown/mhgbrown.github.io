@@ -46,7 +46,8 @@ export const useResumeStore = defineStore('resume', {
       ...resumeData,
       projects: finalResumeProjects
     } as unknown as Resume,
-    allProjects: allUnifiedProjects
+    allProjects: allUnifiedProjects,
+    scrollPosition: 0
   }),
   getters: {
     projects(state): Project[] {
@@ -62,6 +63,9 @@ export const useResumeStore = defineStore('resume', {
   actions: {
     updateApp(field: 'tablet' | 'phone', value: boolean) {
       this.app[field] = value
+    },
+    saveScrollPosition(position: number) {
+      this.scrollPosition = position
     }
   }
 })
