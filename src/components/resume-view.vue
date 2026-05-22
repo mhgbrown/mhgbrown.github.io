@@ -94,6 +94,23 @@
       <div class="description about-text" v-html="resume.basics.summary">
       </div>
     </section>
+
+    <section id="contact" class="resume-section">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li class="contact-link-item"><a target="_blank" href="http://github.com/mhgbrown">Code</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Photos</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">Music</a></li>
+        <li class="contact-link-item"><a href="https://blog.mhgbrown.is">Writing</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">Resume</a></li>
+        <li class="contact-email-item">
+          <a target="_blank" href="mailto:inbox@email.mhgbrown.is">
+            <span class="screen-only">Mail</span>
+            <span class="print-only">inbox@email.mhgbrown.is</span>
+          </a>
+        </li>
+      </ul>
+    </section>
   </div>
 </template>
 
@@ -107,7 +124,7 @@ import { useScrollSpy } from '@/composables/use-scroll-spy.ts'
 const store = useResumeStore()
 const { resume } = storeToRefs(store)
 
-useScrollSpy(['#experience', '#projects', '#skills', '#education', '#about'])
+useScrollSpy(['#experience', '#projects', '#skills', '#education', '#about', '#contact'])
 
 const slugify = (text: string) => {
   return text

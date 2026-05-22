@@ -118,3 +118,9 @@ ul {
   content: ", ";
 }
 
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+

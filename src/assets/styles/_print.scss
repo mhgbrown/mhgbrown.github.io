@@ -22,8 +22,14 @@
   }
 
   .slide-show,
-  .nav-links {
+  .nav-links,
+  .contact-link-item,
+  .screen-only {
     display: none !important;
+  }
+
+  .print-only {
+    display: inline !important;
   }
 
   .application-container {

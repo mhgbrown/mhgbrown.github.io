@@ -4,12 +4,12 @@
       <div class="content-container">
         <h1><router-link :to="{ name: 'home' }">Morgan Brown</router-link> is a Software Engineer based in Athens, Greece.</h1>
         <ul class="nav-links">
-          <li><a target="_blank" href="http://github.com/mhgbrown">Code</a></li>
-          <li><a target="_blank" href="http://instagram.com/mhgbrown">Photos</a></li>
-          <li><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">Music</a></li>
-          <li><a href="https://blog.mhgbrown.is">Writing</a></li>
-          <li><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">Resume</a></li>
-          <li><a target="_blank" href="mailto:inbox@email.mhgbrown.is">Contact</a></li>
+          <li><a :href="route.name === 'home' ? '#experience' : '/#experience'">Experience</a></li>
+          <li><a :href="route.name === 'home' ? '#projects' : '/#projects'">Projects</a></li>
+          <li><a :href="route.name === 'home' ? '#skills' : '/#skills'">Skills</a></li>
+          <li><a :href="route.name === 'home' ? '#education' : '/#education'">Education</a></li>
+          <li><a :href="route.name === 'home' ? '#about' : '/#about'">About</a></li>
+          <li><a :href="route.name === 'home' ? '#contact' : '/#contact'">Contact</a></li>
         </ul>
       </div>
       <div class="content-container">
@@ -22,9 +22,11 @@
 <script setup lang="ts">
 import { useResumeStore } from '@/store.ts'
 import { storeToRefs } from 'pinia'
+import { useRoute } from 'vue-router'
 
 const store = useResumeStore()
 const { projects } = storeToRefs(store)
+const route = useRoute()
 </script>
 
 <style lang="scss">
