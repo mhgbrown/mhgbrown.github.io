@@ -37,14 +37,23 @@ const tumblrs = ref<any[]>([])
 const timeout = 3000
 
 const pool = ref<any[]>([])
+const isLoading = ref(false)
 
 const generateOffsets = () => {
-  offsets.value = shuffle(Array.from({ length: maxOffset }, (_, index) => index))
+  const step = props.postsPerRequest
+  const count = Math.floor(maxOffset / step)
+  offsets.value = shuffle(Array.from({ length: count }, (_, index) => index * step))
 }
 
 const loadTumblr = async (): Promise<void> => {
   if (!loadPromise) return
 
+  if (isLoading.value) {
+    await new Promise(resolve => setTimeout(resolve, 50))
+    return loadTumblr()
+  }
+
+  isLoading.value = true
   try {
     if (!pool.value.length) {
       if (!offsets.value.length) {
@@ -64,6 +73,7 @@ const loadTumblr = async (): Promise<void> => {
       const validPosts = likedPosts.filter((post: any) => (post.photos && post.photos.length) || post.video_url)
 
       if (validPosts.length === 0) {
+        isLoading.value = false
         return loadTumblr()
       }
 
@@ -80,7 +90,12 @@ const loadTumblr = async (): Promise<void> => {
     }
   } catch (error: any) {
     console.error('Error loading tumblr post:', error)
+    isLoading.value = false
+    // Wait a moment before retrying to avoid tight loops on persistent errors (like CORS)
+    await new Promise(resolve => setTimeout(resolve, 1000))
     return loadTumblr()
+  } finally {
+    isLoading.value = false
   }
 }
 
