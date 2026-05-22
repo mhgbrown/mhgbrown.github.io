@@ -15,34 +15,20 @@
       <div class="content-container">
         <slot></slot>
       </div>
-      <div class="content-container">
-        <p>Some work</p>
-        <ul class="projects-list">
-          <li v-for="project in projects" :key="project.title">
-            <router-link v-if="project.href.indexOf('/') === 0" :to="{ name: 'project', params: { id: project.id } }">{{ project.text }}</router-link>
-            <a v-else :target="project.target" :href="project.href">{{ project.text }}</a>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
 
-<script>
-import { mapState } from 'vuex'
-import SlideShow from '@/components/slide-show'
+<script setup lang="ts">
+import { useResumeStore } from '@/store.ts'
+import { storeToRefs } from 'pinia'
 
-export default {
-  name: 'home',
-  computed: {
-    ...mapState(['projects'])
-  },
-  components: {
-    SlideShow
-  }
-}
+const store = useResumeStore()
+const { projects } = storeToRefs(store)
 </script>
-<style lang="stylus">
-.projects-list
-  margin-bottom 1rem
+
+<style lang="scss">
+.projects-list {
+  margin-bottom: 1rem;
+}
 </style>
