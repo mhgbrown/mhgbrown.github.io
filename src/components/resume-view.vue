@@ -20,6 +20,26 @@
       </ul>
     </section>
 
+    <section v-if="resume.projects" class="resume-section">
+      <h2>Projects</h2>
+      <ul class="resume-list">
+        <li v-for="project in resume.projects" :key="project.name">
+          <div class="resume-item-header">
+            <div class="header-main">
+              <strong>{{ project.name }}</strong>
+              <span v-if="project.associatedWith" class="spacer">|</span>
+              <em v-if="project.associatedWith">{{ project.associatedWith }}</em>
+            </div>
+            <span class="date">{{ project.startDate }} — {{ project.endDate }}</span>
+          </div>
+          <p class="description">{{ project.description }}</p>
+          <p v-if="project.keywords" class="keywords">
+            <strong>Keywords:</strong> {{ project.keywords.join(', ') }}
+          </p>
+        </li>
+      </ul>
+    </section>
+
     <section v-if="resume.skills" class="resume-section">
       <h2>Skills</h2>
       <ul class="resume-list skills-list">
@@ -41,26 +61,6 @@
             </div>
             <span class="date">{{ edu.startDate }} — {{ edu.endDate }}</span>
           </div>
-        </li>
-      </ul>
-    </section>
-
-    <section v-if="resume.projects" class="resume-section">
-      <h2>Projects</h2>
-      <ul class="resume-list">
-        <li v-for="project in resume.projects" :key="project.name">
-          <div class="resume-item-header">
-            <div class="header-main">
-              <strong>{{ project.name }}</strong>
-              <span v-if="project.associatedWith" class="spacer">|</span>
-              <em v-if="project.associatedWith">{{ project.associatedWith }}</em>
-            </div>
-            <span class="date">{{ project.startDate }} — {{ project.endDate }}</span>
-          </div>
-          <p class="description">{{ project.description }}</p>
-          <p v-if="project.keywords" class="keywords">
-            <strong>Keywords:</strong> {{ project.keywords.join(', ') }}
-          </p>
         </li>
       </ul>
     </section>
