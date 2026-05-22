@@ -5,9 +5,11 @@
       <ul class="resume-list">
         <li v-for="job in resume.work" :key="job.name + job.position">
           <div class="resume-item-header">
-            <strong>{{ job.name }}</strong>
-            <span class="spacer">|</span>
-            <em>{{ job.position }}</em>
+            <div class="header-main">
+              <strong>{{ job.name }}</strong>
+              <span class="spacer">|</span>
+              <em>{{ job.position }}</em>
+            </div>
             <span class="date">{{ job.startDate }} — {{ job.endDate || 'Present' }}</span>
           </div>
           <p class="description">{{ job.summary }}</p>
@@ -32,9 +34,11 @@
       <ul class="resume-list">
         <li v-for="edu in resume.education" :key="edu.institution + edu.area">
           <div class="resume-item-header">
-            <strong>{{ edu.institution }}</strong>
-            <span class="spacer">|</span>
-            <span>{{ edu.studyType }} {{ edu.area }}</span>
+            <div class="header-main">
+              <strong>{{ edu.institution }}</strong>
+              <span class="spacer">|</span>
+              <span>{{ edu.studyType }} {{ edu.area }}</span>
+            </div>
             <span class="date">{{ edu.startDate }} — {{ edu.endDate }}</span>
           </div>
         </li>
@@ -46,9 +50,11 @@
       <ul class="resume-list">
         <li v-for="project in resume.projects" :key="project.name">
           <div class="resume-item-header">
-            <strong>{{ project.name }}</strong>
-            <span v-if="project.associatedWith" class="spacer">|</span>
-            <em v-if="project.associatedWith">{{ project.associatedWith }}</em>
+            <div class="header-main">
+              <strong>{{ project.name }}</strong>
+              <span v-if="project.associatedWith" class="spacer">|</span>
+              <em v-if="project.associatedWith">{{ project.associatedWith }}</em>
+            </div>
             <span class="date">{{ project.startDate }} — {{ project.endDate }}</span>
           </div>
           <p class="description">{{ project.description }}</p>
@@ -101,19 +107,24 @@ const { resume } = storeToRefs(store)
 
 .resume-item-header {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+
+  .header-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
 
   .spacer {
     color: #999;
   }
 
   .date {
-    margin-left: auto;
     color: #666;
     font-size: 0.9rem;
+    margin-top: 0.1rem;
   }
 }
 
