@@ -125,11 +125,20 @@ const { resume } = storeToRefs(store)
 .highlights-list {
   margin-top: 0.5rem;
   padding-left: 1.2rem;
-  list-style-type: disc;
+  list-style-type: none;
 
   li {
     margin-bottom: 0.25rem;
     line-height: 1.4;
+    position: relative;
+
+    &::before {
+      content: '●';
+      position: absolute;
+      left: -1.2rem;
+      font-size: 0.8rem;
+      top: 0.1rem;
+    }
   }
 }
 
