@@ -1,440 +1,599 @@
 {
-  "bio": "Software Engineer based in Berlin, Germany.",
-  "experience": [
+  "basics": {
+    "name": "Morgan Brown",
+    "label": "Senior Frontend Engineer",
+    "summary": "Formally trained software engineer and US expat with over a decade of remote experience specializing in modern frontend frameworks, user interface architecture, and high-performance web ecosystems. Professionally, my career ranges from serving as the second employee scaling core browser extension tools and complex multimedia rendering features at Minerva, to engineering high-fidelity public goods funding applications. I excel at bridging the gap between rigorous technical implementation and clean design semantics, frequently partnering with premier creative agencies to deliver award-winning web platforms, including a Swiss Design Award winner. Combining a Master's in Software Engineering from Carnegie Mellon University with deep frontend mastery, I thrive on solving complex, highly interactive product challenges.",
+    "location": {
+      "city": "Athens",
+      "countryCode": "GR",
+      "region": "Athens Metropolitan Area"
+    }
+  },
+  "work": [
     {
-      "company": "Example Corp",
-      "title": "Senior Software Engineer",
-      "startDate": "2021-01",
-      "endDate": null,
-      "description": "Leading the development of modern web applications."
+      "name": "Drips",
+      "position": "Core Team",
+      "url": "",
+      "startDate": "2024-10",
+      "endDate": "2026-01",
+      "summary": "Primary engineer for this Ethereum-native funding platform, focusing on full-stack feature delivery to enable on-chain financial support of open-source software and its dependencies. This role required engagement with the web3 stack, including smart contract interaction, protocol SDK contribution, and establishing robust, modern development and deployment practices.",
+      "highlights": [
+        "Engineered and deployed critical, full-stack features using TypeScript, SvelteKit, and GraphQL in service of the financial viability of open-source projects.",
+        "Facilitated secure smart contract interaction via ethers.js and contributed to the core platform SDK for protocol management.",
+        "Established a production-ready deployment pipeline via Dockerization and managed reliable end-to-end testing with Playwright.",
+        "Represented the company at major industry events (Devcon, Berlin Blockchain Week, Funding the Commons), demonstrating the product to developers and potential clients.",
+        "Accelerated development workflows and enhanced code quality by integrating AI coding agents (e.g., Co-Pilot, IDE integrations like Cline) for rapid scaffolding."
+      ]
+    },
+    {
+      "name": "Minerva",
+      "position": "Senior Frontend Developer",
+      "url": "",
+      "startDate": "2020-02",
+      "endDate": "2024-09",
+      "summary": "Instrumental in building Minerva's core products designed to streamline process capture, documentation, and replay. Responsibilities spanned the entire product lifecycle, from deep integration within the Chrome Extension ecosystem to creating complex in-browser multimedia tools and integrating AI capabilities for content enhancement and translation.",
+      "highlights": [
+        "Joined as the 2nd employee, successfully launching the initial product line, providing novel live-guidance and process-capture and replay capabilities.",
+        "Designed and executed a technical interviewing and evaluation process for new engineering hires.",
+        "Developed and maintained large-scale Chrome Extensions using JavaScript, Vue, and Go, and automated deployment to both the Chrome Web Store and Microsoft Add-ons.",
+        "Engineered complex in-browser video editing tools utilizing fabricjs and an FFMPEG web worker pool for immediate pseudo-video playback and rendering.",
+        "Integrated third-party AI APIs for advanced features, including user voice cloning, translation, and content enhancement."
+      ]
+    },
+    {
+      "name": "kpiReady",
+      "position": "Lead Engineer",
+      "url": "",
+      "startDate": "2018-03",
+      "endDate": "2020-11",
+      "summary": "Architected and scaled a sophisticated metrics visualization and automated reporting platform for enterprise business clients.",
+      "highlights": [
+        "Engineered a high-performance, platform-agnostic web capture API using Google Puppeteer to programmatically generate dynamic data visualizations and capture full-page snapshots from any web asset.",
+        "Managed and optimized custom AWS infrastructure clusters, implementing strict multi-tenant data isolation layers to securely ring-fence customer data while enabling internal engineering teams to build, test, and merge product features asynchronously."
+      ]
+    },
+    {
+      "name": "Lexicon Labs",
+      "position": "Software Engineer",
+      "url": "",
+      "startDate": "2016-05",
+      "endDate": "2018-02",
+      "summary": "Spearheaded the technical development of natural language processing (NLP) and machine learning solutions aimed at optimizing professional email composition workflows.",
+      "highlights": [
+        "Orchestrated a major product pivot and system architecture redesign, transitioning the core technology stack to power a robust, scalable digital platform connecting users with professional life coaches."
+      ]
+    },
+    {
+      "name": "onlinebusiness.lol",
+      "position": "Technology Director",
+      "url": "",
+      "startDate": "2016-10",
+      "endDate": "2017-04",
+      "summary": "Directed technical strategy, engineering roadmap execution, and infrastructure decisions for a creative technology agency operating at the intersection of enterprise business logic and high-end visual design.",
+      "highlights": []
+    },
+    {
+      "name": "Sygns",
+      "position": "Software Engineering Consultant",
+      "url": "",
+      "startDate": "2015-11",
+      "endDate": "2017-04",
+      "summary": "Provided strategic full-stack consulting and engineering execution for the development of a novel smart lamp hardware and software ecosystem.",
+      "highlights": [
+        "Directed the requirements gathering, identification, and technical implementation of product configuration tools.",
+        "Partnered closely with Berlin-based graphic designers to engineer and launch high-fidelity web assets promoting the new product line to international markets."
+      ]
+    },
+    {
+      "name": "Self Employed",
+      "position": "Freelance Software Engineer",
+      "url": "",
+      "startDate": "2015-09",
+      "endDate": "present",
+      "summary": "As a long-term freelance Software Engineer, I partner with designers and entrepreneurs to develop bespoke, full-stack solutions. This extensive period of self-employment has involved the end-to-end development, deployment, and maintenance of numerous complex client projects, utilizing a diverse technology stack including Vue.js, React, Django, Kirby CMS, Swift, and various front-end frameworks.",
+      "highlights": [
+        "Led development for multiple award-winning projects in collaboration with Swiss design agencies, including the Dinamo Standards website (React/Contentful) and the Body of Us exhibit development.",
+        "Architected and fully deployed the Firstmate life coaching platform (Vue, Django, iOS web app wrapper) and Leo health promotion website (Vue/siteleaf) for two separate entrepreneurial ventures.",
+        "Developed and maintained several complex portfolio and documentation sites for artists and designers (Markus Mai, Joseph Kadow, Camille Aleña), frequently utilizing Vue.js and Kirby CMS.",
+        "Pioneered the development and rollout of Good Spread, a Shopify-based e-commerce website whose sales directly benefited children worldwide.",
+        "Conceptualized and developed the core platform for Futuress, a hybrid learning and publishing community focused on design politics, which won a Swiss Design Award in 2022."
+      ]
+    },
+    {
+      "name": "SumAll",
+      "position": "Software Engineer",
+      "url": "",
+      "startDate": "2014-07",
+      "endDate": "2016-02",
+      "summary": "Contributed to this marketing analytics startup by working on data integrations with other webservices via Java microservices.",
+      "highlights": [
+        "Developed and maintained Java middle-tier services, managing the ingestion and storage of marketing data from 30+ external APIs (e.g., Klout, Recurly), providing analytics to 500,000+ businesses.",
+        "Implemented comprehensive unit and integration tests to allow confident, rapid iteration and code changes.",
+        "Built regular PDF-style reporting mechanisms for collected data using visualization libraries like D3 and Puppeteer.",
+        "Evolved existing Vue-based front-end to accommodate new data sources and ease future maintenance burden."
+      ]
+    },
+    {
+      "name": "LinkedIn",
+      "position": "Web Developer",
+      "url": "",
+      "startDate": "2012-06",
+      "endDate": "2013-08",
+      "summary": "At LinkedIn, my focus was on enhancing the core profile experience and contributing to foundational, reusable front-end infrastructure that supported site-wide interactions. Contributions helped manage key social features and supported new initiatives targeting students and college populations.",
+      "highlights": [
+        "Developed and shipped profile 2.0 experience and further enhancements used by millions of active users on the professional network.",
+        "Contributed to highly reusable front-end infrastructure for ubiquitous social features like like, comment, and share.",
+        "Helped to ignite and support new student and college initiatives.",
+        "Shaped company-wide front-end coding standards through internal group participation.",
+        "Presented boolean algebra basics to all web developers to level up their logical code quality."
+      ]
+    },
+    {
+      "name": "Apple Inc.",
+      "position": "Web Front-End Engineer/Developer",
+      "url": "",
+      "startDate": "2010-06",
+      "endDate": "2012-06",
+      "summary": "Developed core web applications using Ruby on Rails and JavaScript to coordinate and automate internal processes, spanning project planning, expenses, and event coordination. Work focused on establishing a robust development environment, co-creating an internal app 'ecosystem', culminating in the successful open-sourcing of a highly downloaded Ruby gem.",
+      "highlights": [
+        "Transitioned from a co-located internship to a successful part-time remote engineer while completing undergraduate studies.",
+        "Developed internal automation tools (project, expense, and event planning) using Ruby on Rails and JavaScript, significantly improving operational efficiency for internal teams.",
+        "Established a new continuous integration environment and testing standards, co-creating an internal web-service-based application 'ecosystem'.",
+        "Authored and successfully open-sourced the CachedResource Ruby gem, which has accrued over 2.2 million downloads to date."
+      ]
     }
   ],
   "education": [
     {
-      "school": "University of Technology",
-      "degree": "Bachelor of Science in Computer Science",
-      "year": "2015"
+      "institution": "Carnegie Mellon University",
+      "url": "",
+      "area": "Software Engineering",
+      "studyType": "Master of Science (MS)",
+      "startDate": "2011",
+      "endDate": "2013",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "California Polytechnic State University-San Luis Obispo",
+      "url": "",
+      "area": "Software Engineering, Spanish Language and Literature, Psychology",
+      "studyType": "Bachelor of Science (BS)",
+      "startDate": "2006",
+      "endDate": "2011",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Universidad de Valladolid",
+      "url": "",
+      "area": "Spanish Language and Literature",
+      "studyType": "",
+      "startDate": "2006",
+      "endDate": "2006",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "School Year Abroad (SYA)",
+      "url": "",
+      "area": "Spanish Language and Literature",
+      "studyType": "",
+      "startDate": "2004",
+      "endDate": "2005",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "The Thacher School",
+      "url": "",
+      "area": "High School Diploma",
+      "studyType": "",
+      "startDate": "2002",
+      "endDate": "2006",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Swiss Design Award",
+      "date": "2022",
+      "awarder": "Swiss Federal Office of Culture",
+      "summary": "Won for the core platform design and development of Futuress, a hybrid learning and publishing community focused on design politics."
+    },
+    {
+      "title": "Dean's List",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Rock Star",
+      "date": "",
+      "awarder": "",
+      "summary": ""
     }
   ],
   "skills": [
     {
-      "category": "Languages",
-      "items": ["TypeScript", "JavaScript", "Ruby", "Python"]
+      "name": "Frontend Architecture",
+      "level": "Expert",
+      "keywords": [
+        "TypeScript",
+        "Vue.js",
+        "SvelteKit",
+        "React",
+        "JavaScript",
+        "User Experience (UX)"
+      ]
     },
     {
-      "category": "Frameworks",
-      "items": ["Vue", "React", "Rails", "Django"]
+      "name": "Backend & Tooling",
+      "level": "Advanced",
+      "keywords": [
+        "Ruby on Rails",
+        "Java",
+        "Django",
+        "Go",
+        "GraphQL",
+        "Docker",
+        "Puppeteer",
+        "Playwright"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native or Bilingual"
+    },
+    {
+      "language": "German",
+      "fluency": "Professional Working"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Limited Working"
+    },
+    {
+      "language": "Arabic",
+      "fluency": "Elementary"
+    },
+    {
+      "language": "French",
+      "fluency": "Elementary"
     }
   ],
   "projects": [
     {
-      "text": "Camille Aleña",
-      "href": "/projects/camille-alena",
-      "id": "camille-alena",
-      "preview": "https://www.youtube.com/embed/cDVcOjzam7E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=cDVcOjzam7E",
-      "description": "Website for artist Camille Aleña.",
-      "technology": "Kirby CMS, jQuery, Digital Ocean",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://camillealena.com/"
-        }
+      "name": "Futuress Magazine",
+      "description": "Engineered a high-performance, accessible hybrid learning community and publishing platform designed to democratize design education and amplify marginalized voices, winning a Swiss Design Award in 2022[cite: 204]. Architected a modular, lightweight theme infrastructure prioritizing asset optimization, semantic HTML, and rapid asset delivery to support a global audience[cite: 204].",
+      "startDate": "2020-08",
+      "endDate": "present",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Ghost CMS",
+        "Handlebars",
+        "Post-CSS"
       ]
     },
     {
-      "text": "Dinamo Standards",
-      "href": "/projects/dinamo-standards",
-      "id": "dinamo-standards",
-      "preview": "https://www.youtube.com/embed/V2dQfmUt4s4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=V2dQfmUt4s4",
-      "description": "Typeface demonstration via karaoke.",
-      "technology": "React, Contentful, Github, WebVTT",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://dinamostandards.com/"
-        }
+      "name": "Cached Resource",
+      "description": "Core contributor to a highly utilized open-source Ruby gem focused on maximizing performance and minimizing network overhead when interacting with web services via Active Resource[cite: 216]. Designed and integrated much of the core structure and middleware logic to implement intelligent, query-parameter-based response caching[cite: 217].",
+      "startDate": "2011-10",
+      "endDate": "present",
+      "associatedWith": "Apple Inc.",
+      "keywords": [
+        "Ruby",
+        "Active Resource",
+        "Caching",
+        "Open Source"
       ]
     },
     {
-      "text": "onlinebusiness.lol",
-      "href": "/projects/onlinebusiness-lol",
-      "id": "onlinebusiness-lol",
-      "preview": "https://www.youtube.com/embed/Ct7g-P-pwlQ?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=Ct7g-P-pwlQ",
-      "description": "Landing page for theoretical online business.",
-      "technology": "jQuery, Github",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://onlinebusiness.lol/"
-        }
+      "name": "efemer.al (Serverless Web Architecture)",
+      "description": "Architected a 'vibe coding' experiment in serverless web architecture where the entire site content is stored within the URL hash[cite: 221]. Developed custom logic to optimize, deflate, and Base85 encode Markdown content to bypass standard URL length limits, enabling 'unstoppable' content requiring no backend storage or central database[cite: 221].",
+      "startDate": "2025-11",
+      "endDate": "2025-12",
+      "associatedWith": "Independent Project",
+      "keywords": [
+        "Serverless",
+        "pako",
+        "Base85",
+        "Markdown"
       ]
     },
     {
-      "text": "Souvenir",
-      "href": "/projects/souvenir",
-      "id": "souvenir",
-      "preview": "https://www.youtube.com/embed/_ymJStaS7Nk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=_ymJStaS7Nk",
-      "description": "Webstore for Berlin-based clothing brand.",
-      "technology": "Shopify (Slate), jQuery",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://www.souvenirofficial.com/"
-        }
+      "name": "Minerva Browser Extension",
+      "description": "Engineered a sophisticated Chrome/Edge extension for capturing and editing procedural knowledge[cite: 230]. Developed in-browser video editing tools and managed complex video processing via an in-browser web worker pool[cite: 231].",
+      "startDate": "2020-02",
+      "endDate": "2024-09",
+      "associatedWith": "Minerva",
+      "keywords": [
+        "Fmpeg",
+        "Fabric.js",
+        "Chrome Extensions",
+        "Edge Extensions"
       ]
     },
     {
-      "text": "Kiën",
-      "href": "/projects/kien",
-      "id": "kien",
-      "preview": "https://www.youtube.com/embed/xFET7Pj6FQ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=xFET7Pj6FQ8",
-      "description": "Marketing page and unfinished configurator and webstore for discontinued smart lamp.",
-      "technology": "Angular, Shopify, jQuery",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://kien.com"
-        },
-        {
-          "text": "Kickstarter",
-          "href": "https://www.kickstarter.com/projects/85280086/kien-light-intelligent-daylight-at-your-fingertips"
-        }
+      "name": "Schweizerische Kompetenzzentrum für Menschenrechte (SKMR)",
+      "description": "Led the comprehensive frontend rebuild and responsive redesign of the Swiss Centre of Expertise in Human Rights (SCHR) digital platform prior to its organizational transition[cite: 237]. Built a highly accessible, rapid-loading interface to ensure seamless public access to critical human rights documentation[cite: 238].",
+      "startDate": "2021-02",
+      "endDate": "2023-06",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Craft CMS",
+        "Tailwind CSS",
+        "Vanilla JavaScript"
       ]
     },
     {
-      "text": "Georg Gatsas",
-      "href": "/projects/georg-gatsas",
-      "id": "georg-gatsas",
-      "preview": "https://www.youtube.com/embed/L2dSbRh_eJ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=L2dSbRh_eJ8",
-      "description": "Portfolio website for Swiss photographer.",
-      "technology": "Kirby CMS, Vue"
-    },
-    {
-      "text": "Good Spread",
-      "href": "/projects/good-spread",
-      "id": "good-spread",
-      "preview": "/images/good-spread-website.gif",
-      "description": "Website for charity-based peanut butter retailer.",
-      "technology": "Shopify, jQuery",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://helpgoodspread.com/"
-        }
+      "name": "Futuress",
+      "description": "Architected and deployed a custom digital submission platform in collaboration with Swiss design agency Common Interest, designed to showcase untold stories within the graphic design community[cite: 245]. Developed a highly interactive, fluid frontend robust enough to be exhibited internationally at the Porto Design Biennale and the Ljubljana Biennial of Design[cite: 246].",
+      "startDate": "2019-04",
+      "endDate": "2019-09",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Vue.js",
+        "Kirby CMS"
       ]
     },
     {
-      "text": "Talk Talk Talk",
-      "href": "/projects/talk-talk-talk",
-      "id": "talk-talk-talk",
-      "preview": "https://www.youtube.com/embed/F5eCBt_-uhU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=F5eCBt_-uhU",
-      "description": "Conversation series.",
-      "technology": "Kirby CMS"
-    },
-    {
-      "text": "Lexicon Labs",
-      "href": "/projects/lexicon-labs",
-      "id": "lexicon-labs",
-      "preview": "https://www.youtube.com/embed/NKWI-bUtVmc?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=F5eCBt_-uhU",
-      "description": "Marketing page for startup attempting to facilitate communication via increased understanding.",
-      "technology": "jQuery",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://lexiconlabs.nyc"
-        }
+      "name": "Inside Motion",
+      "description": "Engineered an interactive, media-heavy exhibition website for the Pharmacy Museum in Basel, Switzerland, collaborating alongside design studio Common Interest[cite: 254]. Leveraged a decoupled architecture delivering smooth component transitions, responsive image scaling, and a highly polished museum user experience[cite: 255].",
+      "startDate": "2018-11",
+      "endDate": "2019-04",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Vue.js",
+        "Vuetify",
+        "Kirby CMS"
       ]
     },
     {
-      "text": "SumAll",
-      "href": "/projects/sumall",
-      "id": "sumall",
-      "preview": "https://www.youtube.com/embed/z2JyoYCg5G4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=z2JyoYCg5G4",
-      "description": "Frontend and middletier service development for social media analytics startup. Integration with various third-party APIs.",
-      "technology": "Java, DropWizard, Vue, Node, D3, Phantom",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://sumall.com"
-        }
+      "name": "Body Of Us",
+      "description": "Developed the official interactive digital companion platform for Switzerland's entrance into the 2018 London Design Biennale, collaborating closely with premier design studios Dinamo and Common Interest[cite: 261]. Built a highly reactive, fluid frontend experience leveraging cutting-edge web typography via Variable Fonts to meet strict, pixel-perfect aesthetic demands[cite: 262].",
+      "startDate": "2018-06",
+      "endDate": "2018-09",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Vue.js",
+        "Kirby CMS",
+        "Variable Fonts"
       ]
     },
     {
-      "text": "LinkedIn",
-      "href": "/projects/linked-in",
-      "id": "linked-in",
-      "preview": "/images/linkedin.jpg",
-      "description": "Implementation of new profile redesign.",
-      "technology": "Java, jQuery, Raphaël",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://linkedin.com"
-        }
+      "name": "Firstmate",
+      "description": "Managed the end-to-end technical infrastructure, deployment pipelines, and cross-platform maintenance for a modern digital life coaching application[cite: 267]. Ensured full-stack stability and seamless API contracts across a distributed system architecture featuring a web client, a backend ecosystem, and a native mobile application[cite: 268].",
+      "startDate": "2017-05",
+      "endDate": "2018-02",
+      "associatedWith": "Lexicon Labs",
+      "keywords": [
+        "Vue.js",
+        "Django",
+        "Swift",
+        "iOS"
       ]
     },
     {
-      "text": "Apple, Inc.",
-      "href": "/projects/apple",
-      "id": "apple",
-      "preview": "/images/apple.jpg",
-      "description": "Internal tools to facilitate the operations of Apple's marketing communications department. Appearance in 4th Gen iPod Touch marketing images (above).",
-      "technology": "Ruby, Rails, PHP, jQuery",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://apple.com"
-        }
+      "name": "Markus Mai's Portfolio Website",
+      "description": "Developed a minimalist, high-fidelity portfolio platform for Leipzig-based industrial artist Markus Mai[cite: 275]. Implemented a highly reactive single-page architecture enabling seamless asset loading and dynamic media rendering for complex industrial art galleries[cite: 275].",
+      "startDate": "2018-01",
+      "endDate": "2018-02",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Vue.js",
+        "Kirby CMS"
       ]
     },
     {
-      "text": "Tones",
-      "href": "/projects/tones",
-      "id": "tones",
-      "preview": "https://tones.mhgbrown.is/?hack=youtube.com",
-      "description": "Instrument created using random tones encoded via data URI.",
-      "technology": "jQuery, Github",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://tones.mhgbrown.is/"
-        }
+      "name": "Joseph Kadow's Portfolio Website",
+      "description": "Engineered a bespoke portfolio for Berlin-based photographer Joseph Kadow[cite: 281]. Implemented specialized mobile interactions and integrated Intersection Observer for advanced scroll-based behaviors, resulting in a feature in It's Nice That's 'Double Click' series[cite: 282, 283].",
+      "startDate": "2017-10",
+      "endDate": "2017-12",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Vue.js",
+        "Kirby CMS",
+        "Vue-Touch",
+        "Intersection Observer"
       ]
     },
     {
-      "text": "Witchifier",
-      "href": "/projects/witchifier",
-      "id": "witchifier",
-      "preview": "https://witchifier.mhgbrown.is/?hack=youtube.com",
-      "description": "Character by character random translation to make funny text. Inspired by the music genre \"Witch House\".",
-      "technology": "jQuery, Github",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://witchifier.mhgbrown.is/"
-        }
+      "name": "Wordtelligence",
+      "description": "Led the technical execution and product lifecycle of an enterprise email analysis platform designed to perform live linguistics and security analysis within Gmail[cite: 287]. Developed a robust REST API backend closely paired with a high-performance extension engineered to safely intercept, parse, and handle real-time user data streams[cite: 288].",
+      "startDate": "2016-05",
+      "endDate": "2017-05",
+      "associatedWith": "Lexicon Labs",
+      "keywords": [
+        "Chrome Extensions",
+        "Django",
+        "React"
       ]
     },
     {
-      "text": "Just A Grid",
-      "href": "/projects/just-a-grid",
-      "id": "just-a-grid",
-      "preview": "https://justagrid.mhgbrown.is/?hack=youtube.com",
-      "description": "Just an interactive grid.",
-      "technology": "jQuery, Github",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://justagrid.mhgbrown.is/"
-        }
+      "name": "Camille Aleña's Portfolio",
+      "description": "Implemented a sleek, performant digital archive and portfolio site for artist Camille Aleña, translating complex visual layouts into a responsive web application[cite: 298]. Focused on pixel-perfect frontend engineering, semantic markups, and cross-browser performance optimizations[cite: 299].",
+      "startDate": "2016-11",
+      "endDate": "2017-01",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Frontend Engineering",
+        "Semantic Markup",
+        "Responsive Design"
       ]
     },
     {
-      "text": "image2html",
-      "href": "/projects/image-2-html",
-      "id": "image-2-html",
-      "preview": "https://www.youtube.com/embed/u4ENL5-NQZU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=u4ENL5-NQZU",
-      "description": "Convert images into a HTML \"pixel\" reproduction.",
-      "technology": "jQuery, Web Workers, Github",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://image2html.mhgbrown.is"
-        }
+      "name": "Dinamo Standards",
+      "description": "Architected an interactive, media-rich web application demonstrating advanced typography for the Swiss Design Award-winning practice DINAMO[cite: 304]. Engineered a custom frontend featuring complex, synchronized, karaoke-style media tracking by deeply integrating HTML5 elements with WebVTT tracking[cite: 304].",
+      "startDate": "2016-08",
+      "endDate": "2016-10",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "React",
+        "Contentful CMS",
+        "WebVTT",
+        "HTML5 Audio/Video"
       ]
     },
     {
-      "text": "Void",
-      "href": "/projects/void",
-      "id": "void",
-      "preview": "https://www.youtube.com/embed/lMuTwL10RSA?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=lMuTwL10RSA",
-      "description": "Android application and backend to share and receive random photos from other users.",
-      "technology": "Java, Android, AWS, Ruby, Rails"
-    },
-    {
-      "text": "Why You Leave Me?",
-      "href": "/projects/why-you-leave-me-",
-      "id": "why-you-leave-me-",
-      "preview": "/images/why-you-leave-me.png",
-      "description": "Twitter bot that asks unfollowers why they unfollowed and collects any responses.",
-      "technology": "Node, Heroku, Twitter, Google Docs",
-      "links": [
-        {
-          "text": "Github",
-          "href": "https://github.com/mhgbrown/why-you-leave-me"
-        },
-        {
-          "text": "Responses",
-          "href": "https://docs.google.com/spreadsheets/d/1sa7rdQANt8wzMdLJDFUL9cFLQ9o8ZfJzLQ4Vj53MigU/edit#gid=0"
-        }
+      "name": "Good Spread",
+      "description": "Directed the full-stack engineering, configuration, and global rollout of a custom e-commerce platform dedicated to global humanitarian aid[cite: 310]. Programmed custom templates, integrated secure payment gateways, and optimized checkout funnels to handle high-traffic sales events efficiently[cite: 311].",
+      "startDate": "2016-05",
+      "endDate": "2016-06",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Shopify",
+        "Liquid Templates",
+        "Payment Gateways"
       ]
     },
     {
-      "text": "Let Me Tweet That For You",
-      "href": "/projects/let-me-tweet-that-for-you",
-      "id": "let-me-tweet-that-for-you",
-      "preview": "/images/lmtty.png",
-      "description": "Twitter bot that tweets what you direct message it.",
-      "technology": "Node, Heroku, Twitter",
-      "links": [
-        {
-          "text": "Twitter",
-          "href": "https://twitter.com/lmttfy"
-        },
-        {
-          "text": "Github",
-          "href": "https://github.com/mhgbrown/letmetweetthatforyou"
-        }
+      "name": "Leo Health",
+      "description": "Engineered a custom web application to launch and promote a revolutionary pediatrics practice focused on deeply integrating software into healthcare[cite: 318]. Developed lightweight, fast-loading static web components that served as a core marketing engine and user acquisition portal[cite: 319].",
+      "startDate": "2016-05",
+      "endDate": "2016-06",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Siteleaf",
+        "Static Web Components",
+        "Frontend Development"
       ]
     },
     {
-      "text": "Firstmate - Life Coaching",
-      "href": "/projects/firstmate-life-coaching",
-      "id": "firstmate-life-coaching",
-      "preview": "https://www.youtube.com/embed/2xurCa3OR5M?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=2xurCa3OR5M",
-      "description": "Web and iOS application to to help users achieve their goals with either a Life Coach or friend.",
-      "technology": "Python, Django, iOS, Swift, Vue, Heroku"
-    },
-    {
-      "text": "BVG Train Schedule Display",
-      "href": "/projects/bvg-train-schedule-display",
-      "id": "bvg-train-schedule-display",
-      "preview": "https://www.youtube.com/embed/IW8mCi2zInM?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=IW8mCi2zInM",
-      "description": "LED screen replica of local Berlin train departure times.",
-      "technology": "Raspberry Pi, Python, Django, Heroku",
-      "links": [
-        {
-          "text": "Instagram",
-          "href": "https://www.instagram.com/p/6sGenzL2Gu/"
-        }
+      "name": "Talk Talk Talk",
+      "description": "Built a content-focused digital archive documenting historical conversations between prominent Swiss artists and designers, establishing structured content schemas and clean data relationships to handle extensive text and media assets smoothly[cite: 325, 326].",
+      "startDate": "2016-03",
+      "endDate": "2016-03",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Kirby CMS",
+        "Content Schema",
+        "Digital Archive"
       ]
     },
     {
-      "text": "Joseph Kadow",
-      "href": "/projects/joseph-kadow",
-      "id": "joseph-kadow",
-      "preview": "https://www.youtube.com/embed/HwtptvA5px4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=HwtptvA5px4",
-      "description": "Portfolio for Berlin-based photographer Joseph Kadow.",
-      "technology": "Kirby CMS",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://www.josephkadow.com/"
-        }
+      "name": "Lexicon Labs (Teaser)",
+      "description": "Development of a teaser/signup site for future company products in collaboration with Pemberton[cite: 331].",
+      "startDate": "2016-01",
+      "endDate": "2016-02",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Web Development",
+        "Landing Page"
       ]
     },
     {
-      "text": "Dan Solbach",
-      "href": "/projects/dan-solbach",
-      "id": "dan-solbach",
-      "preview": "https://www.youtube.com/embed/hCxKHsfJ69E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=hCxKHsfJ69E",
-      "description": "Portfolio for Swiss graphic designer Dan Solbach.",
-      "technology": "Kirby CMS, Vue",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://dansolbach.ch/"
-        }
+      "name": "Tactile, inc.",
+      "description": "Spearheaded frontend optimization initiatives for the company's primary corporate landing and high-conversion marketing signup pages[cite: 337]. Refactored legacy style architectures, improved DOM structure, and enhanced user interface layouts to drive up conversion metrics[cite: 338].",
+      "startDate": "2015-09",
+      "endDate": "2015-11",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Frontend Optimization",
+        "DOM Structuring",
+        "UI Refactoring"
       ]
     },
     {
-      "text": "kpiReady",
-      "href": "/projects/kpiready",
-      "id": "kpiready",
-      "preview": "https://www.youtube.com/embed/0NXzsaw8S_c?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=0NXzsaw8S_c",
-      "description": "Web application and backend architecture for company data reporting and analytics platform. Image rendering services for email based around Vue SSR.",
-      "technology": "Node, Vue, Nuxt, AWS, Apexcharts",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://kpiready.com/"
-        }
+      "name": "Void",
+      "description": "Engineered an experimental, location-based media sharing platform where all user content was anonymized and distributed via random ownership algorithms[cite: 344]. Built client-side interfaces and asynchronous stream handling to process real-time geo-tagged media interactions[cite: 345].",
+      "startDate": "2013-05",
+      "endDate": "2013-09",
+      "associatedWith": "Carnegie Mellon University",
+      "keywords": [
+        "Asynchronous Streams",
+        "Geolocation",
+        "Client-Side UI"
       ]
     },
     {
-      "text": "Body Of Us",
-      "href": "/projects/body-of-us",
-      "id": "body-of-us",
-      "preview": "https://www.youtube.com/embed/yqdf1Rhgg3c?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=yqdf1Rhgg3c",
-      "description": "Website for the Swiss entry into the 2018 London Design Biennale.",
-      "technology": "Kirby CMS, Vue, Vuetify, Digital Ocean",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://bodyofus.ch/"
-        }
+      "name": "Linkedin University Pages",
+      "description": "Contributed to the building and engineering implementation of University Pages platform features on LinkedIn[cite: 346, 347].",
+      "startDate": "2012-10",
+      "endDate": "2013-08",
+      "associatedWith": "Linkedin",
+      "keywords": [
+        "Web Development",
+        "Social Infrastructure"
       ]
     },
     {
-      "text": "Markus Mai",
-      "href": "/projects/markus-mai",
-      "id": "markus-mai",
-      "preview": "https://www.youtube.com/embed/wkrm4ITGbto?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=wkrm4ITGbto",
-      "description": "Website for industrial designer and artist Markus Mai.",
-      "technology": "Kirby CMS, Vue",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://maimarkus.com/"
-        }
+      "name": "Profile 2.0 Data Visualization",
+      "description": "Developed key enhancement modules focused on data visualization for the new LinkedIn profile experience[cite: 357]. Provided rich visual details and calls to action to help users optimize their profiles, get found for opportunities, and explore their networks[cite: 358].",
+      "startDate": "2012-03",
+      "endDate": "2013-08",
+      "associatedWith": "Linkedin",
+      "keywords": [
+        "Data Visualization",
+        "Frontend Infrastructure",
+        "UI Modules"
       ]
     },
     {
-      "text": "Wordtelligence",
-      "href": "/projects/wordtelligence",
-      "id": "wordtelligence",
-      "preview": "https://www.youtube.com/embed/sJsNJKO0kHE?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=sJsNJKO0kHE",
-      "description": "Backend and Gmail-integrated Chrome extension to help users craft more understandable emails based on the recipients of the message.",
-      "technology": "Django (+ Channels), Websocket, Python, React, Chrome, Heroku"
-    },
-    {
-      "text": "Inside Motion",
-      "href": "/projects/inside-motion",
-      "id": "inside-motion",
-      "preview": "https://www.youtube.com/embed/CgzUgg9nXzU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=CgzUgg9nXzU",
-      "description": "Website for exhibition at the Pharmacy Museum in Basel, Switzerland in collaboration with Swiss design gurus Common Interest",
-      "technology": "Kirby CMS, Vue, Vuetify, Digital Ocean",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://inside-motion.ch/"
-        }
+      "name": "Lots of Copies Keep Semantics Safe",
+      "description": "Decoupled the deep integration and heavy reliance of LOCKSS systems by adding a database abstraction layer allowing for fast schema-less value storage and programmatic access to large electronic journal data sets[cite: 366, 368]. Enabled querying and processing of this data for semantic fact generation via simple inference engines[cite: 369, 370].",
+      "startDate": "2013-01",
+      "endDate": "2013-05",
+      "associatedWith": "Carnegie Mellon University",
+      "keywords": [
+        "Database Abstraction",
+        "Semantic Web",
+        "Inference Engines",
+        "LOCKSS"
       ]
     },
     {
-      "text": "Futuress",
-      "href": "/projects/futuress",
-      "id": "futuress",
-      "preview": "https://www.youtube.com/embed/aag45VG47yU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=aag45VG47yU",
-      "description": "Multilingual submission platform for stories of underrepresented viewpoints in the design community. In collaboration with Swiss designers commoninterest.",
-      "technology": "Kirby CMS, Vue, Vuetify, CSS 3D"
-    },
-    {
-      "text": "Futuress Magazine",
-      "href": "/projects/futuress-magazine",
-      "id": "futuress-magazine",
-      "preview": "https://www.youtube.com/embed/b4HNdr8CXXk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=b4HNdr8CXXk",
-      "description": "\"An online magazine on the politics of design. A community space for transnational solidarity.\"",
-      "technology": "Ghost CMS, SCSS",
-      "links": [
-        {
-          "text": "Website",
-          "href": "https://futuress.org/"
-        }
+      "name": "PET: Project Enactment Tool",
+      "description": "Built an application designed to manage software projects while applying the fundamentals of Extreme Programming (XP)[cite: 375]. Completed implementation utilizing story card estimation, planning poker, pair-programming, and test-driven development[cite: 376].",
+      "startDate": "2011-08",
+      "endDate": "2011-12",
+      "associatedWith": "Carnegie Mellon University",
+      "keywords": [
+        "Ruby on Rails",
+        "Extreme Programming",
+        "Test-Driven Development",
+        "Pair Programming"
       ]
     },
     {
-      "text": "Capture Translate",
-      "href": "/projects/capture-translate",
-      "id": "capture-translate",
-      "preview": "https://www.youtube.com/embed/O8P3vrdab4E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=O8P3vrdab4E",
-      "description": "An exploratory project to determine the feasibility of creating a language learning flashcard app using machine-detected objects as source material.",
-      "technology": "Vue, Google Cloud Functions, Google Translate, TensorFlow JS, Media Devices API, Firebase",
-      "links": [
-        {
-          "text": "Website",
-          "href": "http://capture-translate.web.app"
-        }
+      "name": "More dBs",
+      "description": "Maintained and augmented a web application for managing Cal Poly CubeSat satellite data[cite: 382]. Developed a generalized packet parsing system using bitstruct for binary data analysis, implemented a RESTful web service for remote data submission, and created custom CSV report generation tools[cite: 383, 384].",
+      "startDate": "2009-09",
+      "endDate": "2011-03",
+      "associatedWith": "California Polytechnic State University-San Luis Obispo",
+      "keywords": [
+        "Ruby on Rails",
+        "bitstruct",
+        "RESTful API",
+        "FasterCSV"
+      ]
+    },
+    {
+      "name": "MySDI",
+      "description": "Interacted with real industry customers to determine system requirements, creating SRS and Architecture documents while coordinating iterations within an Agile development environment[cite: 388, 389]. Developed drilling data display and export tools and established an Ubuntu server and MySQL database architecture[cite: 389].",
+      "startDate": "2009-09",
+      "endDate": "2010-06",
+      "associatedWith": "California Polytechnic State University-San Luis Obispo",
+      "keywords": [
+        "Ruby on Rails",
+        "Agile",
+        "jQuery",
+        "MySQL",
+        "Ubuntu Server"
+      ]
+    },
+    {
+      "name": "Dan Solbach Website",
+      "description": "Developed the professional personal portfolio and web layout showcase for graphic designer Dan Solbach[cite: 298, 393].",
+      "startDate": "2016-11",
+      "endDate": "2017-01",
+      "associatedWith": "Self Employed",
+      "keywords": [
+        "Frontend Engineering",
+        "Web Layouts"
       ]
     }
   ]

@@ -1,61 +1,88 @@
 <template>
   <div class="resume-content">
-    <section class="resume-section bio">
-      <p>{{ resume.bio }}</p>
+    <section v-if="resume.basics" class="resume-section bio">
+      <p>{{ resume.basics.summary }}</p>
     </section>
 
-    <section class="resume-section">
+    <section v-if="resume.work" class="resume-section">
       <h2>Experience</h2>
       <ul class="resume-list">
-        <li v-for="job in resume.experience" :key="job.company + job.title">
+        <li v-for="job in resume.work" :key="job.name + job.position">
           <div class="resume-item-header">
-            <strong>{{ job.company }}</strong>
+            <strong>{{ job.name }}</strong>
             <span class="spacer">|</span>
-            <em>{{ job.title }}</em>
+            <em>{{ job.position }}</em>
             <span class="date">{{ job.startDate }} — {{ job.endDate || 'Present' }}</span>
           </div>
-          <p class="description">{{ job.description }}</p>
+          <p class="description">{{ job.summary }}</p>
+          <ul v-if="job.highlights && job.highlights.length" class="highlights-list">
+            <li v-for="(highlight, idx) in job.highlights" :key="idx">{{ highlight }}</li>
+          </ul>
         </li>
       </ul>
     </section>
 
-    <section class="resume-section">
+    <section v-if="resume.skills" class="resume-section">
       <h2>Skills</h2>
       <ul class="resume-list skills-list">
-        <li v-for="group in resume.skills" :key="group.category">
-          <strong>{{ group.category }}:</strong> {{ group.items.join(', ') }}
+        <li v-for="skill in resume.skills" :key="skill.name">
+          <strong>{{ skill.name }}:</strong> {{ skill.keywords.join(', ') }}
         </li>
       </ul>
     </section>
 
-    <section class="resume-section">
+    <section v-if="resume.education" class="resume-section">
       <h2>Education</h2>
       <ul class="resume-list">
-        <li v-for="edu in resume.education" :key="edu.school">
+        <li v-for="edu in resume.education" :key="edu.institution + edu.area">
           <div class="resume-item-header">
-            <strong>{{ edu.school }}</strong>
+            <strong>{{ edu.institution }}</strong>
             <span class="spacer">|</span>
-            <span>{{ edu.degree }}</span>
-            <span class="date">{{ edu.year }}</span>
+            <span>{{ edu.studyType }} {{ edu.area }}</span>
+            <span class="date">{{ edu.startDate }} — {{ edu.endDate }}</span>
           </div>
         </li>
       </ul>
     </section>
 
-    <section class="resume-section">
+    <section v-if="resume.projects" class="resume-section">
       <h2>Projects</h2>
       <ul class="resume-list">
-        <li v-for="project in resume.projects" :key="project.id">
+        <li v-for="project in resume.projects" :key="project.name">
           <div class="resume-item-header">
-            <strong>
-              <router-link :to="{ name: 'project', params: { id: project.id } }">
-                {{ project.text }}
-              </router-link>
-            </strong>
-            <span v-if="project.technology" class="spacer">|</span>
-            <em v-if="project.technology">{{ project.technology }}</em>
+            <strong>{{ project.name }}</strong>
+            <span v-if="project.associatedWith" class="spacer">|</span>
+            <em v-if="project.associatedWith">{{ project.associatedWith }}</em>
+            <span class="date">{{ project.startDate }} — {{ project.endDate }}</span>
           </div>
           <p class="description">{{ project.description }}</p>
+          <p v-if="project.keywords" class="keywords">
+            <strong>Keywords:</strong> {{ project.keywords.join(', ') }}
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section v-if="resume.awards" class="resume-section">
+      <h2>Awards</h2>
+      <ul class="resume-list">
+        <li v-for="award in resume.awards" :key="award.title">
+          <div class="resume-item-header">
+            <strong>{{ award.title }}</strong>
+            <span v-if="award.awarder" class="spacer">|</span>
+            <span v-if="award.awarder">{{ award.awarder }}</span>
+            <span class="date">{{ award.date }}</span>
+          </div>
+          <p v-if="award.summary" class="description">{{ award.summary }}</p>
+        </li>
+      </ul>
+    </section>
+
+    <section v-if="resume.languages" class="resume-section">
+      <h2>Languages</h2>
+      <ul class="resume-list inline-list">
+        <li v-for="lang in resume.languages" :key="lang.language">
+          <strong>{{ lang.language }}:</strong> {{ lang.fluency }}
         </li>
       </ul>
     </section>
@@ -116,9 +143,33 @@ const { resume } = storeToRefs(store)
   line-height: 1.4;
 }
 
+.highlights-list {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+
+  li {
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+}
+
+.keywords {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
 .skills-list {
   li {
     margin-bottom: 0.5rem;
+  }
+}
+
+.inline-list {
+  li {
+    display: inline-block;
+    margin-right: 1.5rem;
   }
 }
 </style>

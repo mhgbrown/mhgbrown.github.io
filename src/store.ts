@@ -16,7 +16,7 @@ export const useResumeStore = defineStore('resume', {
   }),
   getters: {
     projects(state): Project[] {
-      return (state.resume.projects || []).sort((a, b) => a.text.localeCompare(b.text))
+      return (state.resume.projects || []).sort((a, b) => a.name.localeCompare(b.name))
     },
     findProjectById(): (id: string) => Project | undefined {
       return (id: string) => this.projects.find(project => project.id === id)
