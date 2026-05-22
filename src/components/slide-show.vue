@@ -104,14 +104,20 @@ onBeforeUnmount(() => {
 }
 
 .slide-show {
-  margin: 1rem 0;
+  margin: 1rem -24px;
   font-size: 0;
   height: 0;
   padding-bottom: 56.5%;
   position: relative;
+  width: 100vw;
 
   @media only screen and (max-width: 959px) {
     margin: 1rem -16px;
+    width: calc(100% + 32px);
+    left: auto;
+    right: auto;
+    margin-left: -16px;
+    margin-right: -16px;
   }
 
   .slide-show-inner {
