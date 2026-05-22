@@ -81,9 +81,12 @@ import { useResumeStore } from '@/store.ts'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { sortChronologically } from '@/utils/date-sort.ts'
+import { useScrollSpy } from '@/composables/use-scroll-spy.ts'
 
 const store = useResumeStore()
 const { resume } = storeToRefs(store)
+
+useScrollSpy(['#experience', '#projects', '#skills', '#education', '#about'])
 
 const sortedWork = computed(() => {
   if (!resume.value.work) return []
