@@ -101,3 +101,20 @@ ul {
   }
 }
 
+.comma-list {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comma-list li {
+  display: inline;
+  margin-right: 0;
+}
+
+/* Adds a comma and space between items */
+.comma-list li:not(:last-child)::after {
+  content: ", ";
+}
+

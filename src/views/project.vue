@@ -12,8 +12,8 @@
       </div>
       <div class="project-information">
         <p v-if="project.description">{{ project.description }}</p>
-        <p v-if="project.technology">{{ project.technology }}</p>
-        <ul v-if="project.keywords && project.keywords.length > 0" class="inline">
+        <p class="technology" v-if="project.technology">{{ project.technology }}</p>
+        <ul v-if="project.keywords && project.keywords.length > 0" class="keywords-list comma-list">
           <li v-for="keyword in project.keywords" :key="keyword">
             {{ keyword }}
           </li>
@@ -23,7 +23,6 @@
             <a :href="link.href" target="_blank">{{ link.text }}</a>
           </li>
         </ul>
-        <a v-else-if="project.href" :href="project.href" target="_blank">Visit</a>
       </div>
     </div>
   </application-layout>
@@ -93,8 +92,6 @@ onBeforeUnmount(() => {
   left: 0;
   top: 0;
   width: 100%;
-  background: blue;
-  color: white;
   padding-bottom: 2px;
   margin-bottom: 1rem;
 
@@ -103,9 +100,12 @@ onBeforeUnmount(() => {
   }
 
   a {
-    color: white;
-    border-bottom-color: white;
     display: inline-block;
+  }
+
+  .keywords-list,
+  .technology {
+    font-style: italic;
   }
 }
 </style>

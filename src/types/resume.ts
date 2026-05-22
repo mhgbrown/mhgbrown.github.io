@@ -68,6 +68,7 @@ export interface Project {
   preview?: string;
   technology?: string;
   links?: { text: string; href: string }[];
+  projectsJsonDescription?: string;
 }
 
 export interface Resume {

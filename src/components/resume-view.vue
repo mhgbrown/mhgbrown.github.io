@@ -31,7 +31,10 @@
         <li v-for="project in sortedProjects" :key="project.name">
           <header class="resume-item-header">
             <h3 class="header-main">
-              <strong>{{ project.name }}</strong>
+              <strong v-if="project.id">
+                <router-link :to="{ name: 'project', params: { id: project.id } }">{{ project.name }}</router-link>
+              </strong>
+              <strong v-else>{{ project.name }}</strong>
             </h3>
             <div v-if="project.associatedWith" class="header-sub">
               <em v-if="getMatchingJob(project.associatedWith)">
@@ -42,14 +45,14 @@
               </em>
               <em v-else>{{ project.associatedWith }}</em>
             </div>
-            <span class="date">
+            <span v-if="project.startDate" class="date">
               <time :datetime="project.startDate">{{ formatDate(project.startDate) }}</time> —
               <time v-if="isValidDate(project.endDate)" :datetime="project.endDate">{{ formatDate(project.endDate) }}</time>
               <span v-else>{{ formatDate(project.endDate) }}</span>
             </span>
           </header>
           <p class="description">{{ project.description }}</p>
-          <p v-if="project.keywords" class="keywords">
+          <p v-if="project.keywords && project.keywords.length > 0" class="keywords">
             <strong>Keywords:</strong> {{ project.keywords.join(', ') }}
           </p>
         </li>
@@ -174,7 +177,16 @@ const sortedWork = computed(() => {
 
 const sortedProjects = computed(() => {
   if (!resume.value.projects) return []
-  return [...resume.value.projects].sort(sortChronologically)
+  return [...resume.value.projects].sort((a, b) => {
+    const hasA = !!a.startDate
+    const hasB = !!b.startDate
+    if (hasA && !hasB) return -1
+    if (!hasA && hasB) return 1
+    if (!hasA && !hasB) {
+      return a.name.localeCompare(b.name)
+    }
+    return sortChronologically(a, b)
+  })
 })
 </script>
 

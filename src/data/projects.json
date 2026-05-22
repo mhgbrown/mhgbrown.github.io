@@ -2,8 +2,8 @@
   "projects": [
     {
       "text": "Camille Aleña",
-      "href": "/projects/camille-alena",
       "id": "camille-alena",
+      "associatedResumeProject": "Camille Aleña's Portfolio",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/cDVcOjzam7E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=cDVcOjzam7E",
       "description": "Website for artist Camille Aleña.",
@@ -17,8 +17,8 @@
     },
     {
       "text": "Dinamo Standards",
-      "href": "/projects/dinamo-standards",
       "id": "dinamo-standards",
+      "associatedResumeProject": "Dinamo Standards",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/V2dQfmUt4s4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=V2dQfmUt4s4",
       "description": "Typeface demonstration via karaoke.",
@@ -31,8 +31,7 @@
       ]
     },
     {
-      "text": "onlinebusiness.lol",
-      "href": "/projects/onlinebusiness-lol",
+      "text": "Frontend for lolstuff",
       "id": "onlinebusiness-lol",
       "associatedWith": "onlinebusiness.lol",
       "preview": "https://www.youtube.com/embed/Ct7g-P-pwlQ?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=Ct7g-P-pwlQ",
@@ -47,7 +46,6 @@
     },
     {
       "text": "Souvenir",
-      "href": "/projects/souvenir",
       "id": "souvenir",
       "preview": "https://www.youtube.com/embed/_ymJStaS7Nk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=_ymJStaS7Nk",
       "description": "Webstore for Berlin-based clothing brand.",
@@ -61,7 +59,6 @@
     },
     {
       "text": "Kiën",
-      "href": "/projects/kien",
       "id": "kien",
       "associatedWith": "Sygns",
       "preview": "https://www.youtube.com/embed/xFET7Pj6FQ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=xFET7Pj6FQ8",
@@ -80,7 +77,6 @@
     },
     {
       "text": "Georg Gatsas",
-      "href": "/projects/georg-gatsas",
       "id": "georg-gatsas",
       "preview": "https://www.youtube.com/embed/L2dSbRh_eJ8?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=L2dSbRh_eJ8",
       "description": "Portfolio website for Swiss photographer.",
@@ -88,8 +84,8 @@
     },
     {
       "text": "Good Spread",
-      "href": "/projects/good-spread",
       "id": "good-spread",
+      "associatedResumeProject": "Good Spread",
       "associatedWith": "Self Employed",
       "preview": "/images/good-spread-website.gif",
       "description": "Website for charity-based peanut butter retailer.",
@@ -103,8 +99,8 @@
     },
     {
       "text": "Talk Talk Talk",
-      "href": "/projects/talk-talk-talk",
       "id": "talk-talk-talk",
+      "associatedResumeProject": "Talk Talk Talk",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/F5eCBt_-uhU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=F5eCBt_-uhU",
       "description": "Conversation series.",
@@ -112,8 +108,8 @@
     },
     {
       "text": "Lexicon Labs",
-      "href": "/projects/lexicon-labs",
       "id": "lexicon-labs",
+      "associatedResumeProject": "Lexicon Labs (Teaser)",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/NKWI-bUtVmc?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=F5eCBt_-uhU",
       "description": "Marketing page for startup attempting to facilitate communication via increased understanding.",
@@ -126,8 +122,7 @@
       ]
     },
     {
-      "text": "SumAll",
-      "href": "/projects/sumall",
+      "text": "Frontend and Middletier Service Development",
       "id": "sumall",
       "associatedWith": "SumAll",
       "preview": "https://www.youtube.com/embed/z2JyoYCg5G4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=z2JyoYCg5G4",
@@ -142,8 +137,8 @@
     },
     {
       "text": "LinkedIn",
-      "href": "/projects/linked-in",
       "id": "linked-in",
+      "associatedResumeProject": "Profile 2.0 Data Visualization",
       "associatedWith": "Linkedin",
       "preview": "/images/linkedin.jpg",
       "description": "Implementation of new profile redesign.",
@@ -156,8 +151,7 @@
       ]
     },
     {
-      "text": "Apple, Inc.",
-      "href": "/projects/apple",
+      "text": "Internal Tools for Apple Marketing Communications",
       "id": "apple",
       "associatedWith": "Apple Inc.",
       "preview": "/images/apple.jpg",
@@ -172,7 +166,6 @@
     },
     {
       "text": "Tones",
-      "href": "/projects/tones",
       "id": "tones",
       "preview": "https://tones.mhgbrown.is/?hack=youtube.com",
       "description": "Instrument created using random tones encoded via data URI.",
@@ -186,7 +179,6 @@
     },
     {
       "text": "Witchifier",
-      "href": "/projects/witchifier",
       "id": "witchifier",
       "preview": "https://witchifier.mhgbrown.is/?hack=youtube.com",
       "description": "Character by character random translation to make funny text. Inspired by the music genre \"Witch House\".",
@@ -200,7 +192,6 @@
     },
     {
       "text": "Just A Grid",
-      "href": "/projects/just-a-grid",
       "id": "just-a-grid",
       "preview": "https://justagrid.mhgbrown.is/?hack=youtube.com",
       "description": "Just an interactive grid.",
@@ -214,7 +205,6 @@
     },
     {
       "text": "image2html",
-      "href": "/projects/image-2-html",
       "id": "image-2-html",
       "preview": "https://www.youtube.com/embed/u4ENL5-NQZU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=u4ENL5-NQZU",
       "description": "Convert images into a HTML \"pixel\" reproduction.",
@@ -228,8 +218,8 @@
     },
     {
       "text": "Void",
-      "href": "/projects/void",
       "id": "void",
+      "associatedResumeProject": "Void",
       "associatedWith": "Carnegie Mellon University",
       "preview": "https://www.youtube.com/embed/lMuTwL10RSA?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=lMuTwL10RSA",
       "description": "Android application and backend to share and receive random photos from other users.",
@@ -237,7 +227,6 @@
     },
     {
       "text": "Why You Leave Me?",
-      "href": "/projects/why-you-leave-me-",
       "id": "why-you-leave-me-",
       "preview": "/images/why-you-leave-me.png",
       "description": "Twitter bot that asks unfollowers why they unfollowed and collects any responses.",
@@ -255,7 +244,6 @@
     },
     {
       "text": "Let Me Tweet That For You",
-      "href": "/projects/let-me-tweet-that-for-you",
       "id": "let-me-tweet-that-for-you",
       "preview": "/images/lmtty.png",
       "description": "Twitter bot that tweets what you direct message it.",
@@ -273,8 +261,8 @@
     },
     {
       "text": "Firstmate - Life Coaching",
-      "href": "/projects/firstmate-life-coaching",
       "id": "firstmate-life-coaching",
+      "associatedResumeProject": "Firstmate",
       "associatedWith": "Lexicon Labs",
       "preview": "https://www.youtube.com/embed/2xurCa3OR5M?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=2xurCa3OR5M",
       "description": "Web and iOS application to to help users achieve their goals with either a Life Coach or friend.",
@@ -282,7 +270,6 @@
     },
     {
       "text": "BVG Train Schedule Display",
-      "href": "/projects/bvg-train-schedule-display",
       "id": "bvg-train-schedule-display",
       "preview": "https://www.youtube.com/embed/IW8mCi2zInM?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=IW8mCi2zInM",
       "description": "LED screen replica of local Berlin train departure times.",
@@ -296,8 +283,8 @@
     },
     {
       "text": "Joseph Kadow",
-      "href": "/projects/joseph-kadow",
       "id": "joseph-kadow",
+      "associatedResumeProject": "Joseph Kadow's Portfolio Website",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/HwtptvA5px4?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=HwtptvA5px4",
       "description": "Portfolio for Berlin-based photographer Joseph Kadow.",
@@ -311,8 +298,8 @@
     },
     {
       "text": "Dan Solbach",
-      "href": "/projects/dan-solbach",
       "id": "dan-solbach",
+      "associatedResumeProject": "Dan Solbach Website",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/hCxKHsfJ69E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=hCxKHsfJ69E",
       "description": "Portfolio for Swiss graphic designer Dan Solbach.",
@@ -325,8 +312,7 @@
       ]
     },
     {
-      "text": "kpiReady",
-      "href": "/projects/kpiready",
+      "text": "Platform for Startup Data Analytics and Reporting",
       "id": "kpiready",
       "associatedWith": "kpiReady",
       "preview": "https://www.youtube.com/embed/0NXzsaw8S_c?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=0NXzsaw8S_c",
@@ -341,8 +327,8 @@
     },
     {
       "text": "Body Of Us",
-      "href": "/projects/body-of-us",
       "id": "body-of-us",
+      "associatedResumeProject": "Body Of Us",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/yqdf1Rhgg3c?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=yqdf1Rhgg3c",
       "description": "Website for the Swiss entry into the 2018 London Design Biennale.",
@@ -356,8 +342,8 @@
     },
     {
       "text": "Markus Mai",
-      "href": "/projects/markus-mai",
       "id": "markus-mai",
+      "associatedResumeProject": "Markus Mai's Portfolio Website",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/wkrm4ITGbto?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=wkrm4ITGbto",
       "description": "Website for industrial designer and artist Markus Mai.",
@@ -371,8 +357,8 @@
     },
     {
       "text": "Wordtelligence",
-      "href": "/projects/wordtelligence",
       "id": "wordtelligence",
+      "associatedResumeProject": "Wordtelligence",
       "associatedWith": "Lexicon Labs",
       "preview": "https://www.youtube.com/embed/sJsNJKO0kHE?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=sJsNJKO0kHE",
       "description": "Backend and Gmail-integrated Chrome extension to help users craft more understandable emails based on the recipients of the message.",
@@ -380,8 +366,8 @@
     },
     {
       "text": "Inside Motion",
-      "href": "/projects/inside-motion",
       "id": "inside-motion",
+      "associatedResumeProject": "Inside Motion",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/CgzUgg9nXzU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=CgzUgg9nXzU",
       "description": "Website for exhibition at the Pharmacy Museum in Basel, Switzerland in collaboration with Swiss design gurus Common Interest",
@@ -395,8 +381,8 @@
     },
     {
       "text": "Futuress",
-      "href": "/projects/futuress",
       "id": "futuress",
+      "associatedResumeProject": "Futuress",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/aag45VG47yU?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=aag45VG47yU",
       "description": "Multilingual submission platform for stories of underrepresented viewpoints in the design community. In collaboration with Swiss designers commoninterest.",
@@ -404,8 +390,8 @@
     },
     {
       "text": "Futuress Magazine",
-      "href": "/projects/futuress-magazine",
       "id": "futuress-magazine",
+      "associatedResumeProject": "Futuress Magazine",
       "associatedWith": "Self Employed",
       "preview": "https://www.youtube.com/embed/b4HNdr8CXXk?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=b4HNdr8CXXk",
       "description": "\"An online magazine on the politics of design. A community space for transnational solidarity.\"",
@@ -419,7 +405,6 @@
     },
     {
       "text": "Capture Translate",
-      "href": "/projects/capture-translate",
       "id": "capture-translate",
       "preview": "https://www.youtube.com/embed/O8P3vrdab4E?ecver=1&autoplay=1&showinfo=1&controls=1&modestbranding=1&rel=0&autohide=1&cc_load_policy=0&iv_load_policy=0&mute=1&loop=1&playlist=O8P3vrdab4E",
       "description": "An exploratory project to determine the feasibility of creating a language learning flashcard app using machine-detected objects as source material.",
