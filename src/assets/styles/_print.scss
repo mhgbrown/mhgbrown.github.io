@@ -1,0 +1,40 @@
+@media print {
+  @page {
+    margin: 0; /* Removes default browser headers (title, URL) and footers (date, page numbers) */
+  }
+
+  * {
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt !important;
+  }
+
+  body {
+    margin: 1.6cm !important; /* Adds margin inside the body so content isn't cut off when @page margin is 0 */
+  }
+
+  .slide-show,
+  .nav-links {
+    display: none !important;
+  }
+
+  .application-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  a,
+  a:visited {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}

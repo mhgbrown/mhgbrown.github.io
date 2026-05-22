@@ -1,0 +1,100 @@
+@import 'reset-css/reset.css';
+
+::selection {
+  background: yellow;
+  color: red;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: yellow;
+  color: red;
+  text-shadow: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Georgia, serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: #1a1a1a;
+  font-size: 20px;
+  cursor: default;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
+    background-color: black;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.application-container {
+  max-width: 800px;
+  margin: 0;
+  padding: 24px;
+  @media only screen and (max-width: 959px) {
+    padding: 16px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+a,
+a:visited {
+  color: blue;
+  @media (prefers-color-scheme: dark) {
+    color: yellow;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  &.inline {
+    li {
+      margin-right: 0.5rem;
+      margin-bottom: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@import './print';
