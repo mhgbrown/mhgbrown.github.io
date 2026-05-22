@@ -102,7 +102,8 @@
         <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Photos</a></li>
         <li class="contact-link-item"><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">Music</a></li>
         <li class="contact-link-item"><a href="https://blog.mhgbrown.is">Writing</a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">Resume</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">LinkedIn</a></li>
+        <li class="contact-link-item"><a href="#" @click.prevent="print">Resume</a></li>
         <li class="contact-email-item">
           <a target="_blank" href="mailto:inbox@email.mhgbrown.is">
             <span class="screen-only">Mail</span>
@@ -125,6 +126,10 @@ const store = useResumeStore()
 const { resume } = storeToRefs(store)
 
 useScrollSpy()
+
+const print = () => {
+  window.print()
+}
 
 const slugify = (text: string) => {
   return text
