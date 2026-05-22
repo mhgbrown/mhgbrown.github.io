@@ -1,4 +1,5 @@
-@import 'reset-css/reset.css';
+@use 'reset-css/reset.css';
+@use './print';
 
 ::selection {
   background: yellow;
@@ -100,4 +101,3 @@ ul {
   }
 }
 
-@import './print';
