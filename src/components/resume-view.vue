@@ -1,7 +1,7 @@
 <template>
   <div class="resume-content">
     <section v-if="sortedWork.length" id="experience" class="resume-section">
-      <h2>Experience</h2>
+      <h2><a href="#experience">Experience</a></h2>
       <ul class="resume-list">
         <li v-for="job in sortedWork" :key="job.name + job.position" :id="'experience-' + slugify(job.name)">
           <header class="resume-item-header">
@@ -26,7 +26,7 @@
     </section>
 
     <section v-if="sortedProjects.length" id="projects" class="resume-section">
-      <h2>Projects</h2>
+      <h2><a href="#projects">Projects</a></h2>
       <ul class="resume-list">
         <li v-for="project in sortedProjects" :key="project.name">
           <header class="resume-item-header">
@@ -60,7 +60,7 @@
     </section>
 
     <section v-if="resume.skills" id="skills" class="resume-section">
-      <h2>Skills</h2>
+      <h2><a href="#skills">Skills</a></h2>
       <ul class="resume-list skills-list">
         <li v-for="skill in resume.skills" :key="skill.name">
           <strong>{{ skill.name }}:</strong> {{ skill.keywords.join(', ') }}
@@ -69,7 +69,7 @@
     </section>
 
     <section v-if="resume.education" id="education" class="resume-section">
-      <h2>Education</h2>
+      <h2><a href="#education">Education</a></h2>
       <ul class="resume-list">
         <li v-for="edu in resume.education" :key="edu.institution + edu.area" :id="'education-' + slugify(edu.institution)">
           <header class="resume-item-header">
@@ -90,13 +90,13 @@
     </section>
 
     <section v-if="resume.basics && resume.basics.summary" id="about" class="resume-section">
-      <h2>About</h2>
+      <h2><a href="#about">About</a></h2>
       <div class="description about-text" v-html="resume.basics.summary">
       </div>
     </section>
 
     <section id="contact" class="resume-section">
-      <h2>Contact</h2>
+      <h2><a href="#contact">Contact</a></h2>
       <ul class="contact-list">
         <li class="contact-link-item"><a target="_blank" href="http://github.com/mhgbrown">Code</a></li>
         <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Photos</a></li>
@@ -124,7 +124,7 @@ import { useScrollSpy } from '@/composables/use-scroll-spy.ts'
 const store = useResumeStore()
 const { resume } = storeToRefs(store)
 
-useScrollSpy(['#experience', '#projects', '#skills', '#education', '#about', '#contact'])
+useScrollSpy()
 
 const slugify = (text: string) => {
   return text
@@ -218,6 +218,21 @@ const sortedProjects = computed(() => {
     padding-bottom: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:visited {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
   }
 }
 

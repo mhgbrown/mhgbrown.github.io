@@ -16,7 +16,7 @@
       "url": "",
       "startDate": "2024-10",
       "endDate": "2026-01",
-      "summary": "Primary engineer for this Ethereum-native funding platform, focusing on full-stack feature delivery to enable on-chain financial support of open-source software and its dependencies. This role required engagement with the web3 stack, including smart contract interaction, protocol SDK contribution, and establishing robust, modern development and deployment practices.",
+      "summary": "Core engineer for this Ethereum-native funding platform, focusing on full-stack feature delivery to enable on-chain financial support of open-source software and its dependencies. This role required engagement with the web3 stack, including smart contract interaction, protocol SDK contribution, and establishing robust, modern development and deployment practices.",
       "highlights": [
         "Engineered and deployed critical, full-stack features using TypeScript, SvelteKit, and GraphQL in service of the financial viability of open-source projects.",
         "Facilitated secure smart contract interaction via ethers.js and contributed to the core platform SDK for protocol management.",

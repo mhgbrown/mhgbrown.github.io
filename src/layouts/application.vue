@@ -2,7 +2,7 @@
   <div class="application-layout">
     <div class="application-container">
       <div class="content-container">
-        <h1><router-link :to="{ name: 'home' }">Morgan Brown</router-link> is a Software Engineer based in Athens, Greece.</h1>
+        <h1><router-link :to="{ name: 'home' }" @click="store.saveScrollPosition(0)">Morgan Brown</router-link> is a Software Engineer based in Athens, Greece.</h1>
         <ul class="nav-links">
           <li><a :href="route.name === 'home' ? '#experience' : '/#experience'">Experience</a></li>
           <li><a :href="route.name === 'home' ? '#projects' : '/#projects'">Projects</a></li>
