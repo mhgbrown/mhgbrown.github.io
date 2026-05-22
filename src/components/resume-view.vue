@@ -11,7 +11,11 @@
             <div class="header-sub">
               <em>{{ job.name }}</em>
             </div>
-            <span class="date">{{ job.startDate }} — {{ job.endDate || 'Present' }}</span>
+            <span class="date">
+              <time :datetime="job.startDate">{{ job.startDate }}</time> —
+              <time v-if="isValidDate(job.endDate)" :datetime="job.endDate">{{ job.endDate }}</time>
+              <span v-else>{{ job.endDate || 'Present' }}</span>
+            </span>
           </div>
           <p class="description">{{ job.summary }}</p>
           <ul v-if="job.highlights && job.highlights.length" class="highlights-list">
@@ -38,7 +42,11 @@
               </em>
               <em v-else>{{ project.associatedWith }}</em>
             </div>
-            <span class="date">{{ project.startDate }} — {{ project.endDate }}</span>
+            <span class="date">
+              <time :datetime="project.startDate">{{ project.startDate }}</time> —
+              <time v-if="isValidDate(project.endDate)" :datetime="project.endDate">{{ project.endDate }}</time>
+              <span v-else>{{ project.endDate || 'Present' }}</span>
+            </span>
           </div>
           <p class="description">{{ project.description }}</p>
           <p v-if="project.keywords" class="keywords">
@@ -68,7 +76,11 @@
             <div class="header-sub">
               <span>{{ edu.studyType }} {{ edu.area }}</span>
             </div>
-            <span class="date">{{ edu.startDate }} — {{ edu.endDate }}</span>
+            <span class="date">
+              <time :datetime="edu.startDate">{{ edu.startDate }}</time> —
+              <time v-if="isValidDate(edu.endDate)" :datetime="edu.endDate">{{ edu.endDate }}</time>
+              <span v-else>{{ edu.endDate || 'Present' }}</span>
+            </span>
           </div>
         </li>
       </ul>
@@ -115,6 +127,10 @@ const getMatchingEducation = (associatedWith: string) => {
   if (!associatedWith) return null
   const query = slugify(associatedWith)
   return resume.value.education?.find(edu => slugify(edu.institution) === query) || null
+}
+
+const isValidDate = (date: string | null | undefined) => {
+  return !!date && date.toLowerCase() !== 'present'
 }
 
 const sortedWork = computed(() => {
