@@ -1,5 +1,5 @@
 <template>
-  <div class="slide-show">
+  <div class="slide-show" :class="{ 'is-vertical': vertical }">
     <div class="slide-show-inner" ref="inner">
       <figure
         v-for="tumblr in tumblrs"
@@ -24,8 +24,12 @@ import shuffle from 'lodash.shuffle'
 
 const props = withDefaults(defineProps<{
   postsPerRequest?: number
+  vertical?: boolean
+  verticalHeight?: string
 }>(), {
-  postsPerRequest: 100
+  postsPerRequest: 100,
+  vertical: false,
+  verticalHeight: '400px'
 })
 
 const tumblrApiKey = 'ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv'
@@ -258,6 +262,41 @@ onBeforeUnmount(() => {
     right: auto;
     margin-left: -16px;
     margin-right: -16px;
+  }
+
+  &.is-vertical {
+    height: v-bind(verticalHeight);
+    width: 100%;
+    padding-bottom: 0;
+    margin: 1rem 0;
+    overflow: hidden;
+
+    @media only screen and (max-width: 959px) {
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    .slide-show-inner {
+      white-space: normal;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+
+    figure {
+      display: block;
+      width: 100%;
+      height: auto !important;
+
+      img, video {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 
   .slide-show-inner {
