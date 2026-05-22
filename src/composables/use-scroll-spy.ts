@@ -52,6 +52,7 @@ export function useScrollSpy() {
         if (target) {
           isScrollingToHash = true
           target.scrollIntoView({ behavior: 'smooth' })
+          target.focus({ preventScroll: true })
 
           if (scrollTimeout) {
             window.clearTimeout(scrollTimeout)
@@ -92,6 +93,7 @@ export function useScrollSpy() {
 
             // Smoothly scroll to target
             targetEl.scrollIntoView({ behavior: 'smooth' })
+            targetEl.focus({ preventScroll: true })
 
             if (scrollTimeout) {
               window.clearTimeout(scrollTimeout)

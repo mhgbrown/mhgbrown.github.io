@@ -1,7 +1,7 @@
 <template>
   <div class="resume-content">
-    <section v-if="sortedWork.length" id="experience" class="resume-section">
-      <h2><a href="#experience">Experience</a></h2>
+    <section v-if="sortedWork.length" id="experience" class="resume-section" tabindex="-1">
+      <h2>Experience</h2>
       <ul class="resume-list">
         <li v-for="job in sortedWork" :key="job.name + job.position" :id="'experience-' + slugify(job.name)">
           <header class="resume-item-header">
@@ -25,8 +25,8 @@
       </ul>
     </section>
 
-    <section v-if="sortedProjects.length" id="projects" class="resume-section">
-      <h2><a href="#projects">Projects</a></h2>
+    <section v-if="sortedProjects.length" id="projects" class="resume-section" tabindex="-1">
+      <h2>Projects</h2>
       <ul class="resume-list">
         <li v-for="project in sortedProjects" :key="project.name">
           <header class="resume-item-header">
@@ -59,8 +59,8 @@
       </ul>
     </section>
 
-    <section v-if="resume.skills" id="skills" class="resume-section">
-      <h2><a href="#skills">Skills</a></h2>
+    <section v-if="resume.skills" id="skills" class="resume-section" tabindex="-1">
+      <h2>Skills</h2>
       <ul class="resume-list skills-list">
         <li v-for="skill in resume.skills" :key="skill.name">
           <strong>{{ skill.name }}:</strong> {{ skill.keywords.join(', ') }}
@@ -68,8 +68,8 @@
       </ul>
     </section>
 
-    <section v-if="resume.education" id="education" class="resume-section">
-      <h2><a href="#education">Education</a></h2>
+    <section v-if="resume.education" id="education" class="resume-section" tabindex="-1">
+      <h2>Education</h2>
       <ul class="resume-list">
         <li v-for="edu in resume.education" :key="edu.institution + edu.area" :id="'education-' + slugify(edu.institution)">
           <header class="resume-item-header">
@@ -89,24 +89,24 @@
       </ul>
     </section>
 
-    <section v-if="resume.basics && resume.basics.summary" id="about" class="resume-section">
-      <h2><a href="#about">About</a></h2>
+    <section v-if="resume.basics && resume.basics.summary" id="about" class="resume-section" tabindex="-1">
+      <h2>About</h2>
       <div class="description about-text" v-html="resume.basics.summary">
       </div>
     </section>
 
-    <section id="contact" class="resume-section">
-      <h2><a href="#contact">Contact</a></h2>
+    <section id="contact" class="resume-section" tabindex="-1">
+      <h2>Contact</h2>
       <ul class="contact-list">
-        <li class="contact-link-item"><a target="_blank" href="http://github.com/mhgbrown">Github</a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Instagram</a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">SoundCloud</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://github.com/mhgbrown">Github <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Instagram <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">SoundCloud <span class="sr-only">(opens in a new tab)</span></a></li>
         <li class="contact-link-item"><a href="https://blog.mhgbrown.is">Writing</a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">LinkedIn</a></li>
-        <li class="contact-link-item"><a href="#" @click.prevent="print">Resume</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">LinkedIn <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li class="contact-link-item"><button class="print-button" @click="print">Resume</button></li>
         <li class="contact-email-item">
           <a target="_blank" href="mailto:inbox@email.mhgbrown.is">
-            <span class="screen-only">Mail</span>
+            <span class="screen-only">Mail <span class="sr-only">(opens in a new tab)</span></span>
             <span class="print-only">inbox@email.mhgbrown.is</span>
           </a>
         </li>
@@ -215,6 +215,7 @@ const sortedProjects = computed(() => {
 <style lang="scss">
 .resume-section {
   margin-bottom: 2rem;
+  outline: none; // Hide outline when focus is programmatically shifted to section
 
   h2 {
     font-size: 1.5rem;
@@ -223,21 +224,26 @@ const sortedProjects = computed(() => {
     padding-bottom: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-block;
+.print-button {
+  background: none;
+  border: none;
+  color: blue;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  cursor: pointer;
+  display: inline;
 
-      &:hover,
-      &:focus,
-      &:active,
-      &:visited {
-        color: inherit;
-        text-decoration: none;
-      }
-    }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: yellow;
   }
 }
 

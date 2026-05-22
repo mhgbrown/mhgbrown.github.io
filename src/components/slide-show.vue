@@ -1,5 +1,5 @@
 <template>
-  <div class="slide-show" :class="{ 'is-vertical': vertical }">
+  <div class="slide-show" aria-hidden="true" :class="{ 'is-vertical': vertical }">
     <div class="slide-show-inner" ref="inner">
       <figure
         v-for="tumblr in tumblrs"
@@ -7,10 +7,10 @@
         >
         <template v-if="tumblr._media">
           <template v-if="tumblr._media.type === 'image'">
-            <img :src="tumblr._media.url" @load="onLoad" @error="onLoad"/>
+            <img :src="tumblr._media.url" alt="" @load="onLoad" @error="onLoad"/>
           </template>
           <template v-else-if="tumblr._media.type === 'video'">
-            <video :src="tumblr._media.url" muted autoplay loop playsinline @canplay="onLoad" @error="onLoad"/>
+            <video :src="tumblr._media.url" muted autoplay loop playsinline aria-hidden="true" @canplay="onLoad" @error="onLoad"/>
           </template>
         </template>
       </figure>

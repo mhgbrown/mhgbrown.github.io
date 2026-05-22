@@ -2,13 +2,13 @@
   <application-layout v-if="project" class="project-id">
     <div class="project">
       <div class="project-media">
-        <div class="project-inner">
-          <iframe v-if="project.preview && project.preview.indexOf('youtube.com') >= 0" width="560" height="315" :src="project.preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <video ref="media" v-else-if="project.preview && project.preview.indexOf('.mp4') >= 0" :src="project.preview" :alt="project.name" loop autoplay muted preload="auto" playsinline webkit-playsinline controls>
-            <source :src="project.preview" type="video/mp4">
-          </video>
-          <img ref="media" v-else-if="project.preview" :src="project.preview" :alt="project.name">
-        </div>
+          <div class="project-inner">
+            <iframe v-if="project.preview && project.preview.indexOf('youtube.com') >= 0" width="560" height="315" :src="project.preview" :title="project.name + ' preview video'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <video ref="media" v-else-if="project.preview && project.preview.indexOf('.mp4') >= 0" :src="project.preview" :aria-label="project.name + ' video preview'" loop autoplay muted preload="auto" playsinline webkit-playsinline controls>
+              <source :src="project.preview" type="video/mp4">
+            </video>
+            <img ref="media" v-else-if="project.preview" :src="project.preview" :alt="project.name">
+          </div>
       </div>
       <div class="project-information">
         <p v-if="project.description">{{ project.description }}</p>
@@ -16,11 +16,11 @@
         <p v-if="project.keywords && project.keywords.length > 0" class="keywords">
           <strong>Keywords:</strong> {{ project.keywords.join(', ') }}
         </p>
-        <ul v-if="project.links && project.links.length > 0" class="inline">
-          <li v-for="link in project.links" :key="link.href">
-            <a :href="link.href" target="_blank">{{ link.text }}</a>
-          </li>
-        </ul>
+          <ul v-if="project.links && project.links.length > 0" class="inline">
+            <li v-for="link in project.links" :key="link.href">
+              <a :href="link.href" target="_blank">{{ link.text }} <span class="sr-only">(opens in a new tab)</span></a>
+            </li>
+          </ul>
       </div>
     </div>
   </application-layout>
