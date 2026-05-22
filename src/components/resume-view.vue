@@ -98,9 +98,9 @@
     <section id="contact" class="resume-section">
       <h2><a href="#contact">Contact</a></h2>
       <ul class="contact-list">
-        <li class="contact-link-item"><a target="_blank" href="http://github.com/mhgbrown">Code</a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Photos</a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">Music</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://github.com/mhgbrown">Github</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Instagram</a></li>
+        <li class="contact-link-item"><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">SoundCloud</a></li>
         <li class="contact-link-item"><a href="https://blog.mhgbrown.is">Writing</a></li>
         <li class="contact-link-item"><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">LinkedIn</a></li>
         <li class="contact-link-item"><a href="#" @click.prevent="print">Resume</a></li>
