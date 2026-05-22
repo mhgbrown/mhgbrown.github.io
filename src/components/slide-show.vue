@@ -23,7 +23,7 @@ import shuffle from 'lodash.shuffle'
 const props = withDefaults(defineProps<{
   postsPerRequest?: number
 }>(), {
-  postsPerRequest: 10
+  postsPerRequest: 100
 })
 
 const tumblrApiKey = 'ok1dCktUCXTyOgG0vlyhxcW7oQ4lxUZl0QfZkoEiwwjvU2ZKAv'
@@ -73,13 +73,16 @@ const loadTumblr = async (): Promise<void> => {
       const validPosts = likedPosts.filter((post: any) => (post.photos && post.photos.length) || post.video_url)
 
       if (validPosts.length === 0) {
+        console.warn('No valid posts found in this batch, trying another batch...')
         isLoading.value = false
+        // Wait 1 second constant backoff before trying the next offset
+        await new Promise(resolve => setTimeout(resolve, 1000))
         return loadTumblr()
       }
 
-      // Choose up to maxTumblrs random valid posts
-      const chosenPosts = shuffle(validPosts).slice(0, maxTumblrs)
-      pool.value = chosenPosts
+      console.log(`Loaded ${validPosts.length} valid posts from offset ${offset}. Pool size: ${validPosts.length}`)
+      // Shuffle the valid posts to randomize them, and keep the whole batch in pool
+      pool.value = shuffle(validPosts)
     }
 
     const tumblr = pool.value.shift()
