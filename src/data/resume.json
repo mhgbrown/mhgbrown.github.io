@@ -155,7 +155,7 @@
       "courses": []
     },
     {
-      "institution": "California Polytechnic State University-San Luis Obispo",
+      "institution": "California Polytechnic State University - San Luis Obispo",
       "url": "",
       "area": "Software Engineering, Spanish Language and Literature, Psychology",
       "studyType": "Bachelor of Science (BS)",
@@ -348,7 +348,7 @@
     },
     {
       "name": "Joseph Kadow's Portfolio Website",
-      "description": "Engineered a bespoke portfolio for Berlin-based photographer Joseph Kadow. Implemented specialized mobile interactions and integrated Intersection Observer for advanced scroll-based behaviors, resulting in a feature in It's Nice That's 'Double Click' series[cite: 282, 283].",
+      "description": "Engineered a bespoke portfolio for Berlin-based photographer Joseph Kadow. Implemented specialized mobile interactions and integrated Intersection Observer for advanced scroll-based behaviors, resulting in a feature in It's Nice That's 'Double Click' series.",
       "startDate": "2017-10",
       "endDate": "2017-12",
       "associatedWith": "Self Employed",
@@ -422,7 +422,7 @@
     },
     {
       "name": "Talk Talk Talk",
-      "description": "Built a content-focused digital archive documenting historical conversations between prominent Swiss artists and designers, establishing structured content schemas and clean data relationships to handle extensive text and media assets smoothly[cite: 325, 326].",
+      "description": "Built a content-focused digital archive documenting historical conversations between prominent Swiss artists and designers, establishing structured content schemas and clean data relationships to handle extensive text and media assets smoothly.",
       "startDate": "2016-03",
       "endDate": "2016-03",
       "associatedWith": "Self Employed",
@@ -434,7 +434,7 @@
     },
     {
       "name": "Lexicon Labs (Teaser)",
-      "description": "Development of a teaser/signup site for future company products in collaboration with Pemberton.",
+      "description": "Engineered a highly interactive, animated teaser site designed to emulate a real-time typing experience directly within the browser interface . Built a dynamic, choice-driven user flow functioning as a \"choose your own adve\" micro-application, utilizing complex asynchronous timing loops and state management to handle fluid, user-triggered textual transitions seamlessly.",
       "startDate": "2016-01",
       "endDate": "2016-02",
       "associatedWith": "Self Employed",
@@ -469,7 +469,7 @@
     },
     {
       "name": "Linkedin University Pages",
-      "description": "Contributed to the building and engineering implementation of University Pages platform features on LinkedIn[cite: 346, 347].",
+      "description": "Collaborated with a cross-functional engineering team to develop and launch LinkedIn University Pages , a major strategic initiative targeting student and college populations globally. Engineered scalable frontend components and interactive user experiences designed to help millions of prospective students explore academic networks, discover institutional opportunities, and optimize their early-career profiles.",
       "startDate": "2012-10",
       "endDate": "2013-08",
       "associatedWith": "Linkedin",
@@ -492,7 +492,7 @@
     },
     {
       "name": "Lots of Copies Keep Semantics Safe",
-      "description": "Decoupled the deep integration and heavy reliance of LOCKSS systems by adding a database abstraction layer allowing for fast schema-less value storage and programmatic access to large electronic journal data sets[cite: 366, 368]. Enabled querying and processing of this data for semantic fact generation via simple inference engines[cite: 369, 370].",
+      "description": "Decoupled the deep integration and heavy reliance of LOCKSS systems by adding a database abstraction layer allowing for fast schema-less value storage and programmatic access to large electronic journal data sets. Enabled querying and processing of this data for semantic fact generation via simple inference engines.",
       "startDate": "2013-01",
       "endDate": "2013-05",
       "associatedWith": "Carnegie Mellon University",
@@ -518,10 +518,10 @@
     },
     {
       "name": "More dBs",
-      "description": "Maintained and augmented a web application for managing Cal Poly CubeSat satellite data. Developed a generalized packet parsing system using bitstruct for binary data analysis, implemented a RESTful web service for remote data submission, and created custom CSV report generation tools[cite: 383, 384].",
+      "description": "Maintained and augmented a web application for managing Cal Poly CubeSat satellite data. Developed a generalized packet parsing system using bitstruct for binary data analysis, implemented a RESTful web service for remote data submission, and created custom CSV report generation tools.",
       "startDate": "2009-09",
       "endDate": "2011-03",
-      "associatedWith": "California Polytechnic State University-San Luis Obispo",
+      "associatedWith": "California Polytechnic State University - San Luis Obispo",
       "keywords": [
         "Ruby on Rails",
         "bitstruct",
@@ -531,10 +531,10 @@
     },
     {
       "name": "MySDI",
-      "description": "Interacted with real industry customers to determine system requirements, creating SRS and Architecture documents while coordinating iterations within an Agile development environment[cite: 388, 389]. Developed drilling data display and export tools and established an Ubuntu server and MySQL database architecture.",
+      "description": "Interacted with real industry customers to determine system requirements, creating SRS and Architecture documents while coordinating iterations within an Agile development environment. Developed drilling data display and export tools and established an Ubuntu server and MySQL database architecture.",
       "startDate": "2009-09",
       "endDate": "2010-06",
-      "associatedWith": "California Polytechnic State University-San Luis Obispo",
+      "associatedWith": "California Polytechnic State University - San Luis Obispo",
       "keywords": [
         "Ruby on Rails",
         "Agile",
@@ -545,7 +545,7 @@
     },
     {
       "name": "Dan Solbach Website",
-      "description": "Developed the professional personal portfolio and web layout showcase for graphic designer Dan Solbach[cite: 298, 393].",
+      "description": "Engineered and deployed the custom personal portfolio platform for prominent Swiss graphic designer Dan Solbach. Translated highly sophisticated typography layouts and minimal visual design systems into a performant, pixel-perfect web application, optimizing media asset delivery and cross-browser responsiveness.",
       "startDate": "2016-11",
       "endDate": "2017-01",
       "associatedWith": "Self Employed",
