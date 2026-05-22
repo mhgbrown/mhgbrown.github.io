@@ -4,19 +4,19 @@
       <h2>Experience</h2>
       <ul class="resume-list">
         <li v-for="job in sortedWork" :key="job.name + job.position" :id="'experience-' + slugify(job.name)">
-          <div class="resume-item-header">
-            <div class="header-main">
+          <header class="resume-item-header">
+            <h3 class="header-main">
               <strong>{{ job.position }}</strong>
-            </div>
+            </h3>
             <div class="header-sub">
               <em>{{ job.name }}</em>
             </div>
             <span class="date">
-              <time :datetime="job.startDate">{{ job.startDate }}</time> —
-              <time v-if="isValidDate(job.endDate)" :datetime="job.endDate">{{ job.endDate }}</time>
-              <span v-else>{{ job.endDate || 'Present' }}</span>
+              <time :datetime="job.startDate">{{ formatDate(job.startDate) }}</time> —
+              <time v-if="isValidDate(job.endDate)" :datetime="job.endDate">{{ formatDate(job.endDate) }}</time>
+              <span v-else>{{ formatDate(job.endDate) }}</span>
             </span>
-          </div>
+          </header>
           <p class="description">{{ job.summary }}</p>
           <ul v-if="job.highlights && job.highlights.length" class="highlights-list">
             <li v-for="(highlight, idx) in job.highlights" :key="idx">{{ highlight }}</li>
@@ -29,10 +29,10 @@
       <h2>Projects</h2>
       <ul class="resume-list">
         <li v-for="project in sortedProjects" :key="project.name">
-          <div class="resume-item-header">
-            <div class="header-main">
+          <header class="resume-item-header">
+            <h3 class="header-main">
               <strong>{{ project.name }}</strong>
-            </div>
+            </h3>
             <div v-if="project.associatedWith" class="header-sub">
               <em v-if="getMatchingJob(project.associatedWith)">
                 <a :href="'#experience-' + slugify(project.associatedWith)" data-scroll-only="true">{{ project.associatedWith }}</a>
@@ -43,11 +43,11 @@
               <em v-else>{{ project.associatedWith }}</em>
             </div>
             <span class="date">
-              <time :datetime="project.startDate">{{ project.startDate }}</time> —
-              <time v-if="isValidDate(project.endDate)" :datetime="project.endDate">{{ project.endDate }}</time>
-              <span v-else>{{ project.endDate || 'Present' }}</span>
+              <time :datetime="project.startDate">{{ formatDate(project.startDate) }}</time> —
+              <time v-if="isValidDate(project.endDate)" :datetime="project.endDate">{{ formatDate(project.endDate) }}</time>
+              <span v-else>{{ formatDate(project.endDate) }}</span>
             </span>
-          </div>
+          </header>
           <p class="description">{{ project.description }}</p>
           <p v-if="project.keywords" class="keywords">
             <strong>Keywords:</strong> {{ project.keywords.join(', ') }}
@@ -69,19 +69,19 @@
       <h2>Education</h2>
       <ul class="resume-list">
         <li v-for="edu in resume.education" :key="edu.institution + edu.area" :id="'education-' + slugify(edu.institution)">
-          <div class="resume-item-header">
-            <div class="header-main">
+          <header class="resume-item-header">
+            <h3 class="header-main">
               <strong>{{ edu.institution }}</strong>
-            </div>
+            </h3>
             <div class="header-sub">
               <span>{{ edu.studyType }} {{ edu.area }}</span>
             </div>
             <span class="date">
-              <time :datetime="edu.startDate">{{ edu.startDate }}</time> —
-              <time v-if="isValidDate(edu.endDate)" :datetime="edu.endDate">{{ edu.endDate }}</time>
-              <span v-else>{{ edu.endDate || 'Present' }}</span>
+              <time :datetime="edu.startDate">{{ formatDate(edu.startDate) }}</time> —
+              <time v-if="isValidDate(edu.endDate)" :datetime="edu.endDate">{{ formatDate(edu.endDate) }}</time>
+              <span v-else>{{ formatDate(edu.endDate) }}</span>
             </span>
-          </div>
+          </header>
         </li>
       </ul>
     </section>
@@ -133,6 +133,40 @@ const isValidDate = (date: string | null | undefined) => {
   return !!date && date.toLowerCase() !== 'present'
 }
 
+const MONTH_NAMES = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+]
+
+const formatDate = (dateStr: string | null | undefined): string => {
+  if (!dateStr) return 'Present'
+  const trimmed = dateStr.trim()
+  if (trimmed.toLowerCase() === 'present') {
+    return 'Present'
+  }
+
+  const parts = trimmed.split('-')
+  if (parts.length === 2) {
+    const year = parts[0]
+    const monthVal = parseInt(parts[1], 10)
+    if (!isNaN(monthVal) && monthVal >= 1 && monthVal <= 12) {
+      return `${MONTH_NAMES[monthVal - 1]}, ${year}`
+    }
+  }
+
+  return trimmed
+}
+
 const sortedWork = computed(() => {
   if (!resume.value.work) return []
   return [...resume.value.work].sort(sortChronologically)
@@ -179,6 +213,15 @@ const sortedProjects = computed(() => {
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.5rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  h3.header-main {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
   }
 
   .header-sub {
