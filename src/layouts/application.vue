@@ -6,12 +6,9 @@
         <h1><router-link :to="{ name: 'home' }" @click="store.saveScrollPosition(0)">Morgan Brown</router-link> is a Software Engineer based in Athens, Greece.</h1>
         <nav aria-label="Primary Navigation">
           <ul class="nav-links">
-            <li><a :href="route.name === 'home' ? '#experience' : '/#experience'">Experience</a></li>
-            <li><a :href="route.name === 'home' ? '#projects' : '/#projects'">Projects</a></li>
-            <li><a :href="route.name === 'home' ? '#skills' : '/#skills'">Skills</a></li>
-            <li><a :href="route.name === 'home' ? '#education' : '/#education'">Education</a></li>
-            <li><a :href="route.name === 'home' ? '#about' : '/#about'">About</a></li>
-            <li><a :href="route.name === 'home' ? '#contact' : '/#contact'">Contact</a></li>
+            <li v-for="item in navItems" :key="item.id">
+              <a :href="getHref(item.id)">{{ item.label }}</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -28,6 +25,17 @@ import { useRoute } from 'vue-router'
 
 const store = useResumeStore()
 const route = useRoute()
+
+const navItems = [
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'education', label: 'Education' },
+  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' }
+]
+
+const getHref = (id: string) => route.name === 'home' ? `#${id}` : `/#${id}`
 </script>
 
 <style lang="scss">

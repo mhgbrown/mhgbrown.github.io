@@ -81,6 +81,7 @@ We design for everyone, including keyboard users, screen-readers, and assistive 
 ### 1. Concision over Complexity (DRY)
 - **Format Dates & Ranges:** Do not repeat date parsing or rendering blocks in different elements. Use the reusable `<date-range :start-date="..." :end-date="..." />` component.
 - **External Links:** Always use the `<external-a href="...">` component for links that open in a new window/tab to guarantee uniform a11y compliance.
+- **Internal Navigation Hrefs:** Use consistent helper methods to generate cross-route anchor hashes (e.g., `getHref` inside layouts/views) instead of hardcoding ternary route name checks on every `<a>` link.
 - **Derived Computations:** Prefer `computed()` properties over manual watchers (`watch()`) or lifecycle Hooks (`onMounted`) to format data structure.
 
 ### 2. Responsive Styling & Dark Mode
