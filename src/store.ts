@@ -33,20 +33,12 @@ const unmatchedProjects = projectsData.projects
 // Combine both lists for the resume view to display
 const finalResumeProjects = [...mergedResumeProjects, ...unmatchedProjects]
 
-// Create a unified list of all projects for the findProjectById lookup
-const allUnifiedProjects: Project[] = [...finalResumeProjects]
-
 export const useResumeStore = defineStore('resume', {
   state: () => ({
-    app: {
-      tablet: false,
-      phone: false
-    },
     resume: {
       ...resumeData,
       projects: finalResumeProjects
     } as unknown as Resume,
-    allProjects: allUnifiedProjects,
     scrollPosition: 0
   }),
   getters: {
@@ -56,14 +48,12 @@ export const useResumeStore = defineStore('resume', {
     },
     findProjectById(state): (id: string) => Project | undefined {
       return (id: string) => {
-        return state.allProjects.find(project => project.id === id)
+        const allProjects = state.resume.projects || []
+        return allProjects.find(project => project.id === id)
       }
     }
   },
   actions: {
-    updateApp(field: 'tablet' | 'phone', value: boolean) {
-      this.app[field] = value
-    },
     saveScrollPosition(position: number) {
       this.scrollPosition = position
     }
