@@ -11,11 +11,7 @@
             <div class="header-sub">
               <em>{{ job.name }}</em>
             </div>
-            <span class="date">
-              <time :datetime="job.startDate">{{ formatDate(job.startDate) }}</time> —
-              <time v-if="isValidDate(job.endDate)" :datetime="job.endDate">{{ formatDate(job.endDate) }}</time>
-              <span v-else>{{ formatDate(job.endDate) }}</span>
-            </span>
+            <date-range :start-date="job.startDate" :end-date="job.endDate"></date-range>
           </header>
           <p class="description">{{ job.summary }}</p>
           <ul v-if="job.highlights && job.highlights.length" class="highlights-list">
@@ -45,11 +41,7 @@
               </em>
               <em v-else>{{ project.associatedWith }}</em>
             </div>
-            <span v-if="project.startDate" class="date">
-              <time :datetime="project.startDate">{{ formatDate(project.startDate) }}</time> —
-              <time v-if="isValidDate(project.endDate)" :datetime="project.endDate">{{ formatDate(project.endDate) }}</time>
-              <span v-else>{{ formatDate(project.endDate) }}</span>
-            </span>
+            <date-range v-if="project.startDate" :start-date="project.startDate" :end-date="project.endDate"></date-range>
           </header>
           <p class="description">{{ project.description }}</p>
           <p v-if="project.keywords && project.keywords.length > 0" class="keywords">
@@ -79,11 +71,7 @@
             <div class="header-sub">
               <span>{{ edu.studyType }} {{ edu.area }}</span>
             </div>
-            <span class="date">
-              <time :datetime="edu.startDate">{{ formatDate(edu.startDate) }}</time> —
-              <time v-if="isValidDate(edu.endDate)" :datetime="edu.endDate">{{ formatDate(edu.endDate) }}</time>
-              <span v-else>{{ formatDate(edu.endDate) }}</span>
-            </span>
+            <date-range :start-date="edu.startDate" :end-date="edu.endDate"></date-range>
           </header>
         </li>
       </ul>
@@ -121,6 +109,7 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { sortChronologically } from '@/utils/date-sort.ts'
 import { useScrollSpy } from '@/composables/use-scroll-spy.ts'
+import DateRange from '@/components/date-range.vue'
 
 const store = useResumeStore()
 const { resume } = storeToRefs(store)
@@ -152,44 +141,6 @@ const getMatchingEducation = (associatedWith: string) => {
   if (!associatedWith) return null
   const query = slugify(associatedWith)
   return resume.value.education?.find(edu => slugify(edu.institution) === query) || null
-}
-
-const isValidDate = (date: string | null | undefined) => {
-  return !!date && date.toLowerCase() !== 'present'
-}
-
-const MONTH_NAMES = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-]
-
-const formatDate = (dateStr: string | null | undefined): string => {
-  if (!dateStr) return 'Present'
-  const trimmed = dateStr.trim()
-  if (trimmed.toLowerCase() === 'present') {
-    return 'Present'
-  }
-
-  const parts = trimmed.split('-')
-  if (parts.length === 2) {
-    const year = parts[0]
-    const monthVal = parseInt(parts[1], 10)
-    if (!isNaN(monthVal) && monthVal >= 1 && monthVal <= 12) {
-      return `${MONTH_NAMES[monthVal - 1]}, ${year}`
-    }
-  }
-
-  return trimmed
 }
 
 const sortedWork = computed(() => {
