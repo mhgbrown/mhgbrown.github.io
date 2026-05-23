@@ -203,9 +203,14 @@ const sortedProjects = computed(() => {
   cursor: pointer;
   display: inline;
 
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease;
+
   &:hover,
   &:focus {
-    text-decoration: underline;
+    text-decoration-color: transparent;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -228,6 +233,7 @@ const sortedProjects = computed(() => {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
+  line-height: 1.25;
 
   .header-main {
     display: flex;
@@ -247,7 +253,7 @@ const sortedProjects = computed(() => {
 
   .header-sub {
     font-style: italic;
-    margin-top: 0.1rem;
+    margin-top: 0.3rem;
   }
 
   .spacer {
@@ -257,7 +263,7 @@ const sortedProjects = computed(() => {
   .date {
     color: #666;
     font-size: 0.9rem;
-    margin-top: 0.1rem;
+    margin-top: 0.3rem;
   }
 }
 

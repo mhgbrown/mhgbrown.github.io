@@ -1,5 +1,5 @@
 <template>
-  <div class="application-layout georgia-premium-text">
+  <div class="application-layout">
     <a href="#main-content" class="sr-only skip-link">Skip to main content</a>
     <div class="application-container">
       <header class="content-container">

@@ -1,0 +1,59 @@
+// ==========================================================================
+// Premium Georgia Typography Mixin
+// ==========================================================================
+
+@mixin premium-georgia-text {
+  // Base Identity & Sizing
+  font-family: Georgia, serif;
+  font-size: clamp(16px, 1rem + 0.5vw, 20px);     // Fluid scale across devices
+  line-height: 1.65;                              // Breathing room between rows
+
+  // Micro-Typography & Kerning
+  letter-spacing: 0.01em;                         // Modern tracking adjustment
+  word-spacing: 0.05em;                           // Prevents dense word crowding
+  font-kerning: normal;                           // Forces designer-intended spacing
+  font-variant-numeric: oldstyle-nums;            // Beautiful hanging numerals
+
+  // Layout & Layout Safety
+  max-width: 65ch;                                // Comfortable reading line length
+  text-wrap: pretty;                              // Prevents single-word orphans
+
+  // Rendering & Contrast Engine
+  color: #2D3748;                                 // Soft charcoal to reduce eye strain
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Integrated Inline Link Optimization
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;                 // Clears Georgia's deep descenders
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s ease;
+
+    &:hover {
+      text-decoration-color: transparent;         // Clean hover state transition
+    }
+  }
+
+  // Dark Mode Adjustments (Combats font irradiation/glow)
+  @media (prefers-color-scheme: dark) {
+    color: #E2E8F0;                               // Soft off-white
+    letter-spacing: 0.02em;                       // Slightly wider to handle dark mode glow
+  }
+
+  // Editorial Accent: Optional Drop Cap for Initial Paragraphs
+  &.has-drop-cap::first-letter {
+    float: left;
+    font-size: 4.5rem;
+    line-height: 0.85;                            // Tightened to snap to text baseline
+    margin-top: 4px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #1A202C;                               // Slightly punchier contrast for the accent
+
+    @media (prefers-color-scheme: dark) {
+      color: #FFFFFF;
+    }
+  }
+}
