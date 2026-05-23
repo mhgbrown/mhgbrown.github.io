@@ -18,7 +18,7 @@
         </p>
         <ul v-if="project.links && project.links.length > 0" class="inline">
           <li v-for="link in project.links" :key="link.href">
-            <a :href="link.href" target="_blank">{{ link.text }} <span class="sr-only">(opens in a new tab)</span></a>
+            <external-a :href="link.href">{{ link.text }}</external-a>
           </li>
         </ul>
       </div>
@@ -30,6 +30,7 @@
 import { computed } from 'vue'
 import { useResumeStore } from '@/store.ts'
 import ApplicationLayout from '@/layouts/application.vue'
+import ExternalA from '@/components/external-a.vue'
 
 const props = defineProps<{
   id: string

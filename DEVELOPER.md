@@ -68,12 +68,9 @@ We design for everyone, including keyboard users, screen-readers, and assistive 
   This is why sections have `tabindex="-1"` and `outline: none` styles. Doing this ensures screen-reader focus moves along with the viewport.
 
 ### 3. Screen Reader Utilities (`sr-only`)
-- For external links that open in a new browser tab, append screen-reader warning texts:
+- For external links that open in a new browser tab, use the reusable `<external-a href="...">` component instead of manual `<a>` tags. It automatically appends the correct `target="_blank"`, `rel="noopener noreferrer"`, and screen-reader accessible warning text:
   ```html
-  <a href="..." target="_blank">
-    Link Text
-    <span class="sr-only">(opens in a new tab)</span>
-  </a>
+  <external-a href="...">Link Text</external-a>
   ```
 - Use `aria-label` on custom controls, video views, or descriptive figures that do not have visible caption text.
 
@@ -83,6 +80,7 @@ We design for everyone, including keyboard users, screen-readers, and assistive 
 
 ### 1. Concision over Complexity (DRY)
 - **Format Dates & Ranges:** Do not repeat date parsing or rendering blocks in different elements. Use the reusable `<date-range :start-date="..." :end-date="..." />` component.
+- **External Links:** Always use the `<external-a href="...">` component for links that open in a new window/tab to guarantee uniform a11y compliance.
 - **Derived Computations:** Prefer `computed()` properties over manual watchers (`watch()`) or lifecycle Hooks (`onMounted`) to format data structure.
 
 ### 2. Responsive Styling & Dark Mode

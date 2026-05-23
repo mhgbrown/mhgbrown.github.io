@@ -86,17 +86,17 @@
     <section id="contact" class="resume-section" tabindex="-1">
       <h2>Contact</h2>
       <ul class="contact-list">
-        <li class="contact-link-item"><a target="_blank" href="http://github.com/mhgbrown">Github <span class="sr-only">(opens in a new tab)</span></a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://instagram.com/mhgbrown">Instagram <span class="sr-only">(opens in a new tab)</span></a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://soundcloud.com/mhgbrown/likes">SoundCloud <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li class="contact-link-item"><external-a href="http://github.com/mhgbrown">Github</external-a></li>
+        <li class="contact-link-item"><external-a href="http://instagram.com/mhgbrown">Instagram</external-a></li>
+        <li class="contact-link-item"><external-a href="http://soundcloud.com/mhgbrown/likes">SoundCloud</external-a></li>
         <li class="contact-link-item"><a href="https://blog.mhgbrown.is">Writing</a></li>
-        <li class="contact-link-item"><a target="_blank" href="http://www.linkedin.com/in/mhgbrown">LinkedIn <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li class="contact-link-item"><external-a href="http://www.linkedin.com/in/mhgbrown">LinkedIn</external-a></li>
         <li class="contact-link-item"><button class="print-button" @click="print">Resume</button></li>
         <li class="contact-email-item">
-          <a target="_blank" href="mailto:inbox@email.mhgbrown.is">
-            <span class="screen-only">Mail <span class="sr-only">(opens in a new tab)</span></span>
+          <external-a href="mailto:inbox@email.mhgbrown.is">
+            <span class="screen-only">Mail</span>
             <span class="print-only">inbox@email.mhgbrown.is</span>
-          </a>
+          </external-a>
         </li>
       </ul>
     </section>
@@ -110,6 +110,7 @@ import { computed } from 'vue'
 import { sortChronologically } from '@/utils/date-sort.ts'
 import { useScrollSpy } from '@/composables/use-scroll-spy.ts'
 import DateRange from '@/components/date-range.vue'
+import ExternalA from '@/components/external-a.vue'
 
 const store = useResumeStore()
 const { resume } = storeToRefs(store)
