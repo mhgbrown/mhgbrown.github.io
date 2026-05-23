@@ -24,19 +24,13 @@
 
 <script setup lang="ts">
 import { useResumeStore } from '@/store.ts'
-import { storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router'
 
 const store = useResumeStore()
-const { projects } = storeToRefs(store)
 const route = useRoute()
 </script>
 
 <style lang="scss">
-.projects-list {
-  margin-bottom: 1rem;
-}
-
 .skip-link {
   &:focus {
     position: fixed;
