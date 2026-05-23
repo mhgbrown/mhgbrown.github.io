@@ -46,7 +46,7 @@ export function useScrollSpy() {
 
   const scrollToHash = () => {
     const hash = window.location.hash
-    if (hash) {
+    if (hash && hash !== '#') {
       try {
         const target = document.querySelector(hash) as HTMLElement | null
         if (target) {
@@ -77,7 +77,7 @@ export function useScrollSpy() {
     const anchor = target?.closest('a')
     if (anchor) {
       const href = anchor.getAttribute('href')
-      if (href && href.startsWith('#')) {
+      if (href && href.startsWith('#') && href !== '#') {
         try {
           const targetEl = document.querySelector(href) as HTMLElement | null
           if (targetEl) {
