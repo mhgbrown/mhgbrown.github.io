@@ -415,6 +415,12 @@
           "href": "http://capture-translate.web.app"
         }
       ]
+    },
+    {
+      "text": "Fuck My Dom",
+      "id": "fuck-my-dom",
+      "description": "Messes up the structure of the document by randomly rearranging elements.",
+      "code": "(function( window, document, undefined ) {\n\n  var stag;\n\n  if( !window.FuckMyDom ) {\n    stag = document.createElement( 'script' );\n    stag.setAttribute( 'src', 'https://mhgbrown.github.io/fuck-my-dom/fuck-my-dom.js' );\n    stag.onload = function(){ FuckMyDom.slowly(); };\n    document.body.appendChild( stag );\n  } else {\n    FuckMyDom.slowly();\n  }\n\n}( window, document ));"
     }
   ]
 }

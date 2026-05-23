@@ -27,7 +27,10 @@
         <li v-for="project in sortedProjects" :key="project.name">
           <header class="resume-item-header">
             <h3 class="header-main">
-              <strong v-if="project.id">
+              <strong v-if="project.code">
+                <a href="#" @click.prevent="invokeProjectCode(project.code)">{{ project.name }}</a>
+              </strong>
+              <strong v-else-if="project.id">
                 <router-link :to="{ name: 'project', params: { id: project.id } }">{{ project.name }}</router-link>
               </strong>
               <strong v-else>{{ project.name }}</strong>
@@ -119,6 +122,17 @@ useScrollSpy()
 
 const print = () => {
   window.print()
+}
+
+const invokeProjectCode = (code: string) => {
+  if (!code) return
+  try {
+    // eslint-disable-next-line no-new-func
+    const fn = new Function(code)
+    fn()
+  } catch (error) {
+    console.error('Error invoking project code:', error)
+  }
 }
 
 const slugify = (text: string) => {
