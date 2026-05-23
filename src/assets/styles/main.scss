@@ -144,3 +144,29 @@ ul {
   border: 0;
 }
 
+.georgia-premium-text {
+  /* 1. Fluid sizing across devices */
+  // font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+
+  /* 2. Advanced text wrapping and spacing */
+  text-wrap: pretty;
+  word-spacing: 0.05em;
+
+  /* 3. Drop cap and selection aesthetics */
+  font-kerning: normal;
+
+  /* 4. Optimize the reading environment for dark mode */
+  @media (prefers-color-scheme: dark) {
+    // color: #E2E8F0; /* Light gray for better contrast */
+    font-weight: 300; /* If using a variable or web-font variant */
+    letter-spacing: 0.02em; /* Slightly wider for light text on dark background */
+  }
+
+  /* 5. Clean up link underscores */
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+}
+
