@@ -43,4 +43,46 @@
     color: #000 !important;
     text-decoration: none !important;
   }
+
+  // Control page breaks to prevent awkward content spacing & splits
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid-page !important;
+    page-break-after: avoid !important;
+  }
+
+  .resume-section {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .resume-list {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .resume-list > li {
+    break-inside: auto !important; // Allow long resume items to break across pages to prevent massive empty spaces
+    page-break-inside: auto !important;
+  }
+
+  // Keep the item header content block unified on the same page
+  .resume-item-header {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+    break-after: avoid-page !important; // Keep header with its description
+    page-break-after: avoid !important;
+  }
+
+  // Avoid splitting inside a single bullet point/highlight or keywords line
+  .highlights-list > li,
+  .keywords {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+
+  // Prevent internal text block/row splits, but allow breaks between blocks
+  p, blockquote, tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
 }
