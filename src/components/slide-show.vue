@@ -34,14 +34,48 @@ const props = withDefaults(defineProps<{
 
 const tumblrApiKey = import.meta.env.VITE_TUMBLR_API_KEY
 
+interface TumblrMedia {
+  type: 'image' | 'video'
+  url: string
+}
+
+interface TumblrPhotoSize {
+  url: string
+}
+
+interface TumblrPhoto {
+  alt_sizes: TumblrPhotoSize[]
+}
+
+interface NpfBlock {
+  type: string
+  media?: Array<{ url: string }> | { url: string }
+}
+
+interface TrailItem {
+  content?: NpfBlock[]
+  body?: string
+}
+
+interface TumblrPost {
+  id: number | string
+  photos?: TumblrPhoto[]
+  video_url?: string
+  content?: NpfBlock[]
+  trail?: TrailItem[]
+  body?: string
+  caption?: string
+  _media?: TumblrMedia
+}
+
 const maxOffset = 1000
 const offsets = ref<number[]>([])
 const maxTumblrs = 5
 let loadPromise: Promise<void> | null = Promise.resolve()
-const tumblrs = ref<any[]>([])
+const tumblrs = ref<TumblrPost[]>([])
 const timeout = 3000
 
-const pool = ref<any[]>([])
+const pool = ref<TumblrPost[]>([])
 const isLoading = ref(false)
 
 const generateOffsets = () => {
@@ -70,7 +104,7 @@ const extractFromHtml = (html: string): { type: 'image' | 'video', url: string }
   return null
 }
 
-const extractMedia = (post: any): { type: 'image' | 'video', url: string } | null => {
+const extractMedia = (post: TumblrPost): TumblrMedia | null => {
   if (!post) return null
 
   // 1. Check legacy photos
@@ -89,8 +123,11 @@ const extractMedia = (post: any): { type: 'image' | 'video', url: string } | nul
   // 3. Check Neue Post Format (NPF) content blocks
   if (post.content && Array.isArray(post.content)) {
     for (const block of post.content) {
-      if (block.type === 'image' && block.media && block.media.length) {
-        return { type: 'image', url: block.media[0].url }
+      if (block.type === 'image' && block.media) {
+        const mediaUrl = Array.isArray(block.media) ? block.media[0]?.url : block.media.url
+        if (mediaUrl) {
+          return { type: 'image', url: mediaUrl }
+        }
       }
       if (block.type === 'video' && block.media) {
         const mediaUrl = Array.isArray(block.media) ? block.media[0]?.url : block.media.url
@@ -106,8 +143,11 @@ const extractMedia = (post: any): { type: 'image' | 'video', url: string } | nul
     for (const item of post.trail) {
       if (item.content && Array.isArray(item.content)) {
         for (const block of item.content) {
-          if (block.type === 'image' && block.media && block.media.length) {
-            return { type: 'image', url: block.media[0].url }
+          if (block.type === 'image' && block.media) {
+            const mediaUrl = Array.isArray(block.media) ? block.media[0]?.url : block.media.url
+            if (mediaUrl) {
+              return { type: 'image', url: mediaUrl }
+            }
           }
           if (block.type === 'video' && block.media) {
             const mediaUrl = Array.isArray(block.media) ? block.media[0]?.url : block.media.url
@@ -164,16 +204,16 @@ const loadTumblr = async (): Promise<void> => {
       }
 
       const data = await response.json()
-      const likedPosts = data.response.liked_posts || []
+      const likedPosts = (data.response.liked_posts || []) as TumblrPost[]
       const validPosts = likedPosts
-        .map((post: any) => {
+        .map((post: TumblrPost) => {
           const media = extractMedia(post)
           if (media) {
             post._media = media
           }
           return post
         })
-        .filter((post: any) => !!post._media)
+        .filter((post: TumblrPost) => !!post._media)
 
       if (validPosts.length === 0) {
         console.warn('No valid posts found in this batch, trying another batch...')
@@ -190,7 +230,7 @@ const loadTumblr = async (): Promise<void> => {
     if (tumblr) {
       tumblrs.value.push(tumblr)
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error loading tumblr post:', error)
     isLoading.value = false
     // Wait a moment before retrying to avoid tight loops on persistent errors (like CORS)

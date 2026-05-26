@@ -7,7 +7,7 @@ import Sitemap from 'vite-plugin-sitemap'
 
 // Read projects list to construct dynamic routes
 const projectsData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './src/data/projects.json'), 'utf-8'))
-const projectIds = projectsData.projects.map((p: any) => p.id)
+const projectIds = projectsData.projects.map((p: { id: string }) => p.id)
 const projectRoutes = projectIds.map((id: string) => `/projects/${id}`)
 
 // Retrieve git commit date for fallback/homepage
@@ -30,7 +30,7 @@ for (const id of projectIds) {
   let dateStr = ''
   try {
     dateStr = execSync(`git log -1 --format=%cs -S "${id}" -- src/data/projects.json`).toString().trim()
-  } catch (e) {
+  } catch {
     // If git fails or has no match, fall back to defaultDate
   }
   lastmodMap[route] = dateStr ? new Date(dateStr) : defaultDate
