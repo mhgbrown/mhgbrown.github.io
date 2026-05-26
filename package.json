@@ -1,7 +1,11 @@
 {
-  "name": "website",
+  "name": "mhgbrown-website",
   "version": "0.1.0",
-  "private": true,
+  "description": "Morgan Brown's personal portfolio and resume website, built with Vue 3, Vite, TypeScript, and Pinia.",
+  "engines": {
+    "node": ">=24.14.0",
+    "npm": ">=11.9.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
