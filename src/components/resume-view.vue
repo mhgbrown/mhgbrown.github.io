@@ -30,7 +30,7 @@
               <strong v-if="project.code">
                 <a href="#" @click.prevent="invokeProjectCode(project.code)">{{ project.name }}</a>
               </strong>
-              <strong v-else-if="project.id">
+              <strong v-else-if="project.id && project.preview">
                 <router-link :to="{ name: 'project', params: { id: project.id } }">{{ project.name }}</router-link>
               </strong>
               <strong v-else>{{ project.name }}</strong>
