@@ -32,11 +32,15 @@ const seoData = computed(() => {
     }
   }
 
+  // Ensure canonical URL is always set to the clean path without query parameters
+  const canonicalUrl = `https://mhgbrown.is${route.path}`
+
   return {
     title,
     description,
     ogImageSrc,
-    twitterImageSrc
+    twitterImageSrc,
+    canonicalUrl
   }
 })
 
@@ -76,8 +80,14 @@ useSeoMeta({
   twitterImage: () => seoData.value.twitterImageSrc,
 })
 
-// Use useHead for script (JSON-LD)
+// Use useHead for script (JSON-LD) and link (canonical)
 useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: () => seoData.value.canonicalUrl
+    }
+  ],
   script: [
     {
       type: 'application/ld+json',
