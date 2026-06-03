@@ -33,4 +33,12 @@ router.beforeEach((to, from) => {
   }
 })
 
+router.afterEach((to) => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('config', 'G-C8GLZL7JH1', {
+      page_path: to.fullPath
+    })
+  }
+})
+
 export default router
