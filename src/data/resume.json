@@ -225,6 +225,22 @@
   ],
   "projects": [
     {
+      "name": "Run Map",
+      "description": "Engineered an elegant, dependency-free, interactive map showcasing running activities tracked via Google Fit and Strava. Built using native ES6 JavaScript, HTML5, Leaflet.js, and Tailwind CSS, the application achieves high performance by pre-parsing raw activity files into highly compressed JSON coordinate chunks that are lazy-loaded on demand as the user zooms and pans the map. Features reverse geocoding with local caching and automated daily activity synchronization via GitHub Actions. Fun fact: I've run over 5,300 km in Berlin over 12 years!",
+      "startDate": "2026-06",
+      "endDate": "present",
+      "associatedWith": "Independent Project",
+      "keywords": [
+        "Leaflet.js",
+        "Tailwind CSS",
+        "ES6 JavaScript",
+        "Strava API",
+        "Google Fit",
+        "GitHub Actions",
+        "Node.js"
+      ]
+    },
+    {
       "name": "Futuress Magazine",
       "description": "Engineered a high-performance, accessible hybrid learning community and publishing platform designed to democratize design education and amplify marginalized voices, winning a Swiss Design Award in 2022. Architected a modular, lightweight theme infrastructure prioritizing asset optimization, semantic HTML, and rapid asset delivery to support a global audience.",
       "startDate": "2020-08",
