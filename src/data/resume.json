@@ -226,7 +226,7 @@
   "projects": [
     {
       "name": "Run Map",
-      "description": "Engineered an elegant, dependency-free, interactive map showcasing running activities tracked via Google Fit and Strava. Built using native ES6 JavaScript, HTML5, Leaflet.js, and Tailwind CSS, the application achieves high performance by pre-parsing raw activity files into highly compressed JSON coordinate chunks that are lazy-loaded on demand as the user zooms and pans the map. Features reverse geocoding with local caching and automated daily activity synchronization via GitHub Actions. Fun fact: I've run over 5,300 km in Berlin over 12 years!",
+      "description": "An elegant, dependency-free interactive run map showcasing running activities tracked via Google Fit and Strava. As an urban runner who hates taking the same path twice, I explore new places by running loops or one-way routes, and built this project to visualize my progress, share routes, and celebrate all the hard work accomplished. Built with native ES6 JavaScript, Leaflet.js, and Tailwind CSS, the map achieves high performance via on-demand lazy-loading of coordinate chunks, local geocoding caching, and automated daily Strava synchronization via GitHub Actions. Fun fact: I've run over 5,300 km in Berlin over 12 years!",
       "startDate": "2026-06",
       "endDate": "present",
       "associatedWith": "Independent Project",
