@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "text": "Run Map",
+      "id": "run-map",
+      "associatedResumeProject": "Run Map",
+      "preview": "/images/run-map.png",
+      "description": "An elegant, dependency-free interactive run map showcasing running activities tracked via Google Fit and Strava. Built using native ES6 JavaScript, HTML5, Leaflet.js, and Tailwind CSS, it features high performance through on-demand lazy-loading of coordinate chunks, local geocoding caching, and automated daily synchronization with Strava's API via GitHub Actions.",
+      "technology": "Native ES6 JavaScript, Leaflet.js, Tailwind CSS, Node.js, GitHub Actions",
+      "links": [
+        {
+          "text": "Website",
+          "href": "https://runs.mhgbrown.is"
+        }
+      ]
+    },
+    {
       "text": "Camille Aleña",
       "id": "camille-alena",
       "associatedResumeProject": "Camille Aleña's Portfolio",
