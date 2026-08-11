@@ -11,6 +11,15 @@
   },
   "work": [
     {
+      "name": "Intego",
+      "position": "Staff Backend Engineer / Product Engineer",
+      "url": "",
+      "startDate": "2026-07",
+      "endDate": "present",
+      "summary": "Brought on as a strategic engineering partner to lead backend delivery and bridge the gap between technical execution and product strategy. I drive the development of new server-side capabilities while modernizing core infrastructure that keeps legacy services running seamlessly for thousands of daily users. Working directly alongside company leadership, I translate product goals into concrete technical milestones, design resilient APIs, and build targeted diagnostic tooling for customer operations to keep edge-case resolution fast and painless.",
+      "highlights": []
+    },
+    {
       "name": "Drips",
       "position": "Core Team",
       "url": "",
